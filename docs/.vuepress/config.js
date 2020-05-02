@@ -30,7 +30,7 @@ module.exports = {
 		{
 		  transformer: (timestamp, lang) => {
 		    // 不要忘了安装 moment
-		    
+
 		    // moment.locale(lang)
 		    return moment(timestamp).format("LLLL")
 		  }
@@ -45,7 +45,7 @@ module.exports = {
 		   '@vssue/vuepress-plugin-vssue': {
 		         // 设置 `platform` 而不是 `api`
 		         platform: 'github-v4',
-		   
+
 		         // 其他的 Vssue 配置
 		         owner: 'lemonxiesf',
 		         repo: 'vuepress',
@@ -53,9 +53,10 @@ module.exports = {
 		         clientSecret: '9032eb5575b682cf349b76beee5346789ce0a4b4',
 				 autoCreateIssue: true
 		       },
+		'@vuepress/back-to-top': true
 	},
-	   
-		
+
+
 
 	themeConfig: {
 		lastUpdated: '更新时间', // string | boolean
