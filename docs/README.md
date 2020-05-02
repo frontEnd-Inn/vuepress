@@ -16,3 +16,6 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
 # Hello VuePress!
+为了演示  PWA 弹窗效果的内容
+
+本地安装vuepress   yarn add -D vuepress  vuepress !!!!  有弹窗吗

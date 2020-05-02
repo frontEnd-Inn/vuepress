@@ -25,28 +25,37 @@ module.exports = {
 				['meta', { name: 'msapplication-TileImage', content: '/icons/icon-144x144.png' }],
 				['meta', { name: 'msapplication-TileColor', content: '#000000' }]
 	],
-	plugins: [
-	    [
-	      '@vuepress/last-updated',
-	      {
-	        transformer: (timestamp, lang) => {
-	          // 不要忘了安装 moment
-	          
-	          // moment.locale(lang)
-	          return moment(timestamp).format("LLLL")
-	        }
-	      }
-	    ],
-		[
-			'@vuepress/pwa', {
-			      serviceWorker: true,
-			      updatePopup: {
-			        message: "大掌柜,发现新的功能可用",
-			        buttonText: "刷新"
-			      }
-			   }
-		]
-	  ],
+	plugins: {
+		'@vuepress/last-updated':
+		{
+		  transformer: (timestamp, lang) => {
+		    // 不要忘了安装 moment
+		    
+		    // moment.locale(lang)
+		    return moment(timestamp).format("LLLL")
+		  }
+		},
+		'@vuepress/pwa': {
+		      serviceWorker: true,
+		      updatePopup: {
+		        message: "大掌柜,发现新的功能可用",
+		        buttonText: "刷新"
+		      }
+		   },
+		   '@vssue/vuepress-plugin-vssue': {
+		         // 设置 `platform` 而不是 `api`
+		         platform: 'github-v4',
+		   
+		         // 其他的 Vssue 配置
+		         owner: 'lemonxiesf',
+		         repo: 'vuepress',
+		         clientId: '97a8fc00f7a95f230415',
+		         clientSecret: '9032eb5575b682cf349b76beee5346789ce0a4b4',
+				 autoCreateIssue: true
+		       },
+	},
+	   
+		
 
 	themeConfig: {
 		lastUpdated: '更新时间', // string | boolean
