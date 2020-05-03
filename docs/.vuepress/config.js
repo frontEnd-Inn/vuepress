@@ -1,104 +1,26 @@
 // .vuepress/config.js
-const moment = require('moment');
-moment.locale("zh-cn");
+
+const headConf = require("./config/headConf");
+const pluginsConf = require("./config/pluginsConf");
+const navConf = require("./config/navConf");
+const sidebarConf = require("./config/sidebarConf");
+
+
 
 module.exports = {
 	// base: "/vuepress/",
 	title: "飞跃高山与大海的鱼",
 	description: "飞跃高山与大海的鱼的笔记,第二次",
-	head: [
-		['link', { rel: 'icon', href: '/1.jpg' }],
-		['meta', {
-			name: 'author',
-			content: '飞跃高山与大洋的鱼'
-		}],
-		['meta', {
-			name: 'keywords',
-			content: 'vuepress介绍, vuepress说明,飞跃高山与大洋的鱼'
-		}],
-		 ['link', { rel: 'manifest', href: '/manifest.json' }],
-				['meta', { name: 'theme-color', content: '#3eaf7c' }],
-				['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-				['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-				['link', { rel: 'apple-touch-icon', href: '/icons/icon-152x152.png' }],
-				['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
-				['meta', { name: 'msapplication-TileImage', content: '/icons/icon-144x144.png' }],
-				['meta', { name: 'msapplication-TileColor', content: '#000000' }]
-	],
-	plugins: {
-		'@vuepress/last-updated':
-		{
-		  transformer: (timestamp, lang) => {
-		    // 不要忘了安装 moment
-
-		    // moment.locale(lang)
-		    return moment(timestamp).format("LLLL")
-		  }
-		},
-		'@vuepress/pwa': {
-		      serviceWorker: true,
-		      updatePopup: {
-		        message: "大掌柜,发现新的功能可用",
-		        buttonText: "刷新"
-		      }
-		   },
-		   '@vssue/vuepress-plugin-vssue': {
-		         // 设置 `platform` 而不是 `api`
-		         platform: 'github-v4',
-
-		         // 其他的 Vssue 配置
-		         owner: 'lemonxiesf',
-		         repo: 'vuepress',
-		         clientId: '97a8fc00f7a95f230415',
-		         clientSecret: '9032eb5575b682cf349b76beee5346789ce0a4b4',
-				 autoCreateIssue: true
-		       },
-		'@vuepress/back-to-top': true
-	},
+	head:headConf,
+	plugins:pluginsConf,
 
 
 
 	themeConfig: {
 		lastUpdated: '更新时间', // string | boolean
 		logo: '/assets/img/hero.png',
-		nav: [{
-				text: 'Home',
-				link: '/'
-			},
-			{
-				text: 'Guide',
-				link: '/about/'
-			},
-			{
-				text: 'External',
-				link: 'https://google.com'
-			},
-			{
-				text: 'Languages',
-				ariaLabel: 'Language Menu',
-				items: [{
-						text: 'Chinese',
-						link: '/language/chinese/'
-					},
-					{
-						text: 'Japanese',
-						link: '/language/japanese/'
-					}
-				]
-			}
-		],
-		sidebar: {
-			"/css/": [
-				'c-aaa',
-				'c-bbb',
-				'c-ccc',
-			],
-			"/javascript/": [
-				'js-aaa',
-				'js-bbb',
-				'js-ccc',
-			]
-		}
+		nav:  navConf ,
+		sidebar: sidebarConf
 
 	}
 }
