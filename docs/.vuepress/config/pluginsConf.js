@@ -1,3 +1,4 @@
+
 const moment = require('moment');
 moment.locale("zh-cn");
 
@@ -31,6 +32,9 @@ module.exports =  {
         clientId: secret.clientId,
         clientSecret: secret.clientSecret,
         autoCreateIssue: true
+    },
+    "vuepress-plugin-auto-sidebar": {
+        nav: true
     },
     '@vuepress/back-to-top': true
 }

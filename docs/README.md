@@ -1,21 +1,25 @@
 ---
-<!-- home: true -->
-<!-- heroImage: /hero.png -->
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
-actionLink: /zh/guide/
-features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present Evan You
+home: true
+heroImage: /assets/img/1.jpg
+heroText: 软件客栈大掌柜
+tagline: 文档, 博客
+actionText: 进入笔记 →
+actionLink: /guide/
 ---
 
-# Hello VuePress!
-为了演示  PWA 弹窗效果的内容
+## 关于~~文档~~笔记
 
-本地安装vuepress   yarn add -D vuepress  vuepress !!!!  有弹窗吗
+::: danger
+
+这根本不是什么文档，仅仅是一个个人笔记而已。
+
+:::
+
+这个 VuePress 文档主要目的，大掌柜是希望可以帮助到更多想进入互联网行业的同学，更加有效快速学好编程技术，少走不必要的弯路。
+也希望更多的人加入大掌柜一起，整理出更多更好的学习资源，提供热爱学习的程序员一起学习，加油！
+
+
+
+
+
+<p style="text-align:center;">MIT Licensed | Copyright © 2018-2020 软件客栈大掌柜 | ICP证：<a href="http://www.rjkz.net" target="_blank" rel="noopener noreferrer">京ICP备19002167号</a></p>

@@ -1,26 +1,58 @@
-module.exports = [{
-    text: 'Home',
-    link: '/'
-},
-    {
-        text: 'Guide',
-        link: '/about/'
-    },
-    {
-        text: 'External',
-        link: 'https://google.com'
-    },
-    {
-        text: 'Languages',
-        ariaLabel: 'Language Menu',
-        items: [{
-            text: 'Chinese',
-            link: '/language/chinese/'
-        },
-            {
-                text: 'Japanese',
-                link: '/language/japanese/'
-            }
-        ]
-    }
-]
+module.exports = [
+    { text: 'Home', link: '/' },
+    { text: 'Guide', link: '/guide/' },
+    { text: '计算机', link: '/computer/' },
+    { text: '系统', items: [
+            { text: 'Linux', link: '/os/linux/' },
+            { text: 'Manjaro', link: '/os/manjaro/' },
+            { text: 'Ubuntu', link: '/os/ubuntu/' },
+            { text: 'CentOS', link: '/os/centos/' },
+        ]},
+    { text: '前端', items: [
+            { text: 'JavaScript', link: '/frontend/javascript/' },
+            { text: '黑马js笔记', link: '/frontend/黑马-js笔记/' },
+            { text: 'CSS', link: 'https://css.shanyuhai.top/' },
+            { text: 'Webpack', link: '/frontend/webpack/' },
+            { text: 'D3', link: '/frontend/d3js/' },
+            { text: 'Utils', link: '/frontend/utils/' },
+        ]},
+    { text: '后端', items: [
+            { text: 'Nodejs', link: '/backend/nodejs/' },
+            { text: 'Koa', link: '/backend/koa/' },
+            { text: 'MongoDB', link: '/backend/mongodb/' },
+            { text: 'Nginx', link: '/backend/nginx/' },
+            { text: 'springboot', link: '/backend/springboot/' },
+            { text: 'java', link: '/backend/java/' },
+        ]},
+    { text: '面试题', items: [
+            { text: 'Html', link: '/mianshiti/Html/' },
+            { text: 'Css', link: '/mianshiti/Css/' },
+            { text: 'javaScript', link: '/mianshiti/javaScript/' },
+            { text: '操作系统', link: '/mianshiti/操作系统/' },
+            { text: '工具', link: '/mianshiti/工具/' },
+            { text: '计算机网络', link: '/mianshiti/计算机网络/' },
+            { text: '面试记录', link: '/mianshiti/面试记录/' },
+            { text: '算法', link: '/mianshiti/算法/' },
+        ]},
+    { text: '项目实战', items: [
+            { text: 'vue项目实战', link: '/backend/nodejs/' },
+            { text: 'springcloud微服务项目实战', link: '/backend/koa/' },
+            { text: '小程序项目实战', link: '/backend/mongodb/' },
+            { text: 'spingboot+vue全栈项目', link: '/backend/nginx/' },
+            { text: '待整理项目实战', link: '/backend/springboot/' },
+        ]},
+    { text: '开发工具', items: [
+            { text: 'Git', link: '/tools/git/' },
+            { text: 'Github', link: '/tools/github/' },
+            { text: 'VSCode', link: '/tools/vscode/' },
+            { text: 'Chrome Developer tools', link: '/tools/chrome/' },
+            { text: 'Bookmark scripts', link: '/tools/bookmark-scripts/' },
+        ]},
+    { text: '更多', items: [
+            { text: '算法', link: '/more/algorithm/' },
+            { text: '面试题', link: '/more/interview/' },
+            { text: '大杂烩', link: '/more/hodgepodge/' },
+            { text: '风格指南', link: '/more/clean/' },
+            { text: 'VuePress1.x 官网', link: 'https://v1.vuepress.vuejs.org/zh/' },
+        ]}
+];

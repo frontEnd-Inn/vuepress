@@ -2,11 +2,11 @@ module.exports =  [
     ['link', { rel: 'icon', href: '/1.jpg' }],
     ['meta', {
         name: 'author',
-        content: '飞跃高山与大洋的鱼'
+        content: '大掌柜'
     }],
     ['meta', {
         name: 'keywords',
-        content: 'vuepress介绍, vuepress说明,飞跃高山与大洋的鱼'
+        content: 'vuepress介绍, vuepress说明,软件客栈大掌柜'
     }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],

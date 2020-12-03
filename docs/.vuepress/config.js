@@ -2,15 +2,16 @@
 
 const headConf = require("./config/headConf");
 const pluginsConf = require("./config/pluginsConf");
-const navConf = require("./config/navConf");
+const nav = require("./nav");
+const navConf = require('./config/navConf.js');
 const sidebarConf = require("./config/sidebarConf");
 
 
 
 module.exports = {
 	// base: "/vuepress/",
-	title: "飞跃高山与大海的鱼",
-	description: "飞跃高山与大海的鱼的笔记,第二次",
+	title: "软件客栈大掌柜",
+	description: "软件客栈大掌柜笔记",
 	head:headConf,
 	plugins:pluginsConf,
 
@@ -19,8 +20,8 @@ module.exports = {
 	themeConfig: {
 		lastUpdated: '更新时间', // string | boolean
 		logo: '/assets/img/hero.png',
-		nav:  navConf ,
-		sidebar: sidebarConf
+		nav:  navConf,
+
 
 	}
 }
