@@ -9,6 +9,7 @@ module.exports = [
             { text: 'CentOS', link: '/os/centos/' },
         ]},
     { text: '前端', items: [
+            { text: '2021前端最全资源集锦', link: '/frontend/前端最全资源整理/' },
             { text: 'JavaScript', link: '/frontend/javascript/' },
             { text: '黑马js笔记', link: '/frontend/黑马-js笔记/' },
             { text: 'CSS', link: 'https://css.shanyuhai.top/' },
