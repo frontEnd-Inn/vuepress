@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CDN 的缓存与回源机制解析 | 软件客栈大掌柜</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/1.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="软件客栈大掌柜笔记">
+    <meta name="author" content="大掌柜">
+    <meta name="keywords" content="vuepress介绍, vuepress说明,软件客栈大掌柜">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.7f98414a.css" as="style"><link rel="preload" href="/assets/js/app.706dfc08.js" as="script"><link rel="preload" href="/assets/js/5.a1985014.js" as="script"><link rel="preload" href="/assets/js/2.06f532ef.js" as="script"><link rel="preload" href="/assets/js/163.e452a748.js" as="script"><link rel="preload" href="/assets/js/3.cce15a36.js" as="script"><link rel="prefetch" href="/assets/js/10.2c79d68c.js"><link rel="prefetch" href="/assets/js/100.f100f4ea.js"><link rel="prefetch" href="/assets/js/101.8792d9db.js"><link rel="prefetch" href="/assets/js/102.aaa2fe97.js"><link rel="prefetch" href="/assets/js/103.a5ce24af.js"><link rel="prefetch" href="/assets/js/104.b040fffb.js"><link rel="prefetch" href="/assets/js/105.5eee1282.js"><link rel="prefetch" href="/assets/js/106.106a9c26.js"><link rel="prefetch" href="/assets/js/107.a2b61042.js"><link rel="prefetch" href="/assets/js/108.b892dd66.js"><link rel="prefetch" href="/assets/js/109.3314fe2f.js"><link rel="prefetch" href="/assets/js/11.ad036196.js"><link rel="prefetch" href="/assets/js/110.30c4ce99.js"><link rel="prefetch" href="/assets/js/111.2ceb9df8.js"><link rel="prefetch" href="/assets/js/112.7483a3b4.js"><link rel="prefetch" href="/assets/js/113.bac5445b.js"><link rel="prefetch" href="/assets/js/114.1c27f5dc.js"><link rel="prefetch" href="/assets/js/115.e16aef72.js"><link rel="prefetch" href="/assets/js/116.84137466.js"><link rel="prefetch" href="/assets/js/117.d5d2c4aa.js"><link rel="prefetch" href="/assets/js/118.a228463d.js"><link rel="prefetch" href="/assets/js/119.6a6b4f4f.js"><link rel="prefetch" href="/assets/js/12.a52711b9.js"><link rel="prefetch" href="/assets/js/120.b5e71441.js"><link rel="prefetch" href="/assets/js/121.00bd220c.js"><link rel="prefetch" href="/assets/js/122.8f700f5b.js"><link rel="prefetch" href="/assets/js/123.7f413c25.js"><link rel="prefetch" href="/assets/js/124.b783b5cb.js"><link rel="prefetch" href="/assets/js/125.b5e9a09f.js"><link rel="prefetch" href="/assets/js/126.288282b5.js"><link rel="prefetch" href="/assets/js/127.b441e0c9.js"><link rel="prefetch" href="/assets/js/128.0c4282c6.js"><link rel="prefetch" href="/assets/js/129.b42b4e5e.js"><link rel="prefetch" href="/assets/js/13.fde39ba1.js"><link rel="prefetch" href="/assets/js/130.756fff45.js"><link rel="prefetch" href="/assets/js/131.b3d70b12.js"><link rel="prefetch" href="/assets/js/132.57548e9e.js"><link rel="prefetch" href="/assets/js/133.71d13054.js"><link rel="prefetch" href="/assets/js/134.1ecaf78e.js"><link rel="prefetch" href="/assets/js/135.a9a23af5.js"><link rel="prefetch" href="/assets/js/136.562aa5dc.js"><link rel="prefetch" href="/assets/js/137.d602b6b5.js"><link rel="prefetch" href="/assets/js/138.554b8fce.js"><link rel="prefetch" href="/assets/js/139.4865b599.js"><link rel="prefetch" href="/assets/js/14.ffd16da9.js"><link rel="prefetch" href="/assets/js/140.0961d9df.js"><link rel="prefetch" href="/assets/js/141.5cd1a745.js"><link rel="prefetch" href="/assets/js/142.57802000.js"><link rel="prefetch" href="/assets/js/143.93d9efce.js"><link rel="prefetch" href="/assets/js/144.de603eb8.js"><link rel="prefetch" href="/assets/js/145.bf1c2688.js"><link rel="prefetch" href="/assets/js/146.7f6c3213.js"><link rel="prefetch" href="/assets/js/147.f7bf171c.js"><link rel="prefetch" href="/assets/js/148.014a8cac.js"><link rel="prefetch" href="/assets/js/149.c5fa5906.js"><link rel="prefetch" href="/assets/js/15.248c685c.js"><link rel="prefetch" href="/assets/js/150.0cc5ef1c.js"><link rel="prefetch" href="/assets/js/151.07566101.js"><link rel="prefetch" href="/assets/js/152.f74690f8.js"><link rel="prefetch" href="/assets/js/153.7e065629.js"><link rel="prefetch" href="/assets/js/154.a2415b30.js"><link rel="prefetch" href="/assets/js/155.9afb0898.js"><link rel="prefetch" href="/assets/js/156.32f77a06.js"><link rel="prefetch" href="/assets/js/157.6501de59.js"><link rel="prefetch" href="/assets/js/158.e5e5a393.js"><link rel="prefetch" href="/assets/js/159.9ec0457f.js"><link rel="prefetch" href="/assets/js/16.9ac46bb6.js"><link rel="prefetch" href="/assets/js/160.cd094c7d.js"><link rel="prefetch" href="/assets/js/161.ae3e0313.js"><link rel="prefetch" href="/assets/js/162.89539aca.js"><link rel="prefetch" href="/assets/js/164.150aab74.js"><link rel="prefetch" href="/assets/js/165.026bf111.js"><link rel="prefetch" href="/assets/js/166.89c86017.js"><link rel="prefetch" href="/assets/js/167.69ee6ede.js"><link rel="prefetch" href="/assets/js/168.43b68632.js"><link rel="prefetch" href="/assets/js/169.2f9f0246.js"><link rel="prefetch" href="/assets/js/17.82a262d3.js"><link rel="prefetch" href="/assets/js/170.c19dc3dd.js"><link rel="prefetch" href="/assets/js/171.e56c55d9.js"><link rel="prefetch" href="/assets/js/172.a3e7845e.js"><link rel="prefetch" href="/assets/js/173.0b83d9c2.js"><link rel="prefetch" href="/assets/js/174.c68c0269.js"><link rel="prefetch" href="/assets/js/175.539f71f0.js"><link rel="prefetch" href="/assets/js/176.04964db3.js"><link rel="prefetch" href="/assets/js/177.dc992454.js"><link rel="prefetch" href="/assets/js/178.ddfa4a03.js"><link rel="prefetch" href="/assets/js/179.2af0e66e.js"><link rel="prefetch" href="/assets/js/18.28b713e4.js"><link rel="prefetch" href="/assets/js/180.9a4d8869.js"><link rel="prefetch" href="/assets/js/181.6a33aa9b.js"><link rel="prefetch" href="/assets/js/182.73a72c77.js"><link rel="prefetch" href="/assets/js/183.dff62977.js"><link rel="prefetch" href="/assets/js/184.35b18776.js"><link rel="prefetch" href="/assets/js/185.71974dff.js"><link rel="prefetch" href="/assets/js/186.38f792fc.js"><link rel="prefetch" href="/assets/js/187.76a4e549.js"><link rel="prefetch" href="/assets/js/188.43f54939.js"><link rel="prefetch" href="/assets/js/189.3628cb16.js"><link rel="prefetch" href="/assets/js/19.1162fb05.js"><link rel="prefetch" href="/assets/js/190.5d0bf71c.js"><link rel="prefetch" href="/assets/js/191.85bd91c1.js"><link rel="prefetch" href="/assets/js/192.a38cb0a3.js"><link rel="prefetch" href="/assets/js/193.bfad9e0b.js"><link rel="prefetch" href="/assets/js/194.c7264c65.js"><link rel="prefetch" href="/assets/js/195.859098a6.js"><link rel="prefetch" href="/assets/js/196.d36f5885.js"><link rel="prefetch" href="/assets/js/197.85a45767.js"><link rel="prefetch" href="/assets/js/198.a4fe959f.js"><link rel="prefetch" href="/assets/js/199.8b459d06.js"><link rel="prefetch" href="/assets/js/20.ee441cb8.js"><link rel="prefetch" href="/assets/js/200.632f8c04.js"><link rel="prefetch" href="/assets/js/201.643156f4.js"><link rel="prefetch" href="/assets/js/202.ba4a5291.js"><link rel="prefetch" href="/assets/js/203.81a1285e.js"><link rel="prefetch" href="/assets/js/204.8d7384ea.js"><link rel="prefetch" href="/assets/js/205.dd4215ed.js"><link rel="prefetch" href="/assets/js/206.6483093c.js"><link rel="prefetch" href="/assets/js/207.081cff93.js"><link rel="prefetch" href="/assets/js/208.093175e4.js"><link rel="prefetch" href="/assets/js/209.0f54a115.js"><link rel="prefetch" href="/assets/js/21.a4e4754d.js"><link rel="prefetch" href="/assets/js/210.1a0ea810.js"><link rel="prefetch" href="/assets/js/211.abcdbd7b.js"><link rel="prefetch" href="/assets/js/212.1546c314.js"><link rel="prefetch" href="/assets/js/213.2160f67c.js"><link rel="prefetch" href="/assets/js/214.52111592.js"><link rel="prefetch" href="/assets/js/215.b10cb717.js"><link rel="prefetch" href="/assets/js/216.89b60e69.js"><link rel="prefetch" href="/assets/js/217.ad947edf.js"><link rel="prefetch" href="/assets/js/218.27519362.js"><link rel="prefetch" href="/assets/js/219.cb427e64.js"><link rel="prefetch" href="/assets/js/22.d3a7f5c6.js"><link rel="prefetch" href="/assets/js/220.e5905962.js"><link rel="prefetch" href="/assets/js/221.e8322cc4.js"><link rel="prefetch" href="/assets/js/222.0298c6a3.js"><link rel="prefetch" href="/assets/js/223.b5391d9e.js"><link rel="prefetch" href="/assets/js/224.e899bce3.js"><link rel="prefetch" href="/assets/js/225.30cc066e.js"><link rel="prefetch" href="/assets/js/226.ecbe8929.js"><link rel="prefetch" href="/assets/js/227.a12905d3.js"><link rel="prefetch" href="/assets/js/228.a16591a7.js"><link rel="prefetch" href="/assets/js/229.472b2a1b.js"><link rel="prefetch" href="/assets/js/23.873bdd58.js"><link rel="prefetch" href="/assets/js/230.31eaa533.js"><link rel="prefetch" href="/assets/js/231.b686a972.js"><link rel="prefetch" href="/assets/js/232.fb49ef6d.js"><link rel="prefetch" href="/assets/js/233.8d8b812d.js"><link rel="prefetch" href="/assets/js/234.cfba3218.js"><link rel="prefetch" href="/assets/js/235.a0f1f597.js"><link rel="prefetch" href="/assets/js/236.f7e4e484.js"><link rel="prefetch" href="/assets/js/237.a6690e2c.js"><link rel="prefetch" href="/assets/js/238.38806924.js"><link rel="prefetch" href="/assets/js/239.07a31fe4.js"><link rel="prefetch" href="/assets/js/24.ff07a49c.js"><link rel="prefetch" href="/assets/js/240.cff79828.js"><link rel="prefetch" href="/assets/js/241.328d40c3.js"><link rel="prefetch" href="/assets/js/242.a776c189.js"><link rel="prefetch" href="/assets/js/243.540bc455.js"><link rel="prefetch" href="/assets/js/244.02f22973.js"><link rel="prefetch" href="/assets/js/245.fbb6e0c1.js"><link rel="prefetch" href="/assets/js/246.6b6e5c79.js"><link rel="prefetch" href="/assets/js/247.5862a275.js"><link rel="prefetch" href="/assets/js/248.1f88d123.js"><link rel="prefetch" href="/assets/js/249.e9495770.js"><link rel="prefetch" href="/assets/js/25.e40e0dd4.js"><link rel="prefetch" href="/assets/js/250.8a1aab0e.js"><link rel="prefetch" href="/assets/js/251.aced0a71.js"><link rel="prefetch" href="/assets/js/252.4d531500.js"><link rel="prefetch" href="/assets/js/253.9dd9776b.js"><link rel="prefetch" href="/assets/js/254.0f0ccb74.js"><link rel="prefetch" href="/assets/js/255.aae0849b.js"><link rel="prefetch" href="/assets/js/256.6f58d98f.js"><link rel="prefetch" href="/assets/js/257.28618e10.js"><link rel="prefetch" href="/assets/js/258.fe57c27c.js"><link rel="prefetch" href="/assets/js/259.b78ef20a.js"><link rel="prefetch" href="/assets/js/26.de36a71a.js"><link rel="prefetch" href="/assets/js/260.0ea2dc1a.js"><link rel="prefetch" href="/assets/js/261.7e3c0863.js"><link rel="prefetch" href="/assets/js/262.84e63ce4.js"><link rel="prefetch" href="/assets/js/263.510ae371.js"><link rel="prefetch" href="/assets/js/264.4160bc98.js"><link rel="prefetch" href="/assets/js/27.c580ee78.js"><link rel="prefetch" href="/assets/js/28.976d6702.js"><link rel="prefetch" href="/assets/js/29.6174cc16.js"><link rel="prefetch" href="/assets/js/30.aa22d6be.js"><link rel="prefetch" href="/assets/js/31.46de1df0.js"><link rel="prefetch" href="/assets/js/32.1b964f72.js"><link rel="prefetch" href="/assets/js/33.05676cb2.js"><link rel="prefetch" href="/assets/js/34.81be320f.js"><link rel="prefetch" href="/assets/js/35.00de593f.js"><link rel="prefetch" href="/assets/js/36.9c9ac879.js"><link rel="prefetch" href="/assets/js/37.0f391c8d.js"><link rel="prefetch" href="/assets/js/38.af0c2484.js"><link rel="prefetch" href="/assets/js/39.ad3acf6f.js"><link rel="prefetch" href="/assets/js/4.42dba944.js"><link rel="prefetch" href="/assets/js/40.4a9cb0ee.js"><link rel="prefetch" href="/assets/js/41.88e3ef3a.js"><link rel="prefetch" href="/assets/js/42.5e31c822.js"><link rel="prefetch" href="/assets/js/43.b02d7688.js"><link rel="prefetch" href="/assets/js/44.5465006b.js"><link rel="prefetch" href="/assets/js/45.26bca022.js"><link rel="prefetch" href="/assets/js/46.4005d589.js"><link rel="prefetch" href="/assets/js/47.e62a1130.js"><link rel="prefetch" href="/assets/js/48.c04ff0d0.js"><link rel="prefetch" href="/assets/js/49.0ddb5ba9.js"><link rel="prefetch" href="/assets/js/50.565951e1.js"><link rel="prefetch" href="/assets/js/51.3544d229.js"><link rel="prefetch" href="/assets/js/52.7a64588f.js"><link rel="prefetch" href="/assets/js/53.03b79fe7.js"><link rel="prefetch" href="/assets/js/54.fdac08cf.js"><link rel="prefetch" href="/assets/js/55.d9689762.js"><link rel="prefetch" href="/assets/js/56.2240d487.js"><link rel="prefetch" href="/assets/js/57.b041c091.js"><link rel="prefetch" href="/assets/js/58.d0dcd829.js"><link rel="prefetch" href="/assets/js/59.118f91f2.js"><link rel="prefetch" href="/assets/js/6.b166fe72.js"><link rel="prefetch" href="/assets/js/60.f7d99c31.js"><link rel="prefetch" href="/assets/js/61.6455ebd3.js"><link rel="prefetch" href="/assets/js/62.1fbfe7ef.js"><link rel="prefetch" href="/assets/js/63.9e81074e.js"><link rel="prefetch" href="/assets/js/64.b9941626.js"><link rel="prefetch" href="/assets/js/65.941d7e50.js"><link rel="prefetch" href="/assets/js/66.7b1d3392.js"><link rel="prefetch" href="/assets/js/67.49dda8c2.js"><link rel="prefetch" href="/assets/js/68.8aa1ca17.js"><link rel="prefetch" href="/assets/js/69.38d9a056.js"><link rel="prefetch" href="/assets/js/7.a03281b2.js"><link rel="prefetch" href="/assets/js/70.1ac937fe.js"><link rel="prefetch" href="/assets/js/71.b8ac9f51.js"><link rel="prefetch" href="/assets/js/72.19194d07.js"><link rel="prefetch" href="/assets/js/73.de1a0d69.js"><link rel="prefetch" href="/assets/js/74.57533fe3.js"><link rel="prefetch" href="/assets/js/75.d53f74a8.js"><link rel="prefetch" href="/assets/js/76.458d38d0.js"><link rel="prefetch" href="/assets/js/77.4f935fe6.js"><link rel="prefetch" href="/assets/js/78.7e272b25.js"><link rel="prefetch" href="/assets/js/79.d509d5a0.js"><link rel="prefetch" href="/assets/js/8.93c0ee07.js"><link rel="prefetch" href="/assets/js/80.73751a4c.js"><link rel="prefetch" href="/assets/js/81.fead5e9e.js"><link rel="prefetch" href="/assets/js/82.c1e5ee7e.js"><link rel="prefetch" href="/assets/js/83.6d22cb17.js"><link rel="prefetch" href="/assets/js/84.91a277e5.js"><link rel="prefetch" href="/assets/js/85.75219345.js"><link rel="prefetch" href="/assets/js/86.6fc3e32a.js"><link rel="prefetch" href="/assets/js/87.64384c54.js"><link rel="prefetch" href="/assets/js/88.6bef428a.js"><link rel="prefetch" href="/assets/js/89.d74f197d.js"><link rel="prefetch" href="/assets/js/9.81ed1b88.js"><link rel="prefetch" href="/assets/js/90.488a321b.js"><link rel="prefetch" href="/assets/js/91.b541fb2c.js"><link rel="prefetch" href="/assets/js/92.a3da2740.js"><link rel="prefetch" href="/assets/js/93.199e39e4.js"><link rel="prefetch" href="/assets/js/94.222c18be.js"><link rel="prefetch" href="/assets/js/95.fe7ed0da.js"><link rel="prefetch" href="/assets/js/96.2c756e51.js"><link rel="prefetch" href="/assets/js/97.d771cd41.js"><link rel="prefetch" href="/assets/js/98.9f8e2685.js"><link rel="prefetch" href="/assets/js/99.87d07b72.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f98414a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/hero.png" alt="软件客栈大掌柜" class="logo"> <span class="site-name can-hide">软件客栈大掌柜</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>性能优化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mianshiti/性能优化/0开篇：知识体系与小册格局.html" class="sidebar-link">知识体系与小册格局</a></li><li><a href="/mianshiti/性能优化/10渲染篇 5：最后一击——回流（Reflow）与重绘（Repaint）.html" class="sidebar-link">最后一击——回流（Reflow）与重绘（Repaint）</a></li><li><a href="/mianshiti/性能优化/11应用篇 1：优化首屏体验——Lazy-Load 初探.html" class="sidebar-link">优化首屏体验——Lazy-Load 初探</a></li><li><a href="/mianshiti/性能优化/12应用篇 2：事件的节流（throttle）与防抖（debounce）.html" class="sidebar-link">事件的节流（throttle）与防抖（debounce）</a></li><li><a href="/mianshiti/性能优化/13性能监测篇：Performance、LightHouse 与性能 API.html" class="sidebar-link">Performance、LightHouse 与性能 API</a></li><li><a href="/mianshiti/性能优化/14前方的路：希望以此为你的起点.html" class="sidebar-link">前方的路：希望成为你的起点</a></li><li><a href="/mianshiti/性能优化/1网络篇 1：webpack 性能调优与 Gzip 原理.html" class="sidebar-link">webpack 性能调优与 Gzip 原理</a></li><li><a href="/mianshiti/性能优化/2网络篇 2：图片优化——质量与性能的博弈.html" class="sidebar-link">图片优化——质量与性能的博弈</a></li><li><a href="/mianshiti/性能优化/3存储篇 1：浏览器缓存机制介绍与缓存策略剖析.html" class="sidebar-link">浏览器缓存机制介绍与缓存策略剖析</a></li><li><a href="/mianshiti/性能优化/4存储篇 2：本地存储——从 Cookie 到 Web Storage、IndexDB.html" class="sidebar-link">本地存储——从 Cookie 到 Web Storage、IndexDB</a></li><li><a href="/mianshiti/性能优化/5彩蛋篇：CDN 的缓存与回源机制解析.html" class="active sidebar-link">CDN 的缓存与回源机制解析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mianshiti/性能优化/5彩蛋篇：CDN 的缓存与回源机制解析.html#写在小册的半山腰" class="sidebar-link">写在小册的半山腰</a></li><li class="sidebar-sub-header"><a href="/mianshiti/性能优化/5彩蛋篇：CDN 的缓存与回源机制解析.html#彩蛋：cdn的缓存与回源机制解析" class="sidebar-link">彩蛋：CDN的缓存与回源机制解析</a></li><li class="sidebar-sub-header"><a href="/mianshiti/性能优化/5彩蛋篇：CDN 的缓存与回源机制解析.html#小结" class="sidebar-link">小结</a></li></ul></li><li><a href="/mianshiti/性能优化/6渲染篇 1：服务端渲染的探索与实践.html" class="sidebar-link">服务端渲染的探索与实践</a></li><li><a href="/mianshiti/性能优化/7渲染篇 2：知己知彼——解锁浏览器背后的运行机制.html" class="sidebar-link">知己知彼——解锁浏览器背后的运行机制</a></li><li><a href="/mianshiti/性能优化/8渲染篇 3：对症下药——DOM 优化原理与基本实践.html" class="sidebar-link">对症下药—— DOM 优化原理与基本实践</a></li><li><a href="/mianshiti/性能优化/9渲染篇 4：千方百计——Event Loop 与异步更新策略.html" class="sidebar-link">千方百计——Event Loop 与异步更新策略</a></li><li><a href="/mianshiti/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="sidebar-link">首页</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="cdn-的缓存与回源机制解析"><a href="#cdn-的缓存与回源机制解析" class="header-anchor">#</a> CDN 的缓存与回源机制解析</h1> <h2 id="写在小册的半山腰"><a href="#写在小册的半山腰" class="header-anchor">#</a> 写在小册的半山腰</h2> <p>不知不觉，小册内容已经过了小半了。</p> <p>回顾一下走过的路：在对知识体系进行一番梳理后，我们操起 webpack 开始优化文件（顺便还学了点 Gzip），随后又马不停蹄进入图片的小天地，最后把缓存和本地存储的味道逐一品尝，终于得以窥见网络层面核心优化技术的全貌。</p> <p>古人云：学而不思则罔。</p> <p>站在性能优化的半山腰，我希望大家可以缓一缓，停下来思考一个问题：我得到了什么？</p> <p>作为作者，我在自己写的每一行字背后都费了思量。在过去的每个章节里我都预先为知识点做了权重划分，力求“详略得当”，而非盲目地求大求全。孰详孰略，只能根据知识点本身的重要性来划分，但读者的知识结构是多样的。“如何使阅读效益最大化”的金钥匙不在我手中，而是在各位自己手中。</p> <p>本小册中我有所提及的每一个知识点，<strong>都有大公司在实践</strong>。即便是略写的内容，大家也值得进一步去推敲。可以尝试深挖这本小册的可能性，把它用起来，用到自己的工作中去，去看看它能否给你的业务带来提升，看看是否还有更精进的方案。</p> <p>我是一个“啰嗦”的人。尤其是意识到这本书可能会成为一些同学的性能优化启蒙读物时，我更加认为有必要在行文小半时再啰嗦这么一遍：如果读到这里，脑海中无法复现出网络层面的知识体系，无法在回忆每个技术点时记起它的场景和特性，我建议不要急于往下走，而是回过头去再看看学过的这部分的内容——走马观花不是学习，主动理解+动手实践才是。</p> <h2 id="彩蛋：cdn的缓存与回源机制解析"><a href="#彩蛋：cdn的缓存与回源机制解析" class="header-anchor">#</a> 彩蛋：CDN的缓存与回源机制解析</h2> <blockquote><p>CDN （Content Delivery Network，即内容分发网络）指的是一组分布在各个地区的服务器。这些服务器存储着数据的副本，因此服务器可以根据哪些服务器与用户距离最近，来满足数据的请求。 CDN 提供快速服务，较少受高流量影响。</p></blockquote> <h3 id="为什么要用-cdn"><a href="#为什么要用-cdn" class="header-anchor">#</a> 为什么要用 CDN</h3> <p>浏览器存储的相关知识此刻离我们还不太远，大家趁热回忆一下：缓存、本地存储带来的性能提升，是不是只能在“获取到资源并把它们存起来”这件事情发生之后？也就是说，首次请求资源的时候，这些招数都是救不了我们的。要提升首次请求的响应能力，除了我们 2、3、4 节提到的方案之外，我们还需要借助 CDN 的能力。</p> <h3 id="cdn-如何工作"><a href="#cdn-如何工作" class="header-anchor">#</a> CDN 如何工作</h3> <p>借中国地图一角来给大家举一个简单的🌰：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/23/16605c1a4961f07e?w=1184&amp;h=1020&amp;f=png&amp;s=1191786" alt=""></p> <p>假设我的根服务器在杭州，同时在图示的五个城市里都有自己可用的机房。</p> <p>此时有一位北京的用户向我请求资源。在网络带宽小、用户访问量大的情况下，杭州的这一台服务器或许不那么给力，不能给用户非常快的响应速度。于是我灵机一动，把这批资源 copy 了一批放在北京的机房里。当用户请求资源时，就近请求北京的服务器，北京这台服务器低头一看，这个资源我存了，离得这么近，响应速度肯定噌噌的！那如果北京这台服务器没有 copy 这批资源呢？它会再向杭州的根服务器去要这个资源。在这个过程中，北京这台服务器就扮演着 CDN 的角色。</p> <h3 id="cdn的核心功能特写"><a href="#cdn的核心功能特写" class="header-anchor">#</a> CDN的核心功能特写</h3> <p>CDN 的核心点有两个，一个是<strong>缓存</strong>，一个是<strong>回源</strong>。</p> <p>这两个概念都非常好理解。对标到上面描述的过程，“缓存”就是说我们把资源 copy 一份到 CDN 服务器上这个过程，“回源”就是说 CDN 发现自己没有这个资源（一般是缓存的数据过期了），转头向根服务器（或者它的上层服务器）去要这个资源的过程。</p> <h3 id="cdn-与前端性能优化"><a href="#cdn-与前端性能优化" class="header-anchor">#</a> CDN 与前端性能优化</h3> <p>一个彩蛋的自我修养——CDN 往往是被前端认为前端不需要了解的东西。</p> <p>具体来说，我身边许多同学对其的了解止步于：部署界面上有一个“部署到CDN”按钮，我去点一下，资源就在 CDN 上啦！</p> <p>“眼下业务开发用不到的可以暂缓了解”，这是没毛病的。但正如我小册开篇所说的，前端工程师首先是软件工程师。对整个技术架构的理解，将会反哺我们对某一具体环节的理解；知识点的适当拓展，也会对大家技术高度和技术广度的提升大有裨益。</p> <p>那么，我们了解一下 CDN 是怎么帮助前端的。</p> <p><strong>CDN 往往被用来存放静态资源</strong>。上文中我们举例所提到的“根服务器”本质上是业务服务器，它的核心任务在于<strong>生成动态页面或返回非纯静态页面</strong>，这两种过程都是需要计算的。业务服务器仿佛一个车间，车间里运转的机器轰鸣着为我们产出所需的资源；相比之下，CDN 服务器则像一个仓库，它只充当资源的“栖息地”和“搬运工”。</p> <p>所谓“静态资源”，就是像 JS、CSS、图片等<strong>不需要业务服务器进行计算即得的资源</strong>。而“动态资源”，顾名思义是需要<strong>后端实时动态生成的资源</strong>，较为常见的就是 JSP、ASP 或者依赖服务端渲染得到的 HTML 页面。</p> <p>什么是“非纯静态资源”呢？它是指<strong>需要服务器在页面之外作额外计算的 HTML 页面</strong>。具体来说，当我打开某一网站之前，该网站需要通过权限认证等一系列手段确认我的身份、进而决定是否要把 HTML 页面呈现给我。这种情况下 HTML 确实是静态的，但它<strong>和业务服务器的操作耦合</strong>，我们把它丢到CDN 上显然是不合适的。</p> <h3 id="cdn-的实际应用"><a href="#cdn-的实际应用" class="header-anchor">#</a> CDN 的实际应用</h3> <p>静态资源本身具有访问频率高、承接流量大的特点，因此静态资源加载速度始终是前端性能的一个非常关键的指标。CDN 是静态资源提速的重要手段，在许多一线的互联网公司，“静态资源走 CDN”并不是一个建议，而是一个规定。</p> <p>比如以淘宝为代表的阿里系产品，就遵循着这个“规定”。<br>
+打开淘宝首页，我们可以在 Network 面板中看到，“非纯静态”的 HTML 页面，是向业务服务器请求来的：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/25/1660f50337974e82?w=1118&amp;h=678&amp;f=png&amp;s=236400" alt=""></p> <p>我们点击 preview，可以看到业务服务器确实是返回给了我们一个尚未被静态资源加持过的简单 HTML 页面，所有的图片内容都是先以一个 div 占位：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/25/1660f52fe65facba?w=2102&amp;h=1150&amp;f=png&amp;s=64675" alt=""></p> <p>相应地，我们随便点开一个静态资源，可以看到它都是从 CDN 服务器上请求来的。</p> <p>比如说图片：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/25/1660f555fb76a89a?w=1124&amp;h=106&amp;f=png&amp;s=26307" alt=""></p> <p>再比如 JS、CSS 文件：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/25/1660f57436da98f0?w=1606&amp;h=134&amp;f=png&amp;s=43046" alt=""></p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/25/1660f57b6b995d5e?w=1708&amp;h=150&amp;f=png&amp;s=56740" alt=""></p> <h3 id="cdn-优化细节"><a href="#cdn-优化细节" class="header-anchor">#</a> CDN 优化细节</h3> <p>如何让 CDN 的效用最大化？这又是需要前后端程序员一起思考的庞大命题。它涉及到 CDN 服务器本身的性能优化、CDN 节点的地址选取等。但我们今天不写高深的论文，只谈离前端最近的这部分细节：CDN 的域名选取。</p> <p>大家先回头看一下我刚刚选取的淘宝首页的例子，我们注意到业务服务器的域名是这个：</p> <div class="language- extra-class"><pre class="language-text"><code>www.taobao.com
+</code></pre></div><p>而 CDN 服务器的域名是这个：</p> <div class="language- extra-class"><pre class="language-text"><code>g.alicdn.com
+</code></pre></div><p>没错，我们不一样！</p> <p>再看另一方面，我们讲到 Cookie 的时候，为了凸显 Local Storage 的优越性，曾经提到过：</p> <blockquote><p>Cookie 是紧跟域名的。同一个域名下的所有请求，都会携带 Cookie。大家试想，如果我们此刻仅仅是请求一张图片或者一个 CSS 文件，我们也要携带一个 Cookie 跑来跑去（关键是 Cookie 里存储的信息我现在并不需要），这是一件多么劳民伤财的事情。Cookie 虽然小，请求却可以有很多，随着请求的叠加，这样的不必要的 Cookie 带来的开销将是无法想象的……</p></blockquote> <p>同一个域名下的请求会不分青红皂白地携带 Cookie，而静态资源往往并不需要 Cookie 携带什么认证信息。把静态资源和主页面置于不同的域名下，完美地避免了不必要的 Cookie 的出现！</p> <p>看起来是一个不起眼的小细节，但带来的效用却是惊人的。以电商网站静态资源的流量之庞大，如果没把这个多余的 Cookie 拿下来，不仅用户体验会大打折扣，每年因性能浪费带来的经济开销也将是一个非常恐怖的数字。</p> <p>如此看来，性能优化还真是要步步为营！</p> <h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>结束了对 CDN 的剖析，我们网络层面的优化之旅也终于告一段落了。接下来等待大家的就是另一个庞大的知识板块——渲染层面的挑战。</p> <p>与其说是“渲染层面的优化”，不如说是“浏览器端的优化”。这个板块旨在要大家对浏览器及其相关运行机制“知根知底”，进而通过具体的代码片段学习代码层面的应用手段。这部分是实打实的“硬骨头”，需要大家花些精力。</p> <p>过去的几个小节里，我们考虑了服务端，考虑了网络，考虑了协议。那么接下来，我们就以“服务端渲染”为引子，承上启下，切入浏览器渲染的世界。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年12月4日星期五凌晨1点01分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mianshiti/性能优化/4存储篇 2：本地存储——从 Cookie 到 Web Storage、IndexDB.html" class="prev">
+        本地存储——从 Cookie 到 Web Storage、IndexDB
+      </a></span> <span class="next"><a href="/mianshiti/性能优化/6渲染篇 1：服务端渲染的探索与实践.html">
+        服务端渲染的探索与实践
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.706dfc08.js" defer></script><script src="/assets/js/5.a1985014.js" defer></script><script src="/assets/js/2.06f532ef.js" defer></script><script src="/assets/js/163.e452a748.js" defer></script><script src="/assets/js/3.cce15a36.js" defer></script>
+  </body>
+</html>

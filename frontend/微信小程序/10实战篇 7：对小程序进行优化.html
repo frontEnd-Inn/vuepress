@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>实战篇 7：对小程序进行优化 | 软件客栈大掌柜</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/1.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="软件客栈大掌柜笔记">
+    <meta name="author" content="大掌柜">
+    <meta name="keywords" content="vuepress介绍, vuepress说明,软件客栈大掌柜">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.7f98414a.css" as="style"><link rel="preload" href="/assets/js/app.706dfc08.js" as="script"><link rel="preload" href="/assets/js/5.a1985014.js" as="script"><link rel="preload" href="/assets/js/2.06f532ef.js" as="script"><link rel="preload" href="/assets/js/118.a228463d.js" as="script"><link rel="preload" href="/assets/js/3.cce15a36.js" as="script"><link rel="prefetch" href="/assets/js/10.2c79d68c.js"><link rel="prefetch" href="/assets/js/100.f100f4ea.js"><link rel="prefetch" href="/assets/js/101.8792d9db.js"><link rel="prefetch" href="/assets/js/102.aaa2fe97.js"><link rel="prefetch" href="/assets/js/103.a5ce24af.js"><link rel="prefetch" href="/assets/js/104.b040fffb.js"><link rel="prefetch" href="/assets/js/105.5eee1282.js"><link rel="prefetch" href="/assets/js/106.106a9c26.js"><link rel="prefetch" href="/assets/js/107.a2b61042.js"><link rel="prefetch" href="/assets/js/108.b892dd66.js"><link rel="prefetch" href="/assets/js/109.3314fe2f.js"><link rel="prefetch" href="/assets/js/11.ad036196.js"><link rel="prefetch" href="/assets/js/110.30c4ce99.js"><link rel="prefetch" href="/assets/js/111.2ceb9df8.js"><link rel="prefetch" href="/assets/js/112.7483a3b4.js"><link rel="prefetch" href="/assets/js/113.bac5445b.js"><link rel="prefetch" href="/assets/js/114.1c27f5dc.js"><link rel="prefetch" href="/assets/js/115.e16aef72.js"><link rel="prefetch" href="/assets/js/116.84137466.js"><link rel="prefetch" href="/assets/js/117.d5d2c4aa.js"><link rel="prefetch" href="/assets/js/119.6a6b4f4f.js"><link rel="prefetch" href="/assets/js/12.a52711b9.js"><link rel="prefetch" href="/assets/js/120.b5e71441.js"><link rel="prefetch" href="/assets/js/121.00bd220c.js"><link rel="prefetch" href="/assets/js/122.8f700f5b.js"><link rel="prefetch" href="/assets/js/123.7f413c25.js"><link rel="prefetch" href="/assets/js/124.b783b5cb.js"><link rel="prefetch" href="/assets/js/125.b5e9a09f.js"><link rel="prefetch" href="/assets/js/126.288282b5.js"><link rel="prefetch" href="/assets/js/127.b441e0c9.js"><link rel="prefetch" href="/assets/js/128.0c4282c6.js"><link rel="prefetch" href="/assets/js/129.b42b4e5e.js"><link rel="prefetch" href="/assets/js/13.fde39ba1.js"><link rel="prefetch" href="/assets/js/130.756fff45.js"><link rel="prefetch" href="/assets/js/131.b3d70b12.js"><link rel="prefetch" href="/assets/js/132.57548e9e.js"><link rel="prefetch" href="/assets/js/133.71d13054.js"><link rel="prefetch" href="/assets/js/134.1ecaf78e.js"><link rel="prefetch" href="/assets/js/135.a9a23af5.js"><link rel="prefetch" href="/assets/js/136.562aa5dc.js"><link rel="prefetch" href="/assets/js/137.d602b6b5.js"><link rel="prefetch" href="/assets/js/138.554b8fce.js"><link rel="prefetch" href="/assets/js/139.4865b599.js"><link rel="prefetch" href="/assets/js/14.ffd16da9.js"><link rel="prefetch" href="/assets/js/140.0961d9df.js"><link rel="prefetch" href="/assets/js/141.5cd1a745.js"><link rel="prefetch" href="/assets/js/142.57802000.js"><link rel="prefetch" href="/assets/js/143.93d9efce.js"><link rel="prefetch" href="/assets/js/144.de603eb8.js"><link rel="prefetch" href="/assets/js/145.bf1c2688.js"><link rel="prefetch" href="/assets/js/146.7f6c3213.js"><link rel="prefetch" href="/assets/js/147.f7bf171c.js"><link rel="prefetch" href="/assets/js/148.014a8cac.js"><link rel="prefetch" href="/assets/js/149.c5fa5906.js"><link rel="prefetch" href="/assets/js/15.248c685c.js"><link rel="prefetch" href="/assets/js/150.0cc5ef1c.js"><link rel="prefetch" href="/assets/js/151.07566101.js"><link rel="prefetch" href="/assets/js/152.f74690f8.js"><link rel="prefetch" href="/assets/js/153.7e065629.js"><link rel="prefetch" href="/assets/js/154.a2415b30.js"><link rel="prefetch" href="/assets/js/155.9afb0898.js"><link rel="prefetch" href="/assets/js/156.32f77a06.js"><link rel="prefetch" href="/assets/js/157.6501de59.js"><link rel="prefetch" href="/assets/js/158.e5e5a393.js"><link rel="prefetch" href="/assets/js/159.9ec0457f.js"><link rel="prefetch" href="/assets/js/16.9ac46bb6.js"><link rel="prefetch" href="/assets/js/160.cd094c7d.js"><link rel="prefetch" href="/assets/js/161.ae3e0313.js"><link rel="prefetch" href="/assets/js/162.89539aca.js"><link rel="prefetch" href="/assets/js/163.e452a748.js"><link rel="prefetch" href="/assets/js/164.150aab74.js"><link rel="prefetch" href="/assets/js/165.026bf111.js"><link rel="prefetch" href="/assets/js/166.89c86017.js"><link rel="prefetch" href="/assets/js/167.69ee6ede.js"><link rel="prefetch" href="/assets/js/168.43b68632.js"><link rel="prefetch" href="/assets/js/169.2f9f0246.js"><link rel="prefetch" href="/assets/js/17.82a262d3.js"><link rel="prefetch" href="/assets/js/170.c19dc3dd.js"><link rel="prefetch" href="/assets/js/171.e56c55d9.js"><link rel="prefetch" href="/assets/js/172.a3e7845e.js"><link rel="prefetch" href="/assets/js/173.0b83d9c2.js"><link rel="prefetch" href="/assets/js/174.c68c0269.js"><link rel="prefetch" href="/assets/js/175.539f71f0.js"><link rel="prefetch" href="/assets/js/176.04964db3.js"><link rel="prefetch" href="/assets/js/177.dc992454.js"><link rel="prefetch" href="/assets/js/178.ddfa4a03.js"><link rel="prefetch" href="/assets/js/179.2af0e66e.js"><link rel="prefetch" href="/assets/js/18.28b713e4.js"><link rel="prefetch" href="/assets/js/180.9a4d8869.js"><link rel="prefetch" href="/assets/js/181.6a33aa9b.js"><link rel="prefetch" href="/assets/js/182.73a72c77.js"><link rel="prefetch" href="/assets/js/183.dff62977.js"><link rel="prefetch" href="/assets/js/184.35b18776.js"><link rel="prefetch" href="/assets/js/185.71974dff.js"><link rel="prefetch" href="/assets/js/186.38f792fc.js"><link rel="prefetch" href="/assets/js/187.76a4e549.js"><link rel="prefetch" href="/assets/js/188.43f54939.js"><link rel="prefetch" href="/assets/js/189.3628cb16.js"><link rel="prefetch" href="/assets/js/19.1162fb05.js"><link rel="prefetch" href="/assets/js/190.5d0bf71c.js"><link rel="prefetch" href="/assets/js/191.85bd91c1.js"><link rel="prefetch" href="/assets/js/192.a38cb0a3.js"><link rel="prefetch" href="/assets/js/193.bfad9e0b.js"><link rel="prefetch" href="/assets/js/194.c7264c65.js"><link rel="prefetch" href="/assets/js/195.859098a6.js"><link rel="prefetch" href="/assets/js/196.d36f5885.js"><link rel="prefetch" href="/assets/js/197.85a45767.js"><link rel="prefetch" href="/assets/js/198.a4fe959f.js"><link rel="prefetch" href="/assets/js/199.8b459d06.js"><link rel="prefetch" href="/assets/js/20.ee441cb8.js"><link rel="prefetch" href="/assets/js/200.632f8c04.js"><link rel="prefetch" href="/assets/js/201.643156f4.js"><link rel="prefetch" href="/assets/js/202.ba4a5291.js"><link rel="prefetch" href="/assets/js/203.81a1285e.js"><link rel="prefetch" href="/assets/js/204.8d7384ea.js"><link rel="prefetch" href="/assets/js/205.dd4215ed.js"><link rel="prefetch" href="/assets/js/206.6483093c.js"><link rel="prefetch" href="/assets/js/207.081cff93.js"><link rel="prefetch" href="/assets/js/208.093175e4.js"><link rel="prefetch" href="/assets/js/209.0f54a115.js"><link rel="prefetch" href="/assets/js/21.a4e4754d.js"><link rel="prefetch" href="/assets/js/210.1a0ea810.js"><link rel="prefetch" href="/assets/js/211.abcdbd7b.js"><link rel="prefetch" href="/assets/js/212.1546c314.js"><link rel="prefetch" href="/assets/js/213.2160f67c.js"><link rel="prefetch" href="/assets/js/214.52111592.js"><link rel="prefetch" href="/assets/js/215.b10cb717.js"><link rel="prefetch" href="/assets/js/216.89b60e69.js"><link rel="prefetch" href="/assets/js/217.ad947edf.js"><link rel="prefetch" href="/assets/js/218.27519362.js"><link rel="prefetch" href="/assets/js/219.cb427e64.js"><link rel="prefetch" href="/assets/js/22.d3a7f5c6.js"><link rel="prefetch" href="/assets/js/220.e5905962.js"><link rel="prefetch" href="/assets/js/221.e8322cc4.js"><link rel="prefetch" href="/assets/js/222.0298c6a3.js"><link rel="prefetch" href="/assets/js/223.b5391d9e.js"><link rel="prefetch" href="/assets/js/224.e899bce3.js"><link rel="prefetch" href="/assets/js/225.30cc066e.js"><link rel="prefetch" href="/assets/js/226.ecbe8929.js"><link rel="prefetch" href="/assets/js/227.a12905d3.js"><link rel="prefetch" href="/assets/js/228.a16591a7.js"><link rel="prefetch" href="/assets/js/229.472b2a1b.js"><link rel="prefetch" href="/assets/js/23.873bdd58.js"><link rel="prefetch" href="/assets/js/230.31eaa533.js"><link rel="prefetch" href="/assets/js/231.b686a972.js"><link rel="prefetch" href="/assets/js/232.fb49ef6d.js"><link rel="prefetch" href="/assets/js/233.8d8b812d.js"><link rel="prefetch" href="/assets/js/234.cfba3218.js"><link rel="prefetch" href="/assets/js/235.a0f1f597.js"><link rel="prefetch" href="/assets/js/236.f7e4e484.js"><link rel="prefetch" href="/assets/js/237.a6690e2c.js"><link rel="prefetch" href="/assets/js/238.38806924.js"><link rel="prefetch" href="/assets/js/239.07a31fe4.js"><link rel="prefetch" href="/assets/js/24.ff07a49c.js"><link rel="prefetch" href="/assets/js/240.cff79828.js"><link rel="prefetch" href="/assets/js/241.328d40c3.js"><link rel="prefetch" href="/assets/js/242.a776c189.js"><link rel="prefetch" href="/assets/js/243.540bc455.js"><link rel="prefetch" href="/assets/js/244.02f22973.js"><link rel="prefetch" href="/assets/js/245.fbb6e0c1.js"><link rel="prefetch" href="/assets/js/246.6b6e5c79.js"><link rel="prefetch" href="/assets/js/247.5862a275.js"><link rel="prefetch" href="/assets/js/248.1f88d123.js"><link rel="prefetch" href="/assets/js/249.e9495770.js"><link rel="prefetch" href="/assets/js/25.e40e0dd4.js"><link rel="prefetch" href="/assets/js/250.8a1aab0e.js"><link rel="prefetch" href="/assets/js/251.aced0a71.js"><link rel="prefetch" href="/assets/js/252.4d531500.js"><link rel="prefetch" href="/assets/js/253.9dd9776b.js"><link rel="prefetch" href="/assets/js/254.0f0ccb74.js"><link rel="prefetch" href="/assets/js/255.aae0849b.js"><link rel="prefetch" href="/assets/js/256.6f58d98f.js"><link rel="prefetch" href="/assets/js/257.28618e10.js"><link rel="prefetch" href="/assets/js/258.fe57c27c.js"><link rel="prefetch" href="/assets/js/259.b78ef20a.js"><link rel="prefetch" href="/assets/js/26.de36a71a.js"><link rel="prefetch" href="/assets/js/260.0ea2dc1a.js"><link rel="prefetch" href="/assets/js/261.7e3c0863.js"><link rel="prefetch" href="/assets/js/262.84e63ce4.js"><link rel="prefetch" href="/assets/js/263.510ae371.js"><link rel="prefetch" href="/assets/js/264.4160bc98.js"><link rel="prefetch" href="/assets/js/27.c580ee78.js"><link rel="prefetch" href="/assets/js/28.976d6702.js"><link rel="prefetch" href="/assets/js/29.6174cc16.js"><link rel="prefetch" href="/assets/js/30.aa22d6be.js"><link rel="prefetch" href="/assets/js/31.46de1df0.js"><link rel="prefetch" href="/assets/js/32.1b964f72.js"><link rel="prefetch" href="/assets/js/33.05676cb2.js"><link rel="prefetch" href="/assets/js/34.81be320f.js"><link rel="prefetch" href="/assets/js/35.00de593f.js"><link rel="prefetch" href="/assets/js/36.9c9ac879.js"><link rel="prefetch" href="/assets/js/37.0f391c8d.js"><link rel="prefetch" href="/assets/js/38.af0c2484.js"><link rel="prefetch" href="/assets/js/39.ad3acf6f.js"><link rel="prefetch" href="/assets/js/4.42dba944.js"><link rel="prefetch" href="/assets/js/40.4a9cb0ee.js"><link rel="prefetch" href="/assets/js/41.88e3ef3a.js"><link rel="prefetch" href="/assets/js/42.5e31c822.js"><link rel="prefetch" href="/assets/js/43.b02d7688.js"><link rel="prefetch" href="/assets/js/44.5465006b.js"><link rel="prefetch" href="/assets/js/45.26bca022.js"><link rel="prefetch" href="/assets/js/46.4005d589.js"><link rel="prefetch" href="/assets/js/47.e62a1130.js"><link rel="prefetch" href="/assets/js/48.c04ff0d0.js"><link rel="prefetch" href="/assets/js/49.0ddb5ba9.js"><link rel="prefetch" href="/assets/js/50.565951e1.js"><link rel="prefetch" href="/assets/js/51.3544d229.js"><link rel="prefetch" href="/assets/js/52.7a64588f.js"><link rel="prefetch" href="/assets/js/53.03b79fe7.js"><link rel="prefetch" href="/assets/js/54.fdac08cf.js"><link rel="prefetch" href="/assets/js/55.d9689762.js"><link rel="prefetch" href="/assets/js/56.2240d487.js"><link rel="prefetch" href="/assets/js/57.b041c091.js"><link rel="prefetch" href="/assets/js/58.d0dcd829.js"><link rel="prefetch" href="/assets/js/59.118f91f2.js"><link rel="prefetch" href="/assets/js/6.b166fe72.js"><link rel="prefetch" href="/assets/js/60.f7d99c31.js"><link rel="prefetch" href="/assets/js/61.6455ebd3.js"><link rel="prefetch" href="/assets/js/62.1fbfe7ef.js"><link rel="prefetch" href="/assets/js/63.9e81074e.js"><link rel="prefetch" href="/assets/js/64.b9941626.js"><link rel="prefetch" href="/assets/js/65.941d7e50.js"><link rel="prefetch" href="/assets/js/66.7b1d3392.js"><link rel="prefetch" href="/assets/js/67.49dda8c2.js"><link rel="prefetch" href="/assets/js/68.8aa1ca17.js"><link rel="prefetch" href="/assets/js/69.38d9a056.js"><link rel="prefetch" href="/assets/js/7.a03281b2.js"><link rel="prefetch" href="/assets/js/70.1ac937fe.js"><link rel="prefetch" href="/assets/js/71.b8ac9f51.js"><link rel="prefetch" href="/assets/js/72.19194d07.js"><link rel="prefetch" href="/assets/js/73.de1a0d69.js"><link rel="prefetch" href="/assets/js/74.57533fe3.js"><link rel="prefetch" href="/assets/js/75.d53f74a8.js"><link rel="prefetch" href="/assets/js/76.458d38d0.js"><link rel="prefetch" href="/assets/js/77.4f935fe6.js"><link rel="prefetch" href="/assets/js/78.7e272b25.js"><link rel="prefetch" href="/assets/js/79.d509d5a0.js"><link rel="prefetch" href="/assets/js/8.93c0ee07.js"><link rel="prefetch" href="/assets/js/80.73751a4c.js"><link rel="prefetch" href="/assets/js/81.fead5e9e.js"><link rel="prefetch" href="/assets/js/82.c1e5ee7e.js"><link rel="prefetch" href="/assets/js/83.6d22cb17.js"><link rel="prefetch" href="/assets/js/84.91a277e5.js"><link rel="prefetch" href="/assets/js/85.75219345.js"><link rel="prefetch" href="/assets/js/86.6fc3e32a.js"><link rel="prefetch" href="/assets/js/87.64384c54.js"><link rel="prefetch" href="/assets/js/88.6bef428a.js"><link rel="prefetch" href="/assets/js/89.d74f197d.js"><link rel="prefetch" href="/assets/js/9.81ed1b88.js"><link rel="prefetch" href="/assets/js/90.488a321b.js"><link rel="prefetch" href="/assets/js/91.b541fb2c.js"><link rel="prefetch" href="/assets/js/92.a3da2740.js"><link rel="prefetch" href="/assets/js/93.199e39e4.js"><link rel="prefetch" href="/assets/js/94.222c18be.js"><link rel="prefetch" href="/assets/js/95.fe7ed0da.js"><link rel="prefetch" href="/assets/js/96.2c756e51.js"><link rel="prefetch" href="/assets/js/97.d771cd41.js"><link rel="prefetch" href="/assets/js/98.9f8e2685.js"><link rel="prefetch" href="/assets/js/99.87d07b72.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f98414a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/hero.png" alt="软件客栈大掌柜" class="logo"> <span class="site-name can-hide">软件客栈大掌柜</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>微信小程序</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontend/微信小程序/0开篇：微信小程序概述.html" class="sidebar-link">开篇：微信小程序概述</a></li><li><a href="/frontend/微信小程序/10实战篇 7：对小程序进行优化.html" class="active sidebar-link">实战篇 7：对小程序进行优化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/frontend/微信小程序/10实战篇 7：对小程序进行优化.html#页面流程优化" class="sidebar-link">页面流程优化</a></li><li class="sidebar-sub-header"><a href="/frontend/微信小程序/10实战篇 7：对小程序进行优化.html#控制包体积大小" class="sidebar-link">控制包体积大小</a></li><li class="sidebar-sub-header"><a href="/frontend/微信小程序/10实战篇 7：对小程序进行优化.html#代码级别的优化" class="sidebar-link">代码级别的优化</a></li><li class="sidebar-sub-header"><a href="/frontend/微信小程序/10实战篇 7：对小程序进行优化.html#小结" class="sidebar-link">小结</a></li></ul></li><li><a href="/frontend/微信小程序/11实战篇 8：小程序调试技巧和上线发布.html" class="sidebar-link">实战篇 8：小程序调试技巧和上线发布</a></li><li><a href="/frontend/微信小程序/12总结与拓展.html" class="sidebar-link">总结与拓展</a></li><li><a href="/frontend/微信小程序/1基础篇 1：小程序开发基础知识.html" class="sidebar-link">基础篇 1：小程序开发基础知识</a></li><li><a href="/frontend/微信小程序/2基础篇 2：小程序云开发基础知识.html" class="sidebar-link">基础篇 2：小程序·云开发基础知识</a></li><li><a href="/frontend/微信小程序/3基础篇 3：小程序架构及其实现机制.html" class="sidebar-link">基础篇 3：小程序架构及其实现机制</a></li><li><a href="/frontend/微信小程序/4实战篇 1：小程序开发环境搭建.html" class="sidebar-link">实战篇 1：小程序开发环境搭建</a></li><li><a href="/frontend/微信小程序/5实战篇 2：新鲜天气小程序简介.html" class="sidebar-link">实战篇 2：新鲜天气小程序简介</a></li><li><a href="/frontend/微信小程序/6实战篇 3：天气页面样式布局开发.html" class="sidebar-link">实战篇 3：天气页面样式布局开发</a></li><li><a href="/frontend/微信小程序/7实战篇 4：天气页面数据获取和交互实现.html" class="sidebar-link">实战篇 4：天气页面数据获取和交互实现</a></li><li><a href="/frontend/微信小程序/8实战篇 5：为天气页面制作雨雪效果的粒子系统.html" class="sidebar-link">实战篇 5：为天气页面制作雨雪效果的粒子系统</a></li><li><a href="/frontend/微信小程序/9实战篇 6：心情签到页面开发.html" class="sidebar-link">实战篇 6：心情签到页面开发</a></li><li><a href="/frontend/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="sidebar-link">首页</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="实战篇-7：对小程序进行优化"><a href="#实战篇-7：对小程序进行优化" class="header-anchor">#</a> 实战篇 7：对小程序进行优化</h1> <h2 id="页面流程优化"><a href="#页面流程优化" class="header-anchor">#</a> 页面流程优化</h2> <p>合理的页面流程可以加快页面打开速度，下面介绍几种常见的方式。</p> <h3 id="减少白屏时间"><a href="#减少白屏时间" class="header-anchor">#</a> 减少白屏时间</h3> <p>当进入的页面还在进行数据加载的时候，如果加载时间过长，用户看不到页面实际内容，看到的只是一个白屏界面。可以通过增加骨架屏（Skeleton Screen）或者默认数据来减少白屏时间。在新鲜天气的天气预报页面，获取数据的流程较长，笔者通过在首屏提前渲染默认数据来减少白屏时间，效果如下图所示。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/8/17/16546a36e43e23a5?w=375&amp;h=670&amp;f=jpeg&amp;s=31156" alt=""></p> <p>当然这个骨架屏和默认数据做得还不够细致，有兴趣的读者可以通过 <a href="https://github.com/ksky521/fresh-weather" target="_blank" rel="noopener noreferrer">GitHub<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 上的源码继续优化。</p> <h3 id="利用逻辑层空闲时间预加载数据"><a href="#利用逻辑层空闲时间预加载数据" class="header-anchor">#</a> 利用逻辑层空闲时间预加载数据</h3> <p>小程序是由逻辑层和视图层共同作用的，逻辑层代码（App Service）在小程序执行的生命周期内会常驻内存，并不会因为切换页面而释放资源，利用这个特点，可以对页面流程进行一些优化。</p> <p>新鲜天气是由天气预报和心情签到两个页面组成的，在天气预报页面数据获取结束之后、页面空闲之时，如果用户已经授权登录信息，那么可以提前获取心情签到页面的数据，将数据存入 app.js 的 <code>globalData</code> 中，当用户进入心情签到页时，就可以减少等待时间，很快看到页面内容了。</p> <p>天气预报页面对心情签到页面数据预取逻辑如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// weather/index.js</span>
+<span class="token keyword">let</span> prefetchTimer
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">onHide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 切走，则清理计时器</span>
+    <span class="token function">clearTimeout</span><span class="token punctuation">(</span>prefetchTimer<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">onShow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 显示则添加计时器</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">_setPrefetchTimer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">_setPrefetchTimer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 10s 预取</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>currentMonthData<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> isUpdate<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      prefetchTimer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">prefetch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">10e3</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">prefetch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> openid <span class="token operator">=</span> wx<span class="token punctuation">.</span><span class="token function">getStorageSync</span><span class="token punctuation">(</span><span class="token string">'openid'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>openid<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">// 存在则预取当前时间的心情</span>
+      <span class="token keyword">const</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">const</span> year <span class="token operator">=</span> now<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">const</span> month <span class="token operator">=</span> now<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+      <span class="token function">getEmotionByOpenidAndDate</span><span class="token punctuation">(</span>openid<span class="token punctuation">,</span> year<span class="token punctuation">,</span> month<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">r</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> data <span class="token operator">=</span> r<span class="token punctuation">.</span>data <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token comment">// console.log(data)</span>
+        app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>currentMonthData <span class="token operator">=</span> data
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>在上面的预取代码中有个小技巧，就是增加了定时器清理功能，当页面切走（<code>onHide</code>）跳转到心情签到页面时，在后台预取数据已经变得没有意义了，所以及时地清理了定时器；而当页面再切回（<code>onShow</code>）的时候又重新启动了定时器，当然定时器的启动是以 <code>globalData</code> 没有数据，并且天气页面已经完成渲染为前提的。在心情签到页面中，获取的心情数据要存入 <code>globalData</code>，这样数据就打通了。</p> <p>除了预取下一页的数据，如果整个项目中有较多的静态外链资源需要加载，也可以在首页空闲的时候进行预取。</p> <h3 id="默认数据缓存"><a href="#默认数据缓存" class="header-anchor">#</a> 默认数据缓存</h3> <p>对于用户第一次进入小程序的数据可以使用默认数据来构建骨架屏，空闲时预取下一页数据；而用户再次进入小程序，有了上一次的数据了，就可以使用之前的数据优先展示，等数据更新后重新渲染页面即可。心情签到数据也是这样，对于一个用户不能更改之前的签到数据，可以将这些数据存入小程序的本地缓存，减少 SQL 请求。要记录上次的数据，可以使用小程序的<a href="https://developers.weixin.qq.com/miniprogram/dev/api/data.html" target="_blank" rel="noopener noreferrer">数据缓存 API<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// weather/index.js</span>
+<span class="token comment">// render 之后缓存数据</span>
+  <span class="token function">dataCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span>current<span class="token punctuation">,</span> backgroundColor<span class="token punctuation">,</span> backgroundImage<span class="token punctuation">,</span> today<span class="token punctuation">,</span> tomorrow<span class="token punctuation">,</span> address<span class="token punctuation">,</span> tips<span class="token punctuation">,</span> hourlyData<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data
+    wx<span class="token punctuation">.</span><span class="token function">setStorage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      key<span class="token operator">:</span> <span class="token string">'defaultData'</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        current<span class="token punctuation">,</span>
+        backgroundColor<span class="token punctuation">,</span>
+        backgroundImage<span class="token punctuation">,</span>
+        today<span class="token punctuation">,</span>
+        tomorrow<span class="token punctuation">,</span>
+        address<span class="token punctuation">,</span>
+        tips<span class="token punctuation">,</span>
+        hourlyData
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// onLoad 内部获取数据之前调用</span>
+  <span class="token function">setDataFromCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    wx<span class="token punctuation">.</span><span class="token function">getStorage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      key<span class="token operator">:</span> <span class="token string">'defaultData'</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>data<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>data <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>isUpdate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 存在并且没有获取数据成功，那么可以给首屏赋值上次数据</span>
+          <span class="token keyword">const</span> <span class="token punctuation">{</span>current<span class="token punctuation">,</span> backgroundColor<span class="token punctuation">,</span> backgroundImage<span class="token punctuation">,</span> today<span class="token punctuation">,</span> tomorrow<span class="token punctuation">,</span> address<span class="token punctuation">,</span> tips<span class="token punctuation">,</span> hourlyData<span class="token punctuation">}</span> <span class="token operator">=</span> data
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            current<span class="token punctuation">,</span>
+            backgroundColor<span class="token punctuation">,</span>
+            backgroundImage<span class="token punctuation">,</span>
+            today<span class="token punctuation">,</span>
+            tomorrow<span class="token punctuation">,</span>
+            address<span class="token punctuation">,</span>
+            tips<span class="token punctuation">,</span>
+            hourlyData
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>效果如下：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/8/24/16569ab5b6954ea4?w=375&amp;h=667&amp;f=png&amp;s=91638" alt=""></p> <h2 id="控制包体积大小"><a href="#控制包体积大小" class="header-anchor">#</a> 控制包体积大小</h2> <p>当小程序第一次启动（冷启动）或者有更新包的时候，微信客户端会自动下载最新包，尤其是「冷启动」的时候，用户跟小程序的第一次接触如果因为资源包体积过大而一直下载数据，从而造成体验不好，那么对用户的伤害是相当大的。下面来介绍几种减少包体积的方法。</p> <h3 id="静态资源压缩"><a href="#静态资源压缩" class="header-anchor">#</a> 静态资源压缩</h3> <p>要控制包体积大小，可以梳理资源包内静态资源，从以下几个方面入手：</p> <ul><li>使用压缩工具或者直接勾选开发者工具中「上传代码时，压缩代码」选项</li> <li>及时清理无用的代码和资源文件（包括无用的日志代码）</li> <li>减少资源包中图片和媒体资源的数量和大小，除 icon 类小图片放在资源包内，大图片尽量放到 CDN 上</li> <li>icon 类图片可以使用字体和雪碧图</li> <li>外链类静态资源要尽量使用 CDN 来提速</li></ul> <h3 id="采用分包机制"><a href="#采用分包机制" class="header-anchor">#</a> 采用分包机制</h3> <p>小程序的包体积大小限制已经提高到了 2MB，但是一些复杂的大型小程序还是不够用，而且对包体积进行合理划分，做到按需加载，也可以提高页面的打开速度，于是小程序提供了分包机制。</p> <p>分包机制只需要在 app.json 中按照下面格式配置分包的内容即可：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;pages&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+    <span class="token string">&quot;pages/index&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;pages/logs&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;subPackages&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;root&quot;</span><span class="token operator">:</span> <span class="token string">&quot;packageA&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;pages&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;pages/cat&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;pages/dog&quot;</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;root&quot;</span><span class="token operator">:</span> <span class="token string">&quot;packageB&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;pages&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;pages/apple&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;pages/banana&quot;</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>经过上面的配置，<code>pages</code> 内的内容被打包成「主包」，而 <code>subPackages</code> 中的内容则被打包成「子包」。当小程序打开时，采用分包机制的小程序会先下载「主包」来展现首页内容，这样极大地提升了小程序的打开速度。</p> <blockquote><p>注意：并不是任何程序都可以分包，具体是否采用分包形式不能只看体积大小，要考虑业务实际情况；另外业务相关性强，并且具有连贯性的要分到一个包。</p></blockquote> <h2 id="代码级别的优化"><a href="#代码级别的优化" class="header-anchor">#</a> 代码级别的优化</h2> <p>上面主要是从提升资源包下载速度方面来进行优化，而当代码下载到本地执行之后，用户体验满意度则体现在代码级别的优劣上。</p> <h3 id="小程序-setdata-的性能"><a href="#小程序-setdata-的性能" class="header-anchor">#</a> 小程序 <code>setData</code> 的性能</h3> <p>小程序的视图层 WebView 作为渲染载体，而逻辑层是由独立的 JavaScriptCore 作为执行环境的。两者在数据传递上，是先将数据字符串化之后再通过 JSBridge 进行传递的，也正是因为数据传输是通过 JSBridge 的这种事件通知机制，在这种机制下，从 <code>setData</code> 到页面数据真正被渲染使用的过程是一个<strong>异步</strong>的过程，但是 <code>this.data</code> 的变化是发生在逻辑层，即是一个<strong>同步</strong>的过程，<strong>相同的原理，直接修改 <code>this.data</code> 是不被推荐的，因为虽然<code>this.data</code>值发生了变化，但是渲染层并没有发生变化，所以会出现数据不一致的问题！</strong>，下面用代码来理解下 <code>this.data</code> 值设置是同步的：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  data<span class="token operator">:</span><span class="token punctuation">{</span>
+    test<span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      test<span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>test<span class="token punctuation">)</span> <span class="token comment">// 1</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>下面的代码，虽然都可以拿到正确的 <code>this.data</code> 值，但是在页面流程中的表现却是不同的：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  data<span class="token operator">:</span><span class="token punctuation">{</span>
+    test<span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      test<span class="token operator">:</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>test<span class="token punctuation">)</span> <span class="token comment">//1，页面渲染层已经更新完成</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>test<span class="token punctuation">)</span> <span class="token comment">// 1，只是 this.data 变化，而渲染层并没有更新变化</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>正确地使用 <code>setData</code> 可以提升页面性能。下面几种操作是对性能有损坏的，需要在写代码的时候注意。</p> <blockquote><ol><li>频繁调用 <code>setData</code></li></ol></blockquote> <p>不要在一个循环中频繁调用 <code>setData</code>（跟不要在循环内频繁操作 DOM 一样），毫秒级别的调用 <code>setData</code> 会导致视图层和逻辑层频繁地通过 JSBridge 进行通信，大量事件排队，最终导致页面出现卡顿的现象。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 下面的操作是不推荐的</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> items<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    key<span class="token operator">:</span> items<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>一次需要更新多个 <code>data</code> 的字段时，如果数据量不大，可以考虑统一设置一次 <code>setData</code>。</p> <blockquote><ol start="2"><li>使用 <code>setData</code> 传递比较大的数据</li></ol></blockquote> <p>比较大的数据会导致数据字符串化过程较慢，收到数据后重新对象化的时间也会加长，另外小程序内部规定每次 <code>setData</code> 数据不能超过 <code>1024kB</code>。对于较大的数据，可以通过细分的方式来处理：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> bigData <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  text<span class="token operator">:</span> <span class="token string">'长文案1'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+  text<span class="token operator">:</span> <span class="token string">'长文案2'</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'array[0].text'</span><span class="token operator">:</span> bigData<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>text
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><blockquote><ol start="3"><li>后台状态的 webview 使用 <code>setData</code></li></ol></blockquote> <p>因为整个小程序只有一个逻辑层在处理数据和事件逻辑，如果一个页面已经在后台（<code>onHide</code>）但还在设置 <code>setData</code>，那么也会占用逻辑层的通信通道和资源，所以在页面 <code>onHide</code> 之后，一些 <code>setData</code> 操作可以提前缓存起来，等页面 <code>onShow</code> 之后再一次性更新。</p> <blockquote><ol start="4"><li>把跟页面无关的数据放到页面的 <code>data</code> 中</li></ol></blockquote> <p>与当前界面渲染无关的数据最好不要设置在 <code>data</code> 中，而应该考虑作为内部变量来使用或者放在 page 对象的其他字段下。</p> <p>比如在天气预报页面，<code>onLoad</code>方法先获取用户分享的文案地址，用到了获取省市县地址等信息：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ......</span>
+  <span class="token keyword">const</span> pages <span class="token operator">=</span> <span class="token function">getCurrentPages</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//获取加载的页面</span>
+  <span class="token keyword">const</span> currentPage <span class="token operator">=</span> pages<span class="token punctuation">[</span>pages<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment">//获取当前页面的对象</span>
+  <span class="token keyword">const</span> query <span class="token operator">=</span> currentPage<span class="token punctuation">.</span>options
+  <span class="token comment">// 如果有地址，经纬度信息</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>query <span class="token operator">&amp;&amp;</span> query<span class="token punctuation">.</span>address <span class="token operator">&amp;&amp;</span> query<span class="token punctuation">.</span>lat <span class="token operator">&amp;&amp;</span> query<span class="token punctuation">.</span>lon<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token punctuation">{</span>province<span class="token punctuation">,</span> city<span class="token punctuation">,</span> county<span class="token punctuation">,</span> address<span class="token punctuation">,</span> lat<span class="token punctuation">,</span> lon<span class="token punctuation">}</span> <span class="token operator">=</span> query
+    <span class="token comment">// **注意下面调用了 setData 方法，设置了一些无用的 data！！！！！！**</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span>
+      <span class="token punctuation">{</span>
+        city<span class="token punctuation">,</span>
+        province<span class="token punctuation">,</span>
+        county<span class="token punctuation">,</span>
+        address<span class="token punctuation">,</span>
+        lat<span class="token punctuation">,</span>
+        lon
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getWeatherData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 否则，正常逻辑：先获取地址，再获取天气数据</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getLocation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p>这里的<code>city</code>、<code>province</code>、<code>county</code>、<code>lat</code>、<code>lon</code>只是在页面 js 内部使用，跟渲染页面没有关系，所以这几个变量可以从<code>data</code>中剔除，直接放到普通变量中：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> city<span class="token punctuation">,</span> province<span class="token punctuation">,</span> count<span class="token punctuation">,</span> lat<span class="token punctuation">,</span> lon
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        address
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 忽略代码</span>
+        <span class="token comment">// 下面只设置 address 这个跟渲染相关的数据</span>
+        <span class="token comment">// 其他直接用全局的变量即可</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span>
+          <span class="token punctuation">{</span>
+            address
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getWeatherData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+        
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="合理使用小程序事件"><a href="#合理使用小程序事件" class="header-anchor">#</a> 合理使用小程序事件</h3> <p>小程序的事件响应是由视图层对事件进行监听，事件处理函数是通过视图层传递到逻辑层处理的，大量无用的事件绑定会增加视图层和逻辑层的通信，从而降低其他数据传输的响应时间，造成页面卡顿。尤其是 <code>onPageScroll</code> 这类频繁触发的事件，应该做好节流/防抖处理。</p> <blockquote><p><strong>函数节流：</strong> 是指在一段时间内，频繁触发某个函数，而函数的执行结果不会因为触发次数而发生改变，这时候可以使用延迟执行函数的方式，防止函数过多调用而对性能造成影响。最常见的应用场景就是对页面滚动或者改变视口大小的监听，比如 <code>onresize</code> 和 <code>scroll</code> 事件监听。
+<strong>函数防抖</strong>是指频繁触发的情况下，只有足够的空闲时间，才执行代码一次。比如生活中的坐公交，就是一定时间内，如果有人陆续刷卡上车，司机就不会开车。只有别人没刷卡了，司机才开车。</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 节流</span>
+<span class="token keyword">let</span> canRun <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">scroll</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>canRun<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">// 判断是否已空闲，如果在执行中，则直接return</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span> 
+   canRun <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        canRun <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// 防抖</span>
+<span class="token keyword">let</span> timer<span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">scroll</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 延时 200ms，处理滚动逻辑</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>另外，当小程序事件需要绑定 <code>target</code> 或 <code>currentTarget</code> 的 <code>dataset</code> 时，应该尽量保持节点上 <code>data-*</code> 不放置过大的数据。</p> <h3 id="使用自定义组件和类库"><a href="#使用自定义组件和类库" class="header-anchor">#</a> 使用自定义组件和类库</h3> <p>对于多个页面都使用的代码片段，可以提炼成组件或者公共 API 来使用，这样既可以集中维护，又可以减少整体代码量。</p> <h3 id="es6-语法尽量简单"><a href="#es6-语法尽量简单" class="header-anchor">#</a> ES6 语法尽量简单</h3> <p>我们在项目中使用 ES6 时，应该尽量避免使用依赖 Runtime/Polyfill 的语法，例如 import 和 class，这类语法处理成 ES5 代码会增加不少的额外代码，所以需要根据实际情况来使用。</p> <h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>本节重点介绍了小程序优化的技巧。小程序优化可以从页面流程、包体积和静态资源管理，以及代码层次优化三个方面入手。</p> <p>小程序逻辑层和视图层分离设计，利用逻辑层常驻内存可以实现资源的预加载，从而优化页面流程。小程序本身提供分包机制，可以将整个项目划分为多个「子包」实现按需加载。在写代码的时候，应该理解小程序的实现机制，避免 <code>setData</code>、事件绑定的不合理使用，也要考虑将页面公共的组件和 API 提炼出通用代码来维护。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年12月4日星期五凌晨1点01分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/frontend/微信小程序/0开篇：微信小程序概述.html" class="prev">
+        开篇：微信小程序概述
+      </a></span> <span class="next"><a href="/frontend/微信小程序/11实战篇 8：小程序调试技巧和上线发布.html">
+        实战篇 8：小程序调试技巧和上线发布
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.706dfc08.js" defer></script><script src="/assets/js/5.a1985014.js" defer></script><script src="/assets/js/2.06f532ef.js" defer></script><script src="/assets/js/118.a228463d.js" defer></script><script src="/assets/js/3.cce15a36.js" defer></script>
+  </body>
+</html>

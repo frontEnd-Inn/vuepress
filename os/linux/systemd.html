@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>守护系统 systemd | 软件客栈大掌柜</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/1.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="软件客栈大掌柜笔记">
+    <meta name="author" content="大掌柜">
+    <meta name="keywords" content="vuepress介绍, vuepress说明,软件客栈大掌柜">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.7f98414a.css" as="style"><link rel="preload" href="/assets/js/app.706dfc08.js" as="script"><link rel="preload" href="/assets/js/5.a1985014.js" as="script"><link rel="preload" href="/assets/js/2.06f532ef.js" as="script"><link rel="preload" href="/assets/js/218.27519362.js" as="script"><link rel="preload" href="/assets/js/3.cce15a36.js" as="script"><link rel="prefetch" href="/assets/js/10.2c79d68c.js"><link rel="prefetch" href="/assets/js/100.f100f4ea.js"><link rel="prefetch" href="/assets/js/101.8792d9db.js"><link rel="prefetch" href="/assets/js/102.aaa2fe97.js"><link rel="prefetch" href="/assets/js/103.a5ce24af.js"><link rel="prefetch" href="/assets/js/104.b040fffb.js"><link rel="prefetch" href="/assets/js/105.5eee1282.js"><link rel="prefetch" href="/assets/js/106.106a9c26.js"><link rel="prefetch" href="/assets/js/107.a2b61042.js"><link rel="prefetch" href="/assets/js/108.b892dd66.js"><link rel="prefetch" href="/assets/js/109.3314fe2f.js"><link rel="prefetch" href="/assets/js/11.ad036196.js"><link rel="prefetch" href="/assets/js/110.30c4ce99.js"><link rel="prefetch" href="/assets/js/111.2ceb9df8.js"><link rel="prefetch" href="/assets/js/112.7483a3b4.js"><link rel="prefetch" href="/assets/js/113.bac5445b.js"><link rel="prefetch" href="/assets/js/114.1c27f5dc.js"><link rel="prefetch" href="/assets/js/115.e16aef72.js"><link rel="prefetch" href="/assets/js/116.84137466.js"><link rel="prefetch" href="/assets/js/117.d5d2c4aa.js"><link rel="prefetch" href="/assets/js/118.a228463d.js"><link rel="prefetch" href="/assets/js/119.6a6b4f4f.js"><link rel="prefetch" href="/assets/js/12.a52711b9.js"><link rel="prefetch" href="/assets/js/120.b5e71441.js"><link rel="prefetch" href="/assets/js/121.00bd220c.js"><link rel="prefetch" href="/assets/js/122.8f700f5b.js"><link rel="prefetch" href="/assets/js/123.7f413c25.js"><link rel="prefetch" href="/assets/js/124.b783b5cb.js"><link rel="prefetch" href="/assets/js/125.b5e9a09f.js"><link rel="prefetch" href="/assets/js/126.288282b5.js"><link rel="prefetch" href="/assets/js/127.b441e0c9.js"><link rel="prefetch" href="/assets/js/128.0c4282c6.js"><link rel="prefetch" href="/assets/js/129.b42b4e5e.js"><link rel="prefetch" href="/assets/js/13.fde39ba1.js"><link rel="prefetch" href="/assets/js/130.756fff45.js"><link rel="prefetch" href="/assets/js/131.b3d70b12.js"><link rel="prefetch" href="/assets/js/132.57548e9e.js"><link rel="prefetch" href="/assets/js/133.71d13054.js"><link rel="prefetch" href="/assets/js/134.1ecaf78e.js"><link rel="prefetch" href="/assets/js/135.a9a23af5.js"><link rel="prefetch" href="/assets/js/136.562aa5dc.js"><link rel="prefetch" href="/assets/js/137.d602b6b5.js"><link rel="prefetch" href="/assets/js/138.554b8fce.js"><link rel="prefetch" href="/assets/js/139.4865b599.js"><link rel="prefetch" href="/assets/js/14.ffd16da9.js"><link rel="prefetch" href="/assets/js/140.0961d9df.js"><link rel="prefetch" href="/assets/js/141.5cd1a745.js"><link rel="prefetch" href="/assets/js/142.57802000.js"><link rel="prefetch" href="/assets/js/143.93d9efce.js"><link rel="prefetch" href="/assets/js/144.de603eb8.js"><link rel="prefetch" href="/assets/js/145.bf1c2688.js"><link rel="prefetch" href="/assets/js/146.7f6c3213.js"><link rel="prefetch" href="/assets/js/147.f7bf171c.js"><link rel="prefetch" href="/assets/js/148.014a8cac.js"><link rel="prefetch" href="/assets/js/149.c5fa5906.js"><link rel="prefetch" href="/assets/js/15.248c685c.js"><link rel="prefetch" href="/assets/js/150.0cc5ef1c.js"><link rel="prefetch" href="/assets/js/151.07566101.js"><link rel="prefetch" href="/assets/js/152.f74690f8.js"><link rel="prefetch" href="/assets/js/153.7e065629.js"><link rel="prefetch" href="/assets/js/154.a2415b30.js"><link rel="prefetch" href="/assets/js/155.9afb0898.js"><link rel="prefetch" href="/assets/js/156.32f77a06.js"><link rel="prefetch" href="/assets/js/157.6501de59.js"><link rel="prefetch" href="/assets/js/158.e5e5a393.js"><link rel="prefetch" href="/assets/js/159.9ec0457f.js"><link rel="prefetch" href="/assets/js/16.9ac46bb6.js"><link rel="prefetch" href="/assets/js/160.cd094c7d.js"><link rel="prefetch" href="/assets/js/161.ae3e0313.js"><link rel="prefetch" href="/assets/js/162.89539aca.js"><link rel="prefetch" href="/assets/js/163.e452a748.js"><link rel="prefetch" href="/assets/js/164.150aab74.js"><link rel="prefetch" href="/assets/js/165.026bf111.js"><link rel="prefetch" href="/assets/js/166.89c86017.js"><link rel="prefetch" href="/assets/js/167.69ee6ede.js"><link rel="prefetch" href="/assets/js/168.43b68632.js"><link rel="prefetch" href="/assets/js/169.2f9f0246.js"><link rel="prefetch" href="/assets/js/17.82a262d3.js"><link rel="prefetch" href="/assets/js/170.c19dc3dd.js"><link rel="prefetch" href="/assets/js/171.e56c55d9.js"><link rel="prefetch" href="/assets/js/172.a3e7845e.js"><link rel="prefetch" href="/assets/js/173.0b83d9c2.js"><link rel="prefetch" href="/assets/js/174.c68c0269.js"><link rel="prefetch" href="/assets/js/175.539f71f0.js"><link rel="prefetch" href="/assets/js/176.04964db3.js"><link rel="prefetch" href="/assets/js/177.dc992454.js"><link rel="prefetch" href="/assets/js/178.ddfa4a03.js"><link rel="prefetch" href="/assets/js/179.2af0e66e.js"><link rel="prefetch" href="/assets/js/18.28b713e4.js"><link rel="prefetch" href="/assets/js/180.9a4d8869.js"><link rel="prefetch" href="/assets/js/181.6a33aa9b.js"><link rel="prefetch" href="/assets/js/182.73a72c77.js"><link rel="prefetch" href="/assets/js/183.dff62977.js"><link rel="prefetch" href="/assets/js/184.35b18776.js"><link rel="prefetch" href="/assets/js/185.71974dff.js"><link rel="prefetch" href="/assets/js/186.38f792fc.js"><link rel="prefetch" href="/assets/js/187.76a4e549.js"><link rel="prefetch" href="/assets/js/188.43f54939.js"><link rel="prefetch" href="/assets/js/189.3628cb16.js"><link rel="prefetch" href="/assets/js/19.1162fb05.js"><link rel="prefetch" href="/assets/js/190.5d0bf71c.js"><link rel="prefetch" href="/assets/js/191.85bd91c1.js"><link rel="prefetch" href="/assets/js/192.a38cb0a3.js"><link rel="prefetch" href="/assets/js/193.bfad9e0b.js"><link rel="prefetch" href="/assets/js/194.c7264c65.js"><link rel="prefetch" href="/assets/js/195.859098a6.js"><link rel="prefetch" href="/assets/js/196.d36f5885.js"><link rel="prefetch" href="/assets/js/197.85a45767.js"><link rel="prefetch" href="/assets/js/198.a4fe959f.js"><link rel="prefetch" href="/assets/js/199.8b459d06.js"><link rel="prefetch" href="/assets/js/20.ee441cb8.js"><link rel="prefetch" href="/assets/js/200.632f8c04.js"><link rel="prefetch" href="/assets/js/201.643156f4.js"><link rel="prefetch" href="/assets/js/202.ba4a5291.js"><link rel="prefetch" href="/assets/js/203.81a1285e.js"><link rel="prefetch" href="/assets/js/204.8d7384ea.js"><link rel="prefetch" href="/assets/js/205.dd4215ed.js"><link rel="prefetch" href="/assets/js/206.6483093c.js"><link rel="prefetch" href="/assets/js/207.081cff93.js"><link rel="prefetch" href="/assets/js/208.093175e4.js"><link rel="prefetch" href="/assets/js/209.0f54a115.js"><link rel="prefetch" href="/assets/js/21.a4e4754d.js"><link rel="prefetch" href="/assets/js/210.1a0ea810.js"><link rel="prefetch" href="/assets/js/211.abcdbd7b.js"><link rel="prefetch" href="/assets/js/212.1546c314.js"><link rel="prefetch" href="/assets/js/213.2160f67c.js"><link rel="prefetch" href="/assets/js/214.52111592.js"><link rel="prefetch" href="/assets/js/215.b10cb717.js"><link rel="prefetch" href="/assets/js/216.89b60e69.js"><link rel="prefetch" href="/assets/js/217.ad947edf.js"><link rel="prefetch" href="/assets/js/219.cb427e64.js"><link rel="prefetch" href="/assets/js/22.d3a7f5c6.js"><link rel="prefetch" href="/assets/js/220.e5905962.js"><link rel="prefetch" href="/assets/js/221.e8322cc4.js"><link rel="prefetch" href="/assets/js/222.0298c6a3.js"><link rel="prefetch" href="/assets/js/223.b5391d9e.js"><link rel="prefetch" href="/assets/js/224.e899bce3.js"><link rel="prefetch" href="/assets/js/225.30cc066e.js"><link rel="prefetch" href="/assets/js/226.ecbe8929.js"><link rel="prefetch" href="/assets/js/227.a12905d3.js"><link rel="prefetch" href="/assets/js/228.a16591a7.js"><link rel="prefetch" href="/assets/js/229.472b2a1b.js"><link rel="prefetch" href="/assets/js/23.873bdd58.js"><link rel="prefetch" href="/assets/js/230.31eaa533.js"><link rel="prefetch" href="/assets/js/231.b686a972.js"><link rel="prefetch" href="/assets/js/232.fb49ef6d.js"><link rel="prefetch" href="/assets/js/233.8d8b812d.js"><link rel="prefetch" href="/assets/js/234.cfba3218.js"><link rel="prefetch" href="/assets/js/235.a0f1f597.js"><link rel="prefetch" href="/assets/js/236.f7e4e484.js"><link rel="prefetch" href="/assets/js/237.a6690e2c.js"><link rel="prefetch" href="/assets/js/238.38806924.js"><link rel="prefetch" href="/assets/js/239.07a31fe4.js"><link rel="prefetch" href="/assets/js/24.ff07a49c.js"><link rel="prefetch" href="/assets/js/240.cff79828.js"><link rel="prefetch" href="/assets/js/241.328d40c3.js"><link rel="prefetch" href="/assets/js/242.a776c189.js"><link rel="prefetch" href="/assets/js/243.540bc455.js"><link rel="prefetch" href="/assets/js/244.02f22973.js"><link rel="prefetch" href="/assets/js/245.fbb6e0c1.js"><link rel="prefetch" href="/assets/js/246.6b6e5c79.js"><link rel="prefetch" href="/assets/js/247.5862a275.js"><link rel="prefetch" href="/assets/js/248.1f88d123.js"><link rel="prefetch" href="/assets/js/249.e9495770.js"><link rel="prefetch" href="/assets/js/25.e40e0dd4.js"><link rel="prefetch" href="/assets/js/250.8a1aab0e.js"><link rel="prefetch" href="/assets/js/251.aced0a71.js"><link rel="prefetch" href="/assets/js/252.4d531500.js"><link rel="prefetch" href="/assets/js/253.9dd9776b.js"><link rel="prefetch" href="/assets/js/254.0f0ccb74.js"><link rel="prefetch" href="/assets/js/255.aae0849b.js"><link rel="prefetch" href="/assets/js/256.6f58d98f.js"><link rel="prefetch" href="/assets/js/257.28618e10.js"><link rel="prefetch" href="/assets/js/258.fe57c27c.js"><link rel="prefetch" href="/assets/js/259.b78ef20a.js"><link rel="prefetch" href="/assets/js/26.de36a71a.js"><link rel="prefetch" href="/assets/js/260.0ea2dc1a.js"><link rel="prefetch" href="/assets/js/261.7e3c0863.js"><link rel="prefetch" href="/assets/js/262.84e63ce4.js"><link rel="prefetch" href="/assets/js/263.510ae371.js"><link rel="prefetch" href="/assets/js/264.4160bc98.js"><link rel="prefetch" href="/assets/js/27.c580ee78.js"><link rel="prefetch" href="/assets/js/28.976d6702.js"><link rel="prefetch" href="/assets/js/29.6174cc16.js"><link rel="prefetch" href="/assets/js/30.aa22d6be.js"><link rel="prefetch" href="/assets/js/31.46de1df0.js"><link rel="prefetch" href="/assets/js/32.1b964f72.js"><link rel="prefetch" href="/assets/js/33.05676cb2.js"><link rel="prefetch" href="/assets/js/34.81be320f.js"><link rel="prefetch" href="/assets/js/35.00de593f.js"><link rel="prefetch" href="/assets/js/36.9c9ac879.js"><link rel="prefetch" href="/assets/js/37.0f391c8d.js"><link rel="prefetch" href="/assets/js/38.af0c2484.js"><link rel="prefetch" href="/assets/js/39.ad3acf6f.js"><link rel="prefetch" href="/assets/js/4.42dba944.js"><link rel="prefetch" href="/assets/js/40.4a9cb0ee.js"><link rel="prefetch" href="/assets/js/41.88e3ef3a.js"><link rel="prefetch" href="/assets/js/42.5e31c822.js"><link rel="prefetch" href="/assets/js/43.b02d7688.js"><link rel="prefetch" href="/assets/js/44.5465006b.js"><link rel="prefetch" href="/assets/js/45.26bca022.js"><link rel="prefetch" href="/assets/js/46.4005d589.js"><link rel="prefetch" href="/assets/js/47.e62a1130.js"><link rel="prefetch" href="/assets/js/48.c04ff0d0.js"><link rel="prefetch" href="/assets/js/49.0ddb5ba9.js"><link rel="prefetch" href="/assets/js/50.565951e1.js"><link rel="prefetch" href="/assets/js/51.3544d229.js"><link rel="prefetch" href="/assets/js/52.7a64588f.js"><link rel="prefetch" href="/assets/js/53.03b79fe7.js"><link rel="prefetch" href="/assets/js/54.fdac08cf.js"><link rel="prefetch" href="/assets/js/55.d9689762.js"><link rel="prefetch" href="/assets/js/56.2240d487.js"><link rel="prefetch" href="/assets/js/57.b041c091.js"><link rel="prefetch" href="/assets/js/58.d0dcd829.js"><link rel="prefetch" href="/assets/js/59.118f91f2.js"><link rel="prefetch" href="/assets/js/6.b166fe72.js"><link rel="prefetch" href="/assets/js/60.f7d99c31.js"><link rel="prefetch" href="/assets/js/61.6455ebd3.js"><link rel="prefetch" href="/assets/js/62.1fbfe7ef.js"><link rel="prefetch" href="/assets/js/63.9e81074e.js"><link rel="prefetch" href="/assets/js/64.b9941626.js"><link rel="prefetch" href="/assets/js/65.941d7e50.js"><link rel="prefetch" href="/assets/js/66.7b1d3392.js"><link rel="prefetch" href="/assets/js/67.49dda8c2.js"><link rel="prefetch" href="/assets/js/68.8aa1ca17.js"><link rel="prefetch" href="/assets/js/69.38d9a056.js"><link rel="prefetch" href="/assets/js/7.a03281b2.js"><link rel="prefetch" href="/assets/js/70.1ac937fe.js"><link rel="prefetch" href="/assets/js/71.b8ac9f51.js"><link rel="prefetch" href="/assets/js/72.19194d07.js"><link rel="prefetch" href="/assets/js/73.de1a0d69.js"><link rel="prefetch" href="/assets/js/74.57533fe3.js"><link rel="prefetch" href="/assets/js/75.d53f74a8.js"><link rel="prefetch" href="/assets/js/76.458d38d0.js"><link rel="prefetch" href="/assets/js/77.4f935fe6.js"><link rel="prefetch" href="/assets/js/78.7e272b25.js"><link rel="prefetch" href="/assets/js/79.d509d5a0.js"><link rel="prefetch" href="/assets/js/8.93c0ee07.js"><link rel="prefetch" href="/assets/js/80.73751a4c.js"><link rel="prefetch" href="/assets/js/81.fead5e9e.js"><link rel="prefetch" href="/assets/js/82.c1e5ee7e.js"><link rel="prefetch" href="/assets/js/83.6d22cb17.js"><link rel="prefetch" href="/assets/js/84.91a277e5.js"><link rel="prefetch" href="/assets/js/85.75219345.js"><link rel="prefetch" href="/assets/js/86.6fc3e32a.js"><link rel="prefetch" href="/assets/js/87.64384c54.js"><link rel="prefetch" href="/assets/js/88.6bef428a.js"><link rel="prefetch" href="/assets/js/89.d74f197d.js"><link rel="prefetch" href="/assets/js/9.81ed1b88.js"><link rel="prefetch" href="/assets/js/90.488a321b.js"><link rel="prefetch" href="/assets/js/91.b541fb2c.js"><link rel="prefetch" href="/assets/js/92.a3da2740.js"><link rel="prefetch" href="/assets/js/93.199e39e4.js"><link rel="prefetch" href="/assets/js/94.222c18be.js"><link rel="prefetch" href="/assets/js/95.fe7ed0da.js"><link rel="prefetch" href="/assets/js/96.2c756e51.js"><link rel="prefetch" href="/assets/js/97.d771cd41.js"><link rel="prefetch" href="/assets/js/98.9f8e2685.js"><link rel="prefetch" href="/assets/js/99.87d07b72.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f98414a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/hero.png" alt="软件客栈大掌柜" class="logo"> <span class="site-name can-hide">软件客栈大掌柜</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link router-link-active">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link router-link-active">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>linux</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/os/linux/" class="sidebar-link">首页</a></li><li><a href="/os/linux/everything-is-a-file.html" class="sidebar-link">一切皆文件</a></li><li><a href="/os/linux/alias.html" class="sidebar-link">别名 alias</a></li><li><a href="/os/linux/ansible.html" class="sidebar-link">分发脚本 ansible</a></li><li><a href="/os/linux/archiving-and-compression.html" class="sidebar-link">归档和压缩</a></li><li><a href="/os/linux/command-options.html" class="sidebar-link">命令选项</a></li><li><a href="/os/linux/command-shortcut.html" class="sidebar-link">命令行快捷键</a></li><li><a href="/os/linux/crontab.html" class="sidebar-link">解放双手计划</a></li><li><a href="/os/linux/detect-your-server.html" class="sidebar-link">检测服务器通达</a></li><li><a href="/os/linux/directory-structure.html" class="sidebar-link">目录结构</a></li><li><a href="/os/linux/firewalld.html" class="sidebar-link">防火墙 firewalld</a></li><li><a href="/os/linux/gaudy-and-pragmatical-command.html" class="sidebar-link">花里胡哨且实用的命令</a></li><li><a href="/os/linux/generate-ssh-key.html" class="sidebar-link">创建 SSH Key</a></li><li><a href="/os/linux/grep-sed-awk.html" class="sidebar-link">文本三剑客</a></li><li><a href="/os/linux/how-to-enable-the-hard-disk.html" class="sidebar-link">如何启用硬盘</a></li><li><a href="/os/linux/how-to-install-linux-on-virtualbox.html" class="sidebar-link">虚拟机中安装 Linux</a></li><li><a href="/os/linux/io-redirection.html" class="sidebar-link">输入、输出重定向</a></li><li><a href="/os/linux/login-with-rsa-key.html" class="sidebar-link">使用 RSA 登录服务器</a></li><li><a href="/os/linux/raid.html" class="sidebar-link">磁盘阵列</a></li><li><a href="/os/linux/rsync-and-scp.html" class="sidebar-link">远程同步文件</a></li><li><a href="/os/linux/systemd.html" class="active sidebar-link">守护系统 systemd</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/os/linux/systemd.html#概述" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/os/linux/systemd.html#实战" class="sidebar-link">实战</a></li><li class="sidebar-sub-header"><a href="/os/linux/systemd.html#系统管理" class="sidebar-link">系统管理</a></li><li class="sidebar-sub-header"><a href="/os/linux/systemd.html#unit" class="sidebar-link">Unit</a></li><li class="sidebar-sub-header"><a href="/os/linux/systemd.html#unit-的配置文件" class="sidebar-link">Unit 的配置文件</a></li><li class="sidebar-sub-header"><a href="/os/linux/systemd.html#target" class="sidebar-link">Target</a></li><li class="sidebar-sub-header"><a href="/os/linux/systemd.html#日志管理" class="sidebar-link">日志管理</a></li><li class="sidebar-sub-header"><a href="/os/linux/systemd.html#参考文章" class="sidebar-link">参考文章</a></li></ul></li><li><a href="/os/linux/user.html" class="sidebar-link">用户管理</a></li><li><a href="/os/linux/view-text-context.html" class="sidebar-link">查看文本内容</a></li><li><a href="/os/linux/xargs.html" class="sidebar-link">传参 xargs</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h2> <p>Systemd 设计的目标是，为系统的启动和管理提供一整套的完整解决方案。</p> <p>根据 Linux 惯例，字母 <code>d</code> 是守护进程（daemon）的缩写。Systemd 这个名字的含义，就是它要守护整个系统。</p> <p>Systemd 的优点是功能强大，使用方便，缺点是体系庞大，非常复杂。事实上，现在还有很多人反对使用 Systemd，理由就是它过于复杂，与操作系统的其他部分强耦合，违反 ”keep simple，keep stupid“ 的 Unix 哲学。</p> <blockquote><p>原文实在是太详细了，实在没必要重复整理。</p></blockquote> <h2 id="实战"><a href="#实战" class="header-anchor">#</a> 实战</h2> <p>模拟一个操作基本的操作流程：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 有些软件支持 Systemd，安装时，会自动在 `/usr/lib/systemd/system` 目录添加一个配置文件</span>
+<span class="token comment"># 然后就可以让其开机自启了</span>
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> httpd
+<span class="token comment"># 上面的命令相当于在 `/etc/systemd/system` 目录添加一个符号链接，指向 `/usr/lib/systemd/system` 里面的 `httpd.service` 文件。</span>
+<span class="token comment"># 这是因为开机时，Systemd 只执行 `/etc/systemd/system` 目录里面的配置文件。这也意味着，如果把修改后的配置文件放在该目录，就可以达到覆盖原始配置的效果。</span>
+
+<span class="token comment"># 设置开机启动以后，软件并不会立即启动，必须等到下一次开机。如果想现在就运行该软件，那么要执行 `systemctl start` 命令。</span>
+<span class="token function">sudo</span> systemctl start httpd
+<span class="token comment"># 执行上面的命令以后，有可能启动失败，因此要用systemctl status命令查看一下该服务的状态。</span>
+
+<span class="token comment"># 终止正在运行的服务，需要执行 `systemctl stop` 命令。</span>
+<span class="token function">sudo</span> systemctl stop httpd.service
+<span class="token comment"># 有时候，该命令可能没有响应，服务停不下来。这时候就不得不&quot;杀进程&quot;了，向正在运行的进程发出kill信号。</span>
+<span class="token function">sudo</span> systemctl <span class="token function">kill</span> httpd.service
+<span class="token comment"># 此外，重启服务要执行systemctl restart命令。</span>
+<span class="token function">sudo</span> systemctl restart httpd.service
+
+<span class="token comment"># 一个服务怎么启动，完全由它的配置文件决定。</span>
+systemctl <span class="token function">cat</span> sshd.service
+
+<span class="token comment"># 修改配置文件以后，需要重新加载配置文件，然后重新启动相关服务。</span>
+<span class="token comment"># 重新加载配置文件</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+
+<span class="token comment"># 重启相关服务</span>
+<span class="token function">sudo</span> systemctl restart foobar
+</code></pre></div><h2 id="系统管理"><a href="#系统管理" class="header-anchor">#</a> 系统管理</h2> <p>Systemd 并不是一个命令，而是一组命令，涉及系统管理的方方面面。</p> <h3 id="_1-systemctl"><a href="#_1-systemctl" class="header-anchor">#</a> 1. systemctl</h3> <p><code>systemctl</code> 是 Systemd 的主命令，用于管理系统。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 重启系统</span>
+<span class="token function">sudo</span> systemctl <span class="token function">reboot</span>
+
+<span class="token comment"># 关闭系统，切断电源</span>
+<span class="token function">sudo</span> systemctl poweroff
+
+<span class="token comment"># CPU停止工作</span>
+<span class="token function">sudo</span> systemctl <span class="token function">halt</span>
+
+<span class="token comment"># 暂停系统</span>
+<span class="token function">sudo</span> systemctl <span class="token function">suspend</span>
+
+<span class="token comment"># 让系统进入冬眠状态</span>
+<span class="token function">sudo</span> systemctl hibernate
+
+<span class="token comment"># 让西荣进入交互式休眠状态</span>
+<span class="token function">sudo</span> systemctl hybrid-sleep
+
+<span class="token comment"># 启动进入救援状态</span>
+<span class="token function">sudo</span> systemctl rescue
+</code></pre></div><h3 id="_2-systemd-analyze"><a href="#_2-systemd-analyze" class="header-anchor">#</a> 2. systemd-analyze</h3> <p><code>systemd-analyze</code> 命令用于查看启动耗时。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看启动耗时</span>
+systemd-analyze                                                                                       
+
+<span class="token comment"># 查看每个服务的启动耗时</span>
+systemd-analyze blame
+
+<span class="token comment"># 显示瀑布状的启动过程流</span>
+systemd-analyze critical-chain
+
+<span class="token comment"># 显示指定服务的启动流</span>
+systemd-analyze critical-chain atd.service
+</code></pre></div><h3 id="_3-hostnamectl"><a href="#_3-hostnamectl" class="header-anchor">#</a> 3. hostnamectl</h3> <p><code>hostnamectl</code>命令用于查看当前主机的信息。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 显示当前主机的信息</span>
+hostnamectl
+
+<span class="token comment"># 设置主机名。</span>
+<span class="token function">sudo</span> hostnamectl set-hostname rhel7
+</code></pre></div><h3 id="_4-localectl"><a href="#_4-localectl" class="header-anchor">#</a> 4. localectl</h3> <p><code>localectl</code>命令用于查看本地化设置。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看本地化设置</span>
+localectl
+
+<span class="token comment"># 设置本地化参数。</span>
+<span class="token function">sudo</span> localectl set-locale <span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span>en_GB.utf8
+<span class="token function">sudo</span> localectl set-keymap en_GB
+</code></pre></div><h3 id="_5-timedatectl"><a href="#_5-timedatectl" class="header-anchor">#</a> 5. timedatectl</h3> <p><code>timedatectl</code>命令用于查看当前时区设置。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看当前时区设置</span>
+timedatectl
+
+<span class="token comment"># 显示所有可用的时区</span>
+timedatectl list-timezones                                                                                   
+<span class="token comment"># 设置当前时区</span>
+<span class="token function">sudo</span> timedatectl set-timezone America/New_York
+<span class="token function">sudo</span> timedatectl set-time YYYY-MM-DD
+<span class="token function">sudo</span> timedatectl set-time HH:MM:SS
+</code></pre></div><h3 id="_6-loginctl"><a href="#_6-loginctl" class="header-anchor">#</a> 6. loginctl</h3> <p><code>loginctl</code>命令用于查看当前登录的用户。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 列出当前session</span>
+loginctl list-sessions
+
+<span class="token comment"># 列出当前登录用户</span>
+loginctl list-users
+
+<span class="token comment"># 列出显示指定用户的信息</span>
+loginctl show-user ruanyf
+</code></pre></div><h2 id="unit"><a href="#unit" class="header-anchor">#</a> Unit</h2> <p>Systemd 可以管理所有系统资源。不同的资源统称为 Unit（单位）。</p> <p>Unit 一共分成12种。</p> <blockquote><ul><li>Service unit：系统服务</li> <li>Target unit：多个 Unit 构成的一个组</li> <li>Device Unit：硬件设备</li> <li>Mount Unit：文件系统的挂载点</li> <li>Automount Unit：自动挂载点</li> <li>Path Unit：文件或路径</li> <li>Scope Unit：不是由 Systemd 启动的外部进程</li> <li>Slice Unit：进程组</li> <li>Snapshot Unit：Systemd 快照，可以切回某个快照</li> <li>Socket Unit：进程间通信的 socket</li> <li>Swap Unit：swap 文件</li> <li>Timer Unit：定时器</li></ul></blockquote> <p><code>systemctl list-units</code> 命令可以查看当前系统的所有 Unit 。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 列出正在运行的 Unit</span>
+systemctl list-units
+
+<span class="token comment"># 列出所有Unit，包括没有找到配置文件的或者启动失败的</span>
+systemctl list-units --all
+
+<span class="token comment"># 列出所有没有运行的 Unit</span>
+systemctl list-units --all --state<span class="token operator">=</span>inactive
+
+<span class="token comment"># 列出所有加载失败的 Unit</span>
+systemctl list-units --failed
+
+<span class="token comment"># 列出所有正在运行的、类型为 service 的 Unit</span>
+systemctl list-units --type<span class="token operator">=</span>service
+</code></pre></div><h3 id="_1-unit-的状态"><a href="#_1-unit-的状态" class="header-anchor">#</a> 1. Unit 的状态</h3> <p><code>systemctl status</code> 命令用于查看系统状态和单个 Unit 的状态。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 显示系统状态</span>
+systemctl status
+
+<span class="token comment"># 显示单个 Unit 的状态</span>
+sysystemctl status bluetooth.service
+
+<span class="token comment"># 显示远程主机的某个 Unit 的状态</span>
+systemctl -H root@rhel7.example.com status httpd.service
+</code></pre></div><p>除了 <code>status</code> 命令，<code>systemctl</code> 还提供了三个查询状态的简单方法，主要供脚本内部的判断语句使用。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 显示某个 Unit 是否正在运行</span>
+systemctl is-active application.service
+
+<span class="token comment"># 显示某个 Unit 是否处于启动失败状态</span>
+systemctl is-failed application.service
+
+<span class="token comment"># 显示某个 Unit 服务是否建立了启动链接</span>
+systemctl is-enabled application.service
+</code></pre></div><h3 id="_2-unit-管理"><a href="#_2-unit-管理" class="header-anchor">#</a> 2. Unit 管理</h3> <p><strong>对于用户来说，最常用的是下面这些命令，用于启动和停止 Unit（主要是 service）。</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 立即启动一个服务</span>
+<span class="token function">sudo</span> systemctl start apache.service
+
+<span class="token comment"># 立即停止一个服务</span>
+<span class="token function">sudo</span> systemctl stop apache.service
+
+<span class="token comment"># 重启一个服务</span>
+<span class="token function">sudo</span> systemctl restart apache.service
+
+<span class="token comment"># 杀死一个服务的所有子进程</span>
+<span class="token function">sudo</span> systemctl <span class="token function">kill</span> apache.service
+
+<span class="token comment"># 重新加载一个服务的配置文件</span>
+<span class="token function">sudo</span> systemctl reload apache.service
+
+<span class="token comment"># 重载所有修改过的配置文件</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+
+<span class="token comment"># 显示某个 Unit 的所有底层参数</span>
+systemctl show httpd.service
+
+<span class="token comment"># 显示某个 Unit 的指定属性的值</span>
+systemctl show -p CPUShares httpd.service
+
+<span class="token comment"># 设置某个 Unit 的指定属性</span>
+<span class="token function">sudo</span> systemctl set-property httpd.service <span class="token assign-left variable">CPUShares</span><span class="token operator">=</span><span class="token number">500</span>
+</code></pre></div><h3 id="_3-依赖关系"><a href="#_3-依赖关系" class="header-anchor">#</a> 3. 依赖关系</h3> <p>Unit 之间存在依赖关系：A 依赖于 B，就意味着 Systemd 在启动 A 的时候，同时会去启动 B。</p> <p><code>systemctl list-dependencies</code> 命令列出一个 Unit 的所有依赖。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl list-dependencies nginx.service
+</code></pre></div><p>上面命令的输出结果之中，有些依赖是 Target 类型（详见下文），默认不会展开显示。如果要展开 Target，就需要使用 <code>--all</code> 参数。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl list-dependencies --all nginx.service
+</code></pre></div><h2 id="unit-的配置文件"><a href="#unit-的配置文件" class="header-anchor">#</a> Unit 的配置文件</h2> <p>每一个 Unit 都有一个配置文件，告诉 Systemd 怎么启动这个 Unit 。</p> <p>Systemd 默认从目录 <code>/etc/systemd/system/</code> 读取配置文件。但是，里面存放的大部分文件都是符号链接，指向目录 <code>/usr/lib/systemd/system/</code>，真正的配置文件存放在那个目录。</p> <p><code>systemctl enable</code> 命令用于在上面两个目录之间，建立符号链接关系。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> clamd@scan.service
+<span class="token comment"># 等同于</span>
+<span class="token function">sudo</span> <span class="token function">ln</span> -s <span class="token string">'/usr/lib/systemd/system/clamd@scan.service'</span> <span class="token string">'/etc/systemd/system/multi-user.target.wants/clamd@scan.service'</span>
+</code></pre></div><p>如果配置文件里面设置了开机启动，<code>systemctl enable</code> 命令相当于激活开机启动。</p> <p>与之对应的，<code>systemctl disable</code> 命令用于在两个目录之间，撤销符号链接关系，相当于撤销开机启动。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> systemctl disable clamd@scan.service
+</code></pre></div><p>配置文件的后缀名，就是该 Unit 的种类，比如 <code>sshd.socket</code> 。如果省略，Systemd 默认后缀名为 <code>.service</code>，所以 <code>sshd</code> 会被理解成 <code>sshd.service</code> 。</p> <h3 id="_1-配置文件的状态"><a href="#_1-配置文件的状态" class="header-anchor">#</a> 1. 配置文件的状态</h3> <p><code>systemctl list-unit-files</code> 命令用于列出所有配置文件。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 列出所有配置文件</span>
+systemctl list-unit-files
+
+<span class="token comment"># 列出指定类型的配置文件</span>
+systemctl list-unit-files --type<span class="token operator">=</span>service
+</code></pre></div><p>这个命令会输出一个列表。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl list-unit-files
+
+UNIT FILE              STATE
+chronyd.service        enabled
+clamd@.service         static
+clamd@scan.service     disabled
+</code></pre></div><p>这个列表显示每个配置文件的状态，一共有四种。</p> <ul><li>enabled：已建立启动链接</li> <li>disabled：没建立启动链接</li> <li>static：该配置文件没有 <code>[Install]</code> 部分（无法执行），只能作为其他配置文件的依赖</li> <li>masked：该配置文件被禁止建立启动链接</li></ul> <p>注意，从配置文件的状态无法看出，该 Unit 是否正在运行。这必须执行前面提到的 <code>systemctl status</code> 命令。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl status bluetooth.service
+</code></pre></div><p>一旦修改配置文件，就要让 SystemD 重新加载配置文件，然后重新启动，否则修改不会生效。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> systemctl daemon-reload
+<span class="token function">sudo</span> systemctl restart httpd.service
+</code></pre></div><h3 id="_2-配置文件的格式"><a href="#_2-配置文件的格式" class="header-anchor">#</a> 2. 配置文件的格式</h3> <p>配置文件就是普通的文本文件，可以用文本编辑器打开。</p> <p><code>systemctl cat</code> 命令可以查看配置文件的内容。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl <span class="token function">cat</span> atd.service
+
+<span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>ATD daemon
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>forking
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/bin/atd
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target
+</code></pre></div><p>从上面的输出可以看到，配置文件分成几个区块。每个区块的第一行，是用方括号表示的区别名，比如 <code>[Unit]</code> 。注意，配置文件的区块名和字段名，都是大小写敏感的。</p> <p>每个区块内部是一些等号连接的键值对。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>Section<span class="token punctuation">]</span>
+<span class="token assign-left variable">Directive1</span><span class="token operator">=</span>value
+<span class="token assign-left variable">Directive2</span><span class="token operator">=</span>value
+</code></pre></div><p>注意，键值对的等号两侧不能有空格。</p> <h3 id="_3-配置文件的区块"><a href="#_3-配置文件的区块" class="header-anchor">#</a> 3. 配置文件的区块</h3> <p><code>[Unit]</code> 区块通常是配置文件的第一个区块，用来定义 Unit 的元数据，以及配置与其他 Unit 的关系。它的主要字段如下：</p> <ul><li><code>Description</code>：简短描述</li> <li><code>Documentation</code>：文档地址</li> <li><code>Requires</code>：当前 Unit 依赖的其他 Unit，如果它们没有运行，当前 Unit 会启动失败</li> <li><code>Wants</code>：与当前 Unit 配合的其他 Unit，如果它们没有运行，当前 Unit 不会启动失败</li> <li><code>BindsTo</code>：与<code>Requires</code>类似，它指定的 Unit 如果退出，会导致当前 Unit 停止运行</li> <li><code>Before</code>：如果该字段指定的 Unit 也要启动，那么必须在当前 Unit 之后启动</li> <li><code>After</code>：如果该字段指定的 Unit 也要启动，那么必须在当前 Unit 之前启动</li> <li><code>Conflicts</code>：这里指定的 Unit 不能与当前 Unit 同时运行</li> <li><code>Condition...</code>：当前 Unit 运行必须满足的条件，否则不会运行</li> <li><code>Assert...</code>：当前 Unit 运行必须满足的条件，否则会报启动失败</li></ul> <p><code>[Install]</code> 通常是配置文件的最后一个区块，用来定义如何启动，以及是否开机启动。它的主要字段如下：</p> <ul><li><code>WantedBy</code>：它的值是一个或多个 Target，当前 Unit 激活时（enable）符号链接会放入<code>/etc/systemd/system</code>目录下面以 Target 名 + <code>.wants</code>后缀构成的子目录中</li> <li><code>RequiredBy</code>：它的值是一个或多个 Target，当前 Unit 激活时，符号链接会放入<code>/etc/systemd/system</code>目录下面以 Target 名 + <code>.required</code>后缀构成的子目录中</li> <li><code>Alias</code>：当前 Unit 可用于启动的别名</li> <li><code>Also</code>：当前 Unit 激活（enable）时，会被同时激活的其他 Unit</li></ul> <p><code>[Service]</code> 区块用来 Service 的配置，只有 Service 类型的 Unit 才有这个区块。它的主要字段如下：</p> <ul><li><code>Type</code>：定义启动时的进程行为。它有以下几种值。</li> <li><code>Type=simple</code>：默认值，执行<code>ExecStart</code>指定的命令，启动主进程</li> <li><code>Type=forking</code>：以 fork 方式从父进程创建子进程，创建后父进程会立即退出</li> <li><code>Type=oneshot</code>：一次性进程，Systemd 会等当前服务退出，再继续往下执行</li> <li><code>Type=dbus</code>：当前服务通过D-Bus启动</li> <li><code>Type=notify</code>：当前服务启动完毕，会通知<code>Systemd</code>，再继续往下执行</li> <li><code>Type=idle</code>：若有其他任务执行完毕，当前服务才会运行</li> <li><code>ExecStart</code>：启动当前服务的命令</li> <li><code>ExecStartPre</code>：启动当前服务之前执行的命令</li> <li><code>ExecStartPost</code>：启动当前服务之后执行的命令</li> <li><code>ExecReload</code>：重启当前服务时执行的命令</li> <li><code>ExecStop</code>：停止当前服务时执行的命令</li> <li><code>ExecStopPost</code>：停止当其服务之后执行的命令</li> <li><code>RestartSec</code>：自动重启当前服务间隔的秒数</li> <li><code>Restart</code>：定义何种情况 Systemd 会自动重启当前服务，可能的值包括<code>always</code>（总是重启）、<code>on-success</code>、<code>on-failure</code>、<code>on-abnormal</code>、<code>on-abort</code>、<code>on-watchdog</code></li> <li><code>TimeoutSec</code>：定义 Systemd 停止当前服务之前等待的秒数</li> <li><code>Environment</code>：指定环境变量</li></ul> <p>Unit 配置文件的完整字段清单，请参考<a href="https://www.freedesktop.org/software/systemd/man/systemd.unit.html" target="_blank" rel="noopener noreferrer">官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <h2 id="target"><a href="#target" class="header-anchor">#</a> Target</h2> <p>启动计算机的时候，需要启动大量的 Unit。如果每一次启动，都要一一写明本次启动需要哪些 Unit，显然非常不方便。Systemd 的解决方案就是 Target。</p> <p>简单说，Target 就是一个 Unit 组，包含许多相关的 Unit 。启动某个 Target 的时候，Systemd 就会启动里面所有的 Unit。从这个意义上说，Target 这个概念类似于&quot;状态点&quot;，启动某个 Target 就好比启动到某种状态。</p> <p>传统的 <code>init</code> 启动模式里面，有 RunLevel 的概念，跟 Target 的作用很类似。不同的是，RunLevel 是互斥的，不可能多个 RunLevel 同时启动，但是多个 Target 可以同时启动。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看当前系统的所有 Target</span>
+systemctl list-unit-files --type<span class="token operator">=</span>target
+
+<span class="token comment"># 查看一个 Target 包含的所有 Unit</span>
+systemctl list-dependencies multi-user.target
+
+<span class="token comment"># 查看启动时的默认 Target</span>
+systemctl get-default
+
+<span class="token comment"># 设置启动时的默认 Target</span>
+<span class="token function">sudo</span> systemctl set-default multi-user.target
+
+<span class="token comment"># 切换 Target 时，默认不关闭前一个 Target 启动的进程，</span>
+<span class="token comment"># systemctl isolate 命令改变这种行为，</span>
+<span class="token comment"># 关闭前一个 Target 里面所有不属于后一个 Target 的进程</span>
+<span class="token function">sudo</span> systemctl isolate multi-user.target
+</code></pre></div><p>Target 与 传统 RunLevel 的对应关系如下。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Traditional runlevel      New target name     Symbolically linked to<span class="token punctuation">..</span>.
+
+Runlevel <span class="token number">0</span>           <span class="token operator">|</span>    runlevel0.target -<span class="token operator">&gt;</span> poweroff.target
+Runlevel <span class="token number">1</span>           <span class="token operator">|</span>    runlevel1.target -<span class="token operator">&gt;</span> rescue.target
+Runlevel <span class="token number">2</span>           <span class="token operator">|</span>    runlevel2.target -<span class="token operator">&gt;</span> multi-user.target
+Runlevel <span class="token number">3</span>           <span class="token operator">|</span>    runlevel3.target -<span class="token operator">&gt;</span> multi-user.target
+Runlevel <span class="token number">4</span>           <span class="token operator">|</span>    runlevel4.target -<span class="token operator">&gt;</span> multi-user.target
+Runlevel <span class="token number">5</span>           <span class="token operator">|</span>    runlevel5.target -<span class="token operator">&gt;</span> graphical.target
+Runlevel <span class="token number">6</span>           <span class="token operator">|</span>    runlevel6.target -<span class="token operator">&gt;</span> reboot.target
+</code></pre></div><p>它与 <code>init</code> 进程的主要差别如下。</p> <p><strong>（1）默认的 RunLevel</strong>（在<code>/etc/inittab</code>文件设置）现在被默认的 Target 取代，位置是<code>/etc/systemd/system/default.target</code>，通常符号链接到<code>graphical.target</code>（图形界面）或者<code>multi-user.target</code>（多用户命令行）。</p> <p><strong>（2）启动脚本的位置</strong>，以前是<code>/etc/init.d</code>目录，符号链接到不同的 RunLevel 目录 （比如<code>/etc/rc3.d</code>、<code>/etc/rc5.d</code>等），现在则存放在<code>/lib/systemd/system</code>和<code>/etc/systemd/system</code>目录。</p> <p><strong>（3）配置文件的位置</strong>，以前<code>init</code>进程的配置文件是<code>/etc/inittab</code>，各种服务的配置文件存放在<code>/etc/sysconfig</code>目录。现在的配置文件主要存放在<code>/lib/systemd</code>目录，在<code>/etc/systemd</code>目录里面的修改可以覆盖原始设置。</p> <h2 id="日志管理"><a href="#日志管理" class="header-anchor">#</a> 日志管理</h2> <p>Systemd 统一管理所有 Unit 的启动日志。带来的好处就是，可以只用<code>journalctl</code> 一个命令，查看所有日志（内核日志和应用日志）。日志的配置文件是 <code>/etc/systemd/journald.conf</code> 。</p> <p><code>journalctl</code> 功能强大，用法非常多。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看所有日志（默认情况下 ，只保存本次启动的日志）</span>
+<span class="token function">sudo</span> journalctl
+
+<span class="token comment"># 查看内核日志（不显示应用日志）</span>
+<span class="token function">sudo</span> journalctl -k
+
+<span class="token comment"># 查看系统本次启动的日志</span>
+<span class="token function">sudo</span> journalctl -b
+<span class="token function">sudo</span> journalctl -b -0
+
+<span class="token comment"># 查看上一次启动的日志（需更改设置）</span>
+<span class="token function">sudo</span> journalctl -b -1
+
+<span class="token comment"># 查看指定时间的日志</span>
+<span class="token function">sudo</span> journalctl --since<span class="token operator">=</span><span class="token string">&quot;2012-10-30 18:17:16&quot;</span>
+<span class="token function">sudo</span> journalctl --since <span class="token string">&quot;20 min ago&quot;</span>
+<span class="token function">sudo</span> journalctl --since yesterday
+<span class="token function">sudo</span> journalctl --since <span class="token string">&quot;2015-01-10&quot;</span> --until <span class="token string">&quot;2015-01-11 03:00&quot;</span>
+<span class="token function">sudo</span> journalctl --since 09:00 --until <span class="token string">&quot;1 hour ago&quot;</span>
+
+<span class="token comment"># 显示尾部的最新10行日志</span>
+<span class="token function">sudo</span> journalctl -n
+
+<span class="token comment"># 显示尾部指定行数的日志</span>
+<span class="token function">sudo</span> journalctl -n <span class="token number">20</span>
+
+<span class="token comment"># 实时滚动显示最新日志</span>
+<span class="token function">sudo</span> journalctl -f
+
+<span class="token comment"># 查看指定服务的日志</span>
+<span class="token function">sudo</span> journalctl /usr/lib/systemd/systemd
+
+<span class="token comment"># 查看指定进程的日志</span>
+<span class="token function">sudo</span> journalctl <span class="token assign-left variable">_PID</span><span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token comment"># 查看某个路径的脚本的日志</span>
+<span class="token function">sudo</span> journalctl /usr/bin/bash
+
+<span class="token comment"># 查看指定用户的日志</span>
+<span class="token function">sudo</span> journalctl <span class="token assign-left variable">_UID</span><span class="token operator">=</span><span class="token number">33</span> --since today
+
+<span class="token comment"># 查看某个 Unit 的日志</span>
+<span class="token function">sudo</span> journalctl -u nginx.service
+<span class="token function">sudo</span> journalctl -u nginx.service --since today
+
+<span class="token comment"># 实时滚动显示某个 Unit 的最新日志</span>
+<span class="token function">sudo</span> journalctl -u nginx.service -f
+
+<span class="token comment"># 合并显示多个 Unit 的日志</span>
+journalctl -u nginx.service -u php-fpm.service --since today
+
+<span class="token comment"># 查看指定优先级（及其以上级别）的日志，共有8级</span>
+<span class="token comment"># 0: emerg</span>
+<span class="token comment"># 1: alert</span>
+<span class="token comment"># 2: crit</span>
+<span class="token comment"># 3: err</span>
+<span class="token comment"># 4: warning</span>
+<span class="token comment"># 5: notice</span>
+<span class="token comment"># 6: info</span>
+<span class="token comment"># 7: debug</span>
+<span class="token function">sudo</span> journalctl -p err -b
+
+<span class="token comment"># 日志默认分页输出，--no-pager 改为正常的标准输出</span>
+<span class="token function">sudo</span> journalctl --no-pager
+
+<span class="token comment"># 以 JSON 格式（单行）输出</span>
+<span class="token function">sudo</span> journalctl -b -u nginx.service -o json
+
+<span class="token comment"># 以 JSON 格式（多行）输出，可读性更好</span>
+<span class="token function">sudo</span> journalctl -b -u nginx.serviceqq
+ -o json-pretty
+
+<span class="token comment"># 显示日志占据的硬盘空间</span>
+<span class="token function">sudo</span> journalctl --disk-usage
+
+<span class="token comment"># 指定日志文件占据的最大空间</span>
+<span class="token function">sudo</span> journalctl --vacuum-size<span class="token operator">=</span>1G
+
+<span class="token comment"># 指定日志文件保存多久</span>
+<span class="token function">sudo</span> journalctl --vacuum-time<span class="token operator">=</span>1years
+</code></pre></div><h2 id="参考文章"><a href="#参考文章" class="header-anchor">#</a> 参考文章</h2> <p><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener noreferrer">原文：Systemd 入门教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年12月3日星期四晚上11点35分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/os/linux/rsync-and-scp.html" class="prev">
+        远程同步文件
+      </a></span> <span class="next"><a href="/os/linux/user.html">
+        用户管理
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.706dfc08.js" defer></script><script src="/assets/js/5.a1985014.js" defer></script><script src="/assets/js/2.06f532ef.js" defer></script><script src="/assets/js/218.27519362.js" defer></script><script src="/assets/js/3.cce15a36.js" defer></script>
+  </body>
+</html>

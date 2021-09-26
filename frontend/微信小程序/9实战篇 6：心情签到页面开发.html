@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>实战篇 6：心情签到页面开发 | 软件客栈大掌柜</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/1.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="软件客栈大掌柜笔记">
+    <meta name="author" content="大掌柜">
+    <meta name="keywords" content="vuepress介绍, vuepress说明,软件客栈大掌柜">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.7f98414a.css" as="style"><link rel="preload" href="/assets/js/app.706dfc08.js" as="script"><link rel="preload" href="/assets/js/5.a1985014.js" as="script"><link rel="preload" href="/assets/js/2.06f532ef.js" as="script"><link rel="preload" href="/assets/js/129.b42b4e5e.js" as="script"><link rel="preload" href="/assets/js/3.cce15a36.js" as="script"><link rel="prefetch" href="/assets/js/10.2c79d68c.js"><link rel="prefetch" href="/assets/js/100.f100f4ea.js"><link rel="prefetch" href="/assets/js/101.8792d9db.js"><link rel="prefetch" href="/assets/js/102.aaa2fe97.js"><link rel="prefetch" href="/assets/js/103.a5ce24af.js"><link rel="prefetch" href="/assets/js/104.b040fffb.js"><link rel="prefetch" href="/assets/js/105.5eee1282.js"><link rel="prefetch" href="/assets/js/106.106a9c26.js"><link rel="prefetch" href="/assets/js/107.a2b61042.js"><link rel="prefetch" href="/assets/js/108.b892dd66.js"><link rel="prefetch" href="/assets/js/109.3314fe2f.js"><link rel="prefetch" href="/assets/js/11.ad036196.js"><link rel="prefetch" href="/assets/js/110.30c4ce99.js"><link rel="prefetch" href="/assets/js/111.2ceb9df8.js"><link rel="prefetch" href="/assets/js/112.7483a3b4.js"><link rel="prefetch" href="/assets/js/113.bac5445b.js"><link rel="prefetch" href="/assets/js/114.1c27f5dc.js"><link rel="prefetch" href="/assets/js/115.e16aef72.js"><link rel="prefetch" href="/assets/js/116.84137466.js"><link rel="prefetch" href="/assets/js/117.d5d2c4aa.js"><link rel="prefetch" href="/assets/js/118.a228463d.js"><link rel="prefetch" href="/assets/js/119.6a6b4f4f.js"><link rel="prefetch" href="/assets/js/12.a52711b9.js"><link rel="prefetch" href="/assets/js/120.b5e71441.js"><link rel="prefetch" href="/assets/js/121.00bd220c.js"><link rel="prefetch" href="/assets/js/122.8f700f5b.js"><link rel="prefetch" href="/assets/js/123.7f413c25.js"><link rel="prefetch" href="/assets/js/124.b783b5cb.js"><link rel="prefetch" href="/assets/js/125.b5e9a09f.js"><link rel="prefetch" href="/assets/js/126.288282b5.js"><link rel="prefetch" href="/assets/js/127.b441e0c9.js"><link rel="prefetch" href="/assets/js/128.0c4282c6.js"><link rel="prefetch" href="/assets/js/13.fde39ba1.js"><link rel="prefetch" href="/assets/js/130.756fff45.js"><link rel="prefetch" href="/assets/js/131.b3d70b12.js"><link rel="prefetch" href="/assets/js/132.57548e9e.js"><link rel="prefetch" href="/assets/js/133.71d13054.js"><link rel="prefetch" href="/assets/js/134.1ecaf78e.js"><link rel="prefetch" href="/assets/js/135.a9a23af5.js"><link rel="prefetch" href="/assets/js/136.562aa5dc.js"><link rel="prefetch" href="/assets/js/137.d602b6b5.js"><link rel="prefetch" href="/assets/js/138.554b8fce.js"><link rel="prefetch" href="/assets/js/139.4865b599.js"><link rel="prefetch" href="/assets/js/14.ffd16da9.js"><link rel="prefetch" href="/assets/js/140.0961d9df.js"><link rel="prefetch" href="/assets/js/141.5cd1a745.js"><link rel="prefetch" href="/assets/js/142.57802000.js"><link rel="prefetch" href="/assets/js/143.93d9efce.js"><link rel="prefetch" href="/assets/js/144.de603eb8.js"><link rel="prefetch" href="/assets/js/145.bf1c2688.js"><link rel="prefetch" href="/assets/js/146.7f6c3213.js"><link rel="prefetch" href="/assets/js/147.f7bf171c.js"><link rel="prefetch" href="/assets/js/148.014a8cac.js"><link rel="prefetch" href="/assets/js/149.c5fa5906.js"><link rel="prefetch" href="/assets/js/15.248c685c.js"><link rel="prefetch" href="/assets/js/150.0cc5ef1c.js"><link rel="prefetch" href="/assets/js/151.07566101.js"><link rel="prefetch" href="/assets/js/152.f74690f8.js"><link rel="prefetch" href="/assets/js/153.7e065629.js"><link rel="prefetch" href="/assets/js/154.a2415b30.js"><link rel="prefetch" href="/assets/js/155.9afb0898.js"><link rel="prefetch" href="/assets/js/156.32f77a06.js"><link rel="prefetch" href="/assets/js/157.6501de59.js"><link rel="prefetch" href="/assets/js/158.e5e5a393.js"><link rel="prefetch" href="/assets/js/159.9ec0457f.js"><link rel="prefetch" href="/assets/js/16.9ac46bb6.js"><link rel="prefetch" href="/assets/js/160.cd094c7d.js"><link rel="prefetch" href="/assets/js/161.ae3e0313.js"><link rel="prefetch" href="/assets/js/162.89539aca.js"><link rel="prefetch" href="/assets/js/163.e452a748.js"><link rel="prefetch" href="/assets/js/164.150aab74.js"><link rel="prefetch" href="/assets/js/165.026bf111.js"><link rel="prefetch" href="/assets/js/166.89c86017.js"><link rel="prefetch" href="/assets/js/167.69ee6ede.js"><link rel="prefetch" href="/assets/js/168.43b68632.js"><link rel="prefetch" href="/assets/js/169.2f9f0246.js"><link rel="prefetch" href="/assets/js/17.82a262d3.js"><link rel="prefetch" href="/assets/js/170.c19dc3dd.js"><link rel="prefetch" href="/assets/js/171.e56c55d9.js"><link rel="prefetch" href="/assets/js/172.a3e7845e.js"><link rel="prefetch" href="/assets/js/173.0b83d9c2.js"><link rel="prefetch" href="/assets/js/174.c68c0269.js"><link rel="prefetch" href="/assets/js/175.539f71f0.js"><link rel="prefetch" href="/assets/js/176.04964db3.js"><link rel="prefetch" href="/assets/js/177.dc992454.js"><link rel="prefetch" href="/assets/js/178.ddfa4a03.js"><link rel="prefetch" href="/assets/js/179.2af0e66e.js"><link rel="prefetch" href="/assets/js/18.28b713e4.js"><link rel="prefetch" href="/assets/js/180.9a4d8869.js"><link rel="prefetch" href="/assets/js/181.6a33aa9b.js"><link rel="prefetch" href="/assets/js/182.73a72c77.js"><link rel="prefetch" href="/assets/js/183.dff62977.js"><link rel="prefetch" href="/assets/js/184.35b18776.js"><link rel="prefetch" href="/assets/js/185.71974dff.js"><link rel="prefetch" href="/assets/js/186.38f792fc.js"><link rel="prefetch" href="/assets/js/187.76a4e549.js"><link rel="prefetch" href="/assets/js/188.43f54939.js"><link rel="prefetch" href="/assets/js/189.3628cb16.js"><link rel="prefetch" href="/assets/js/19.1162fb05.js"><link rel="prefetch" href="/assets/js/190.5d0bf71c.js"><link rel="prefetch" href="/assets/js/191.85bd91c1.js"><link rel="prefetch" href="/assets/js/192.a38cb0a3.js"><link rel="prefetch" href="/assets/js/193.bfad9e0b.js"><link rel="prefetch" href="/assets/js/194.c7264c65.js"><link rel="prefetch" href="/assets/js/195.859098a6.js"><link rel="prefetch" href="/assets/js/196.d36f5885.js"><link rel="prefetch" href="/assets/js/197.85a45767.js"><link rel="prefetch" href="/assets/js/198.a4fe959f.js"><link rel="prefetch" href="/assets/js/199.8b459d06.js"><link rel="prefetch" href="/assets/js/20.ee441cb8.js"><link rel="prefetch" href="/assets/js/200.632f8c04.js"><link rel="prefetch" href="/assets/js/201.643156f4.js"><link rel="prefetch" href="/assets/js/202.ba4a5291.js"><link rel="prefetch" href="/assets/js/203.81a1285e.js"><link rel="prefetch" href="/assets/js/204.8d7384ea.js"><link rel="prefetch" href="/assets/js/205.dd4215ed.js"><link rel="prefetch" href="/assets/js/206.6483093c.js"><link rel="prefetch" href="/assets/js/207.081cff93.js"><link rel="prefetch" href="/assets/js/208.093175e4.js"><link rel="prefetch" href="/assets/js/209.0f54a115.js"><link rel="prefetch" href="/assets/js/21.a4e4754d.js"><link rel="prefetch" href="/assets/js/210.1a0ea810.js"><link rel="prefetch" href="/assets/js/211.abcdbd7b.js"><link rel="prefetch" href="/assets/js/212.1546c314.js"><link rel="prefetch" href="/assets/js/213.2160f67c.js"><link rel="prefetch" href="/assets/js/214.52111592.js"><link rel="prefetch" href="/assets/js/215.b10cb717.js"><link rel="prefetch" href="/assets/js/216.89b60e69.js"><link rel="prefetch" href="/assets/js/217.ad947edf.js"><link rel="prefetch" href="/assets/js/218.27519362.js"><link rel="prefetch" href="/assets/js/219.cb427e64.js"><link rel="prefetch" href="/assets/js/22.d3a7f5c6.js"><link rel="prefetch" href="/assets/js/220.e5905962.js"><link rel="prefetch" href="/assets/js/221.e8322cc4.js"><link rel="prefetch" href="/assets/js/222.0298c6a3.js"><link rel="prefetch" href="/assets/js/223.b5391d9e.js"><link rel="prefetch" href="/assets/js/224.e899bce3.js"><link rel="prefetch" href="/assets/js/225.30cc066e.js"><link rel="prefetch" href="/assets/js/226.ecbe8929.js"><link rel="prefetch" href="/assets/js/227.a12905d3.js"><link rel="prefetch" href="/assets/js/228.a16591a7.js"><link rel="prefetch" href="/assets/js/229.472b2a1b.js"><link rel="prefetch" href="/assets/js/23.873bdd58.js"><link rel="prefetch" href="/assets/js/230.31eaa533.js"><link rel="prefetch" href="/assets/js/231.b686a972.js"><link rel="prefetch" href="/assets/js/232.fb49ef6d.js"><link rel="prefetch" href="/assets/js/233.8d8b812d.js"><link rel="prefetch" href="/assets/js/234.cfba3218.js"><link rel="prefetch" href="/assets/js/235.a0f1f597.js"><link rel="prefetch" href="/assets/js/236.f7e4e484.js"><link rel="prefetch" href="/assets/js/237.a6690e2c.js"><link rel="prefetch" href="/assets/js/238.38806924.js"><link rel="prefetch" href="/assets/js/239.07a31fe4.js"><link rel="prefetch" href="/assets/js/24.ff07a49c.js"><link rel="prefetch" href="/assets/js/240.cff79828.js"><link rel="prefetch" href="/assets/js/241.328d40c3.js"><link rel="prefetch" href="/assets/js/242.a776c189.js"><link rel="prefetch" href="/assets/js/243.540bc455.js"><link rel="prefetch" href="/assets/js/244.02f22973.js"><link rel="prefetch" href="/assets/js/245.fbb6e0c1.js"><link rel="prefetch" href="/assets/js/246.6b6e5c79.js"><link rel="prefetch" href="/assets/js/247.5862a275.js"><link rel="prefetch" href="/assets/js/248.1f88d123.js"><link rel="prefetch" href="/assets/js/249.e9495770.js"><link rel="prefetch" href="/assets/js/25.e40e0dd4.js"><link rel="prefetch" href="/assets/js/250.8a1aab0e.js"><link rel="prefetch" href="/assets/js/251.aced0a71.js"><link rel="prefetch" href="/assets/js/252.4d531500.js"><link rel="prefetch" href="/assets/js/253.9dd9776b.js"><link rel="prefetch" href="/assets/js/254.0f0ccb74.js"><link rel="prefetch" href="/assets/js/255.aae0849b.js"><link rel="prefetch" href="/assets/js/256.6f58d98f.js"><link rel="prefetch" href="/assets/js/257.28618e10.js"><link rel="prefetch" href="/assets/js/258.fe57c27c.js"><link rel="prefetch" href="/assets/js/259.b78ef20a.js"><link rel="prefetch" href="/assets/js/26.de36a71a.js"><link rel="prefetch" href="/assets/js/260.0ea2dc1a.js"><link rel="prefetch" href="/assets/js/261.7e3c0863.js"><link rel="prefetch" href="/assets/js/262.84e63ce4.js"><link rel="prefetch" href="/assets/js/263.510ae371.js"><link rel="prefetch" href="/assets/js/264.4160bc98.js"><link rel="prefetch" href="/assets/js/27.c580ee78.js"><link rel="prefetch" href="/assets/js/28.976d6702.js"><link rel="prefetch" href="/assets/js/29.6174cc16.js"><link rel="prefetch" href="/assets/js/30.aa22d6be.js"><link rel="prefetch" href="/assets/js/31.46de1df0.js"><link rel="prefetch" href="/assets/js/32.1b964f72.js"><link rel="prefetch" href="/assets/js/33.05676cb2.js"><link rel="prefetch" href="/assets/js/34.81be320f.js"><link rel="prefetch" href="/assets/js/35.00de593f.js"><link rel="prefetch" href="/assets/js/36.9c9ac879.js"><link rel="prefetch" href="/assets/js/37.0f391c8d.js"><link rel="prefetch" href="/assets/js/38.af0c2484.js"><link rel="prefetch" href="/assets/js/39.ad3acf6f.js"><link rel="prefetch" href="/assets/js/4.42dba944.js"><link rel="prefetch" href="/assets/js/40.4a9cb0ee.js"><link rel="prefetch" href="/assets/js/41.88e3ef3a.js"><link rel="prefetch" href="/assets/js/42.5e31c822.js"><link rel="prefetch" href="/assets/js/43.b02d7688.js"><link rel="prefetch" href="/assets/js/44.5465006b.js"><link rel="prefetch" href="/assets/js/45.26bca022.js"><link rel="prefetch" href="/assets/js/46.4005d589.js"><link rel="prefetch" href="/assets/js/47.e62a1130.js"><link rel="prefetch" href="/assets/js/48.c04ff0d0.js"><link rel="prefetch" href="/assets/js/49.0ddb5ba9.js"><link rel="prefetch" href="/assets/js/50.565951e1.js"><link rel="prefetch" href="/assets/js/51.3544d229.js"><link rel="prefetch" href="/assets/js/52.7a64588f.js"><link rel="prefetch" href="/assets/js/53.03b79fe7.js"><link rel="prefetch" href="/assets/js/54.fdac08cf.js"><link rel="prefetch" href="/assets/js/55.d9689762.js"><link rel="prefetch" href="/assets/js/56.2240d487.js"><link rel="prefetch" href="/assets/js/57.b041c091.js"><link rel="prefetch" href="/assets/js/58.d0dcd829.js"><link rel="prefetch" href="/assets/js/59.118f91f2.js"><link rel="prefetch" href="/assets/js/6.b166fe72.js"><link rel="prefetch" href="/assets/js/60.f7d99c31.js"><link rel="prefetch" href="/assets/js/61.6455ebd3.js"><link rel="prefetch" href="/assets/js/62.1fbfe7ef.js"><link rel="prefetch" href="/assets/js/63.9e81074e.js"><link rel="prefetch" href="/assets/js/64.b9941626.js"><link rel="prefetch" href="/assets/js/65.941d7e50.js"><link rel="prefetch" href="/assets/js/66.7b1d3392.js"><link rel="prefetch" href="/assets/js/67.49dda8c2.js"><link rel="prefetch" href="/assets/js/68.8aa1ca17.js"><link rel="prefetch" href="/assets/js/69.38d9a056.js"><link rel="prefetch" href="/assets/js/7.a03281b2.js"><link rel="prefetch" href="/assets/js/70.1ac937fe.js"><link rel="prefetch" href="/assets/js/71.b8ac9f51.js"><link rel="prefetch" href="/assets/js/72.19194d07.js"><link rel="prefetch" href="/assets/js/73.de1a0d69.js"><link rel="prefetch" href="/assets/js/74.57533fe3.js"><link rel="prefetch" href="/assets/js/75.d53f74a8.js"><link rel="prefetch" href="/assets/js/76.458d38d0.js"><link rel="prefetch" href="/assets/js/77.4f935fe6.js"><link rel="prefetch" href="/assets/js/78.7e272b25.js"><link rel="prefetch" href="/assets/js/79.d509d5a0.js"><link rel="prefetch" href="/assets/js/8.93c0ee07.js"><link rel="prefetch" href="/assets/js/80.73751a4c.js"><link rel="prefetch" href="/assets/js/81.fead5e9e.js"><link rel="prefetch" href="/assets/js/82.c1e5ee7e.js"><link rel="prefetch" href="/assets/js/83.6d22cb17.js"><link rel="prefetch" href="/assets/js/84.91a277e5.js"><link rel="prefetch" href="/assets/js/85.75219345.js"><link rel="prefetch" href="/assets/js/86.6fc3e32a.js"><link rel="prefetch" href="/assets/js/87.64384c54.js"><link rel="prefetch" href="/assets/js/88.6bef428a.js"><link rel="prefetch" href="/assets/js/89.d74f197d.js"><link rel="prefetch" href="/assets/js/9.81ed1b88.js"><link rel="prefetch" href="/assets/js/90.488a321b.js"><link rel="prefetch" href="/assets/js/91.b541fb2c.js"><link rel="prefetch" href="/assets/js/92.a3da2740.js"><link rel="prefetch" href="/assets/js/93.199e39e4.js"><link rel="prefetch" href="/assets/js/94.222c18be.js"><link rel="prefetch" href="/assets/js/95.fe7ed0da.js"><link rel="prefetch" href="/assets/js/96.2c756e51.js"><link rel="prefetch" href="/assets/js/97.d771cd41.js"><link rel="prefetch" href="/assets/js/98.9f8e2685.js"><link rel="prefetch" href="/assets/js/99.87d07b72.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f98414a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/hero.png" alt="软件客栈大掌柜" class="logo"> <span class="site-name can-hide">软件客栈大掌柜</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>微信小程序</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontend/微信小程序/0开篇：微信小程序概述.html" class="sidebar-link">开篇：微信小程序概述</a></li><li><a href="/frontend/微信小程序/10实战篇 7：对小程序进行优化.html" class="sidebar-link">实战篇 7：对小程序进行优化</a></li><li><a href="/frontend/微信小程序/11实战篇 8：小程序调试技巧和上线发布.html" class="sidebar-link">实战篇 8：小程序调试技巧和上线发布</a></li><li><a href="/frontend/微信小程序/12总结与拓展.html" class="sidebar-link">总结与拓展</a></li><li><a href="/frontend/微信小程序/1基础篇 1：小程序开发基础知识.html" class="sidebar-link">基础篇 1：小程序开发基础知识</a></li><li><a href="/frontend/微信小程序/2基础篇 2：小程序云开发基础知识.html" class="sidebar-link">基础篇 2：小程序·云开发基础知识</a></li><li><a href="/frontend/微信小程序/3基础篇 3：小程序架构及其实现机制.html" class="sidebar-link">基础篇 3：小程序架构及其实现机制</a></li><li><a href="/frontend/微信小程序/4实战篇 1：小程序开发环境搭建.html" class="sidebar-link">实战篇 1：小程序开发环境搭建</a></li><li><a href="/frontend/微信小程序/5实战篇 2：新鲜天气小程序简介.html" class="sidebar-link">实战篇 2：新鲜天气小程序简介</a></li><li><a href="/frontend/微信小程序/6实战篇 3：天气页面样式布局开发.html" class="sidebar-link">实战篇 3：天气页面样式布局开发</a></li><li><a href="/frontend/微信小程序/7实战篇 4：天气页面数据获取和交互实现.html" class="sidebar-link">实战篇 4：天气页面数据获取和交互实现</a></li><li><a href="/frontend/微信小程序/8实战篇 5：为天气页面制作雨雪效果的粒子系统.html" class="sidebar-link">实战篇 5：为天气页面制作雨雪效果的粒子系统</a></li><li><a href="/frontend/微信小程序/9实战篇 6：心情签到页面开发.html" class="active sidebar-link">实战篇 6：心情签到页面开发</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/frontend/微信小程序/9实战篇 6：心情签到页面开发.html#使用日历插件" class="sidebar-link">使用日历插件</a></li><li class="sidebar-sub-header"><a href="/frontend/微信小程序/9实战篇 6：心情签到页面开发.html#小程序用户登录和授权流程" class="sidebar-link">小程序用户登录和授权流程</a></li><li class="sidebar-sub-header"><a href="/frontend/微信小程序/9实战篇 6：心情签到页面开发.html#使用云开发数据库来存储心情数据" class="sidebar-link">使用云开发数据库来存储心情数据</a></li><li class="sidebar-sub-header"><a href="/frontend/微信小程序/9实战篇 6：心情签到页面开发.html#使用-navigator-增加跳转" class="sidebar-link">使用 navigator 增加跳转</a></li><li class="sidebar-sub-header"><a href="/frontend/微信小程序/9实战篇 6：心情签到页面开发.html#心情签到页面整体流程图" class="sidebar-link">心情签到页面整体流程图</a></li><li class="sidebar-sub-header"><a href="/frontend/微信小程序/9实战篇 6：心情签到页面开发.html#小结" class="sidebar-link">小结</a></li></ul></li><li><a href="/frontend/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="sidebar-link">首页</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="实战篇-6：心情签到页面开发"><a href="#实战篇-6：心情签到页面开发" class="header-anchor">#</a> 实战篇 6：心情签到页面开发</h1> <p>「新鲜天气」的心情签到页面结构比较简单，本小节主要介绍三部分内容：</p> <ul><li>使用日历插件</li> <li>用户授权和登录流程</li> <li>使用小程序云开发的数据库功能</li></ul> <h2 id="使用日历插件"><a href="#使用日历插件" class="header-anchor">#</a> 使用日历插件</h2> <p>心情签到页面最重要的模块就是日历，日历使用了一个<a href="https://github.com/czcaiwj/calendar" target="_blank" rel="noopener noreferrer">开源的日历插件<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，在小程序内使用插件需要经过下面三步。</p> <h4 id="_1-在小程序管理后台添加三方服务插件"><a href="#_1-在小程序管理后台添加三方服务插件" class="header-anchor">#</a> 1. 在小程序管理后台添加三方服务插件</h4> <p>登录小程序管理后台，依次进入「设置 -&gt; 第三方服务」搜索日历插件的 AppID（wx92c68dae5a8bb046）就可以搜索到「极点日历」，这时候申请授权即可。</p> <div style="margin:20px auto;text-align:center;"><img src="https://user-gold-cdn.xitu.io/2018/8/13/1653148e5a1554e6?w=555&amp;h=444&amp;f=jpeg&amp;s=15786" width="360"></div> <h4 id="_2-在-app-json-中增加插件配置"><a href="#_2-在-app-json-中增加插件配置" class="header-anchor">#</a> 2. 在 app.json 中增加插件配置</h4> <p>第二步是在项目的 app.json 中增加 <code>plugins</code> 字段内容：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;calendar&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;version&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.1.3&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;provider&quot;</span><span class="token operator">:</span> <span class="token string">&quot;wx92c68dae5a8bb046&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_3-在-diary-页面增加组件配置"><a href="#_3-在-diary-页面增加组件配置" class="header-anchor">#</a> 3. 在 diary 页面增加组件配置</h4> <p>在 pages/diary/index.json 的页面配置中的 <code>usingComponents</code> 里增加 <code>calendar</code> 的插件地址：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;usingComponents&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;calendar&quot;</span><span class="token operator">:</span> <span class="token string">&quot;plugin://calendar/calendar&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;icon&quot;</span><span class="token operator">:</span> <span class="token string">&quot;../../components/icon/index&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>经过上面三步之后，我们就可以在页面中使用 <code>&lt;calendar /&gt;</code> 标签了。具体日历的用法，可以参考它的 <a href="https://github.com/czcaiwj/calendar/wiki" target="_blank" rel="noopener noreferrer">wiki 主页<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <h3 id="设置日历的心情颜色"><a href="#设置日历的心情颜色" class="header-anchor">#</a> 设置日历的心情颜色</h3> <p>在心情设置上，笔者设计了 5 种心情，由 5 种颜色来表示，具体数值如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// client/pages/diary/index.js Page data</span>
+emotions<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'serene'</span><span class="token punctuation">,</span> <span class="token string">'hehe'</span><span class="token punctuation">,</span> <span class="token string">'ecstatic'</span><span class="token punctuation">,</span> <span class="token string">'sad'</span><span class="token punctuation">,</span> <span class="token string">'terrified'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+colors<span class="token operator">:</span> <span class="token punctuation">{</span>
+  serene<span class="token operator">:</span> <span class="token string">'#64d9fe'</span><span class="token punctuation">,</span>
+  hehe<span class="token operator">:</span> <span class="token string">'#d3fc1e'</span><span class="token punctuation">,</span>
+  ecstatic<span class="token operator">:</span> <span class="token string">'#f7dc0e'</span><span class="token punctuation">,</span>
+  sad<span class="token operator">:</span> <span class="token string">'#ec238a'</span><span class="token punctuation">,</span>
+  terrified<span class="token operator">:</span> <span class="token string">'#ee1aea'</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>签到不同的心情，最终在日历上会展现出下面的效果：</p> <div style="margin:20px auto;text-align:center;"><img src="https://user-gold-cdn.xitu.io/2018/8/17/165469e5ba884ab6?w=345&amp;h=271&amp;f=jpeg&amp;s=22788" width="360"></div> <p>要在某天设置该天的背景颜色，需要使用日历的 <code>days-color</code> 属性，这里笔者将 <code>days-color</code> 与 <code>daysStyle</code> 进行绑定：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!--diary/index.wxml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>calendar</span> <span class="token attr-name">days-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{{daysStyle}}<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre></div><p><code>daysStyle</code> 的计算和赋值是在 <code>setCalendarColor</code> 方法内的：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// diary/index.js</span>
+<span class="token function">setCalendarColor</span><span class="token punctuation">(</span><span class="token parameter">year<span class="token punctuation">,</span> month</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  year <span class="token operator">=</span> year <span class="token operator">||</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  month <span class="token operator">=</span> month <span class="token operator">||</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+  <span class="token comment">// 从数据库读取数据</span>
+  <span class="token function">getEmotionByOpenidAndDate</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>openid<span class="token punctuation">,</span> year<span class="token punctuation">,</span> month<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">r</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> data <span class="token operator">=</span> r<span class="token punctuation">.</span>data <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">const</span> styles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">const</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">const</span> today <span class="token operator">=</span> <span class="token function">dateFormat</span><span class="token punctuation">(</span>now<span class="token punctuation">)</span>
+      <span class="token keyword">let</span> todayEmotion <span class="token operator">=</span> <span class="token string">''</span>
+      <span class="token keyword">let</span> colors <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>colors
+      <span class="token comment">// 遍历日期，存在表情的日期则设置对应的颜色</span>
+      data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> ts <span class="token operator">=</span> v<span class="token punctuation">.</span>tsModified
+        <span class="token keyword">let</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>ts<span class="token punctuation">)</span>
+        <span class="token keyword">let</span> day <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>today <span class="token operator">===</span> <span class="token function">dateFormat</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          todayEmotion <span class="token operator">=</span> v<span class="token punctuation">.</span>emotion <span class="token operator">||</span> <span class="token string">''</span>
+        <span class="token punctuation">}</span>
+        styles<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          month<span class="token operator">:</span> <span class="token string">'current'</span><span class="token punctuation">,</span>
+          day<span class="token punctuation">,</span>
+          color<span class="token operator">:</span> <span class="token string">'black'</span><span class="token punctuation">,</span>
+          background<span class="token operator">:</span> colors<span class="token punctuation">[</span>v<span class="token punctuation">.</span>emotion<span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token comment">// 设置 daysStyle</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        lastMonth<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>year<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token punctuation">(</span><span class="token string">'00'</span> <span class="token operator">+</span> month<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        showPublish<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        todayEmotion<span class="token punctuation">,</span>
+        daysStyle<span class="token operator">:</span> styles
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      wx<span class="token punctuation">.</span><span class="token function">showToast</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">'加载已签数据失败，请稍后再试'</span><span class="token punctuation">,</span>
+        icon<span class="token operator">:</span> <span class="token string">'none'</span><span class="token punctuation">,</span>
+        duration<span class="token operator">:</span> <span class="token number">3000</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="日历事件绑定"><a href="#日历事件绑定" class="header-anchor">#</a> 日历事件绑定</h3> <p>当日历切换月份的时候，我们应该获取当前切换到的月份，获取当前月份的心情数据，所以在 <code>calendar</code> 上绑定 <code>dateChange</code> 事件：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!--diary/index.wxml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>calendar</span> <span class="token attr-name">binddateChange</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dateChange<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// diary/index.js page</span>
+<span class="token function">dateChange</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// console.log(e)</span>
+  <span class="token keyword">let</span> <span class="token punctuation">{</span>currentYear<span class="token punctuation">,</span> currentMonth<span class="token punctuation">}</span> <span class="token operator">=</span> e<span class="token punctuation">.</span>detail
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    daysStyle<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setCalendarColor</span><span class="token punctuation">(</span>currentYear<span class="token punctuation">,</span> currentMonth<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="小程序用户登录和授权流程"><a href="#小程序用户登录和授权流程" class="header-anchor">#</a> 小程序用户登录和授权流程</h2> <p>在心情签到的功能开发中，需要得到用户信息，获取用户信息需要用户账号授权才可以。用户账号授权是小程序开发中经常碰见的技术点，本节重点介绍下小程序的登录授权机制。</p> <p>小程序开发文档中有一张很完整的流程图（见下图），笔者会围绕这张图来介绍用户授权流程，然后结合云函数来实现一个获取用户授权信息的功能。</p> <div style="margin:20px auto;text-align:center;"><img src="https://user-gold-cdn.xitu.io/2018/8/13/16531493dbf89301?w=710&amp;h=720&amp;f=jpeg&amp;s=61617" width="600"></div> <p>从这张图来看，整个数据通信过程包含了小程序、开发者服务器（云函数）和微信接口服务，这三方是都参与其中的，整个流程跟公众号和第三方登录授权流程都基本类似。</p> <p>整个授权流程可分为下面五个步骤。</p> <h4 id="_1-wx-login-获取临时登录凭证-code"><a href="#_1-wx-login-获取临时登录凭证-code" class="header-anchor">#</a> 1. <code>wx.login</code> 获取临时登录凭证 code</h4> <p>「小程序」内调用 <code>wx.login</code> 方法，如果用户是第一次授权或者授权过期，则会弹出授权窗口，提示用户个人信息会被授权给第三方服务使用。这时候如果用户同意授权，则会拿到<strong>临时登录凭证 code</strong>，这个临时登录凭证有效期只有 <strong>5 分钟</strong>。我们拿到这个临时登录凭证需要调用「开发者服务器（云函数）」的接口，将临时凭证发送给服务器，然后「开发者服务器」调用「微信接口服务」的 <code>jscode2session</code> 接口获取 <code>openid</code> 和 <code>session_key</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code>wx<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>code<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// example: 081LXytJ1xxxxcdfxxx1FWxdfdsfXyth</span>
+        <span class="token comment">// 将 code 发送给开发者服务器</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="_2-获取-openid-和-session-key"><a href="#_2-获取-openid-和-session-key" class="header-anchor">#</a> 2. 获取 <code>openid</code> 和 <code>session_key</code></h4> <p>微信内，同一用户在任意小程序、公众号或者服务号中，都会有一个不同的唯一标识 <code>openid</code>，所以可以认为，我们在应用中获取的用户 <code>openid</code> 是唯一的，并且该用户在另外一个应用中的 <code>openid</code> 跟其他应用的是不同的。</p> <p><code>session_key</code> 是微信服务派发给我们的一个用户登录有效性的凭证，通过它我们可以间接维护用户微信的登录态。</p> <p>获取 <code>openid</code> 和 <code>session_key</code> 需要调用微信的接口：<br> <code>https://api.weixin.qq.com/sns/jscode2session?appid=APPID&amp;secret=SECRET&amp;js_code=JSCODE&amp;grant_type=authorization_code</code></p> <p>这个接口的参数为：</p> <table><thead><tr><th>参数</th> <th>必填</th> <th>说明</th></tr></thead> <tbody><tr><td>appid</td> <td>是</td> <td>小程序唯一标识</td></tr> <tr><td>secret</td> <td>是</td> <td>小程序的 app secret</td></tr> <tr><td>js_code</td> <td>是</td> <td>登录时获取的 code</td></tr> <tr><td>grant_type</td> <td>是</td> <td>填写为 authorization_code</td></tr></tbody></table> <p>其中 <code>appid</code> 和 <code>secret</code> 可以在小程序管理后台找到，具体路径为「设置 -&gt; 开发设置 -&gt; 开发者 ID」。<code>appid</code> 直接可见，而 <code>secret</code> 需要点击「生成」链接，并用开发者账号的微信扫码才能生成，生成之后需自行保存。</p> <p><code>secret</code> 是授权中保证安全性的一个重要 ID，不能外泄，因此必须放在开发者自己的服务器上使用，不能直接放到前端页面调用微信服务接口，因为如果这样的话 <code>secret</code> 就暴露了，这也是整个授权过程需要小程序、开发者服务器、微信服务三方都介入的原因。如果忘记或泄露了 <code>secret</code>，需要在微信后台重置。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/8/13/1653149778229d90?w=1298&amp;h=447&amp;f=png&amp;s=39517" alt=""></p> <p><code>js_code</code> 就是第一步中我们通过 <code>wx.login</code> 获取到的临时授权凭证 code。有了<code>appid</code>、<code>secret</code>和<code>js_code</code>，我们可以写一个云函数来请求微信的 <code>jscode2session</code> 接口：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 云函数名称：jscode2session</span>
+<span class="token keyword">const</span> <span class="token constant">API_URL</span> <span class="token operator">=</span> <span class="token string">'https://api.weixin.qq.com/sns/jscode2session'</span>
+<span class="token keyword">const</span> request <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> querystring <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'querystring'</span><span class="token punctuation">)</span>
+<span class="token comment">/*&lt;jdists import=&quot;../../inline/utils.js&quot; /&gt;*/</span>
+
+<span class="token comment">/*&lt;remove&gt;*/</span>
+<span class="token keyword">const</span> $ <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../inline/utils'</span><span class="token punctuation">)</span>
+<span class="token comment">/*&lt;/remove&gt;*/</span>
+
+exports<span class="token punctuation">.</span><span class="token function-variable function">main</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> <span class="token punctuation">{</span>code<span class="token punctuation">}</span> <span class="token operator">=</span> event
+  <span class="token comment">// 这里微信的 id 和 secret 从配置文件中获取</span>
+  <span class="token keyword">let</span> <span class="token punctuation">{</span>id<span class="token punctuation">,</span> sk<span class="token punctuation">}</span> <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">getWechatAppConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>
+    appid<span class="token operator">:</span> id<span class="token punctuation">,</span>
+    secret<span class="token operator">:</span> sk<span class="token punctuation">,</span>
+    js_code<span class="token operator">:</span> code<span class="token punctuation">,</span>
+    grant_type<span class="token operator">:</span> <span class="token string">'authorization_code'</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token constant">API_URL</span> <span class="token operator">+</span> <span class="token string">'?'</span> <span class="token operator">+</span> querystring<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    request<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> response<span class="token punctuation">,</span> body</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>error <span class="token operator">||</span> response<span class="token punctuation">.</span>statusCode <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          <span class="token keyword">const</span> r <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+          <span class="token function">resolve</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>有了 <code>jscode2session</code> 这个云函数，我们就可以在小程序中调用云函数，将 <code>wx.login</code> 获取的 code 作为参数传递过去：</p> <div class="language-js extra-class"><pre class="language-js"><code>wx<span class="token punctuation">.</span><span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>code<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      wx<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span><span class="token function">callFunctions</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'jscode2session'</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> <span class="token punctuation">{</span>
+          code<span class="token operator">:</span> res<span class="token punctuation">.</span>code
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> <span class="token punctuation">{</span>openid <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">,</span> session_key <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">}</span> <span class="token operator">=</span> res<span class="token punctuation">.</span>result <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>openid<span class="token punctuation">,</span> session_key<span class="token punctuation">)</span>
+        wx<span class="token punctuation">.</span><span class="token function">setStorage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+              key<span class="token operator">:</span> <span class="token string">'openid'</span><span class="token punctuation">,</span>
+              data<span class="token operator">:</span> openid
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>关于获取到的 <code>session_key</code>，我们还需要注意以下两点。</p> <ol><li><code>session_key</code> 和 <code>wx.login</code> 获取的 code 是一一对应的，同一 code 只能换取一次 <code>session_key</code>。每次调用 <code>wx.login</code>，都会下发一个新的 code 和对应的 <code>session_key</code>，为了保证用户体验和登录态的有效性，开发者需要清楚用户需要重新登录时才去调用 <code>wx.login</code>。</li> <li><code>session_key</code> 是有时效性的，即便是不调用 <code>wx.login</code>，<code>session_key</code> 也会过期，过期时间跟用户使用小程序的频率成正相关，但具体的时间长短开发者和用户都是获取不到的。</li></ol> <p>由于 <code>session_key</code> 具有实效性，因而我们可以将 <code>session_key</code> 存入本地缓存，每次进入小程序的时候判断下 <code>session_key</code> 是否过期即可：</p> <div class="language-js extra-class"><pre class="language-js"><code>wx<span class="token punctuation">.</span><span class="token function">setStorage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  key<span class="token operator">:</span> <span class="token string">'session_key'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> session_key
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="_3-获取用户昵称等信息"><a href="#_3-获取用户昵称等信息" class="header-anchor">#</a> 3. 获取用户昵称等信息</h4> <p>获取用户信息需要用到 <code>open-type=&quot;getUserInfo&quot;</code> 的 <code>button</code> 组件，具体做法是：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">open-type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getUserInfo<span class="token punctuation">&quot;</span></span> <span class="token attr-name">bindgetuserinfo</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getUserInfo<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>使用该功能需要授权登录<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>上面的代码定义了一个 <code>getUserInfo</code> 类型的按钮，如果授权成功，则调用页面的 <code>getUserInfo</code> 方法（通过 <code>bindgetuserinfo</code> 绑定的）。<code>getUserInfo</code> 代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">getUserInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  wx<span class="token punctuation">.</span><span class="token function">getUserInfo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> rs <span class="token operator">=</span> res<span class="token punctuation">.</span>userInfo
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        nickname<span class="token operator">:</span> rs<span class="token punctuation">.</span>nickName<span class="token punctuation">,</span>
+        avatarUrl<span class="token operator">:</span> rs<span class="token punctuation">.</span>avatarUrl
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>获取到的用户信息，包括以下几部分：</p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>userInfo</td> <td>OBJECT</td> <td>用户信息对象，不包含 openid 等敏感信息</td></tr> <tr><td>rawData</td> <td>String</td> <td>不包括敏感信息的原始数据字符串，用于计算签名</td></tr> <tr><td>signature</td> <td>String</td> <td>使用 sha1( rawData + sessionkey ) 得到字符串，用于校验用户信息</td></tr> <tr><td>encryptedData</td> <td>String</td> <td>包括敏感数据在内的完整用户信息的加密数据</td></tr> <tr><td>iv</td> <td>String</td> <td>加密算法的初始向量</td></tr></tbody></table> <p>除了实战中使用的包含用户昵称和头像的 <code>userInfo</code> 外，还有敏感信息的 <code>encryptedData</code> 字段，如果需要使用该字段，则需要按照<a href="https://developers.weixin.qq.com/miniprogram/dev/api/signature.html#%E5%8A%A0%E5%AF%86%E6%95%B0%E6%8D%AE%E8%A7%A3%E5%AF%86%E7%AE%97%E6%B3%95" target="_blank" rel="noopener noreferrer">加密数据解密算法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>的文档来解密。</p> <h4 id="_4-解密敏感数据"><a href="#_4-解密敏感数据" class="header-anchor">#</a> 4. 解密敏感数据</h4> <p>尽管心情签到功能并没有涉及敏感信息的解密，这里笔者还是简单介绍下如何解密敏感数据。</p> <p>解密敏感信息需要用到小程序的 AppID 和 <code>session_key</code>，在开发者文档中有提供 Node.js 版本的解密 demo，下面来简单实现个云函数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/*&lt;jdists import=&quot;../../inline/utils.js&quot; /&gt;*/</span>
+
+<span class="token comment">/*&lt;remove&gt;*/</span>
+<span class="token keyword">const</span> $ <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../inline/utils'</span><span class="token punctuation">)</span>
+<span class="token comment">/*&lt;/remove&gt;*/</span>
+
+<span class="token keyword">function</span> <span class="token function">WXBizDataCrypt</span><span class="token punctuation">(</span><span class="token parameter">appId<span class="token punctuation">,</span> sessionKey</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>appId <span class="token operator">=</span> appId<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>sessionKey <span class="token operator">=</span> sessionKey<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">WXBizDataCrypt</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">decryptData</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">encryptedData<span class="token punctuation">,</span> iv</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// base64 decode</span>
+  <span class="token keyword">const</span> sessionKey <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>sessionKey<span class="token punctuation">,</span> <span class="token string">'base64'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  encryptedData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span>encryptedData<span class="token punctuation">,</span> <span class="token string">'base64'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  iv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Buffer</span><span class="token punctuation">(</span>iv<span class="token punctuation">,</span> <span class="token string">'base64'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> decoded<span class="token punctuation">;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 解密</span>
+    <span class="token keyword">const</span> decipher <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createDecipheriv</span><span class="token punctuation">(</span><span class="token string">'aes-128-cbc'</span><span class="token punctuation">,</span> sessionKey<span class="token punctuation">,</span> iv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 设置自动 padding 为 true，删除填充补位</span>
+    decipher<span class="token punctuation">.</span><span class="token function">setAutoPadding</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    decoded <span class="token operator">=</span> decipher<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>encryptedData<span class="token punctuation">,</span> <span class="token string">'binary'</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    decoded <span class="token operator">+=</span> decipher<span class="token punctuation">.</span><span class="token function">final</span><span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    decoded <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>decoded<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Illegal Buffer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>decoded<span class="token punctuation">.</span>watermark<span class="token punctuation">.</span>appid <span class="token operator">!==</span> <span class="token keyword">this</span><span class="token punctuation">.</span>appId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Illegal Buffer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> decoded<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+exports<span class="token punctuation">.</span><span class="token function-variable function">main</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> <span class="token punctuation">{</span>iv<span class="token punctuation">,</span> data<span class="token punctuation">,</span> session_key<span class="token punctuation">}</span> <span class="token operator">=</span> event
+  <span class="token comment">// 这里微信的 id 和 secret 从配置文件中获取</span>
+  <span class="token keyword">let</span> appId <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">getWechatAppConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>id
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> pc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WXBizDataCrypt</span><span class="token punctuation">(</span>appId<span class="token punctuation">,</span> session_key<span class="token punctuation">)</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span>pc<span class="token punctuation">.</span><span class="token function">decryptData</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> iv<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_5-检测-session-key-是否失效"><a href="#_5-检测-session-key-是否失效" class="header-anchor">#</a> 5. 检测 <code>session_key</code> 是否失效</h4> <p>前面提到 <code>session_key</code> 需要存入本地缓存，但是存在可能失效的情况，小程序提供的 <code>wx.checkSession</code> 方法可以检测当前的 <code>session_key</code> 是否失效，如果失效则重新调用 <code>wx.login</code> 登录授权流程。</p> <p><code>wx.checkSession</code> 方法并不需要传入任何有关 <code>session_key</code> 的信息参数，而是小程序自己去调自己的服务来查询用户最近一次生成的 <code>session_key</code> 是否过期。如果当前 <code>session_key</code> 过期，就让用户来重新登录，更新 <code>session_key</code>，并将最新的 <code>session_key</code> 存入用户数据表中。</p> <h3 id="整个授权流程图和代码"><a href="#整个授权流程图和代码" class="header-anchor">#</a> 整个授权流程图和代码</h3> <p><img src="https://user-gold-cdn.xitu.io/2018/8/13/1653149c0d99db7d?w=1024&amp;h=768&amp;f=jpeg&amp;s=116659" alt=""></p> <p>用代码来表示如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 或者在 app.js 内使用 onLaunch</span>
+<span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> loginFlag <span class="token operator">=</span> wx<span class="token punctuation">.</span><span class="token function">getStorageSync</span><span class="token punctuation">(</span><span class="token string">'session_key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>loginFlag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 检查 session_key 是否过期</span>
+    wx<span class="token punctuation">.</span><span class="token function">checkSession</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">// session_key 有效（未过期）</span>
+        <span class="token function-variable function">success</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 业务逻辑处理</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        <span class="token comment">// session_key 过期</span>
+        <span class="token function-variable function">fail</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// session_key 过期，重新登录</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">doLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 无 session_key，作为首次登录</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">doLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="使用云开发数据库来存储心情数据"><a href="#使用云开发数据库来存储心情数据" class="header-anchor">#</a> 使用云开发数据库来存储心情数据</h2> <p>可以在小程序中通过 <code>wx.cloud</code> 相关的方法使用云开发的数据库，而且它支持权限设置，很方便存储 UGC（用户原创内容）的数据（在<a href="https://juejin.im/book/5b70f101e51d456669381803/section/5b70f2656fb9a009a545f6c7" target="_blank" rel="noopener noreferrer">第 3 节<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>介绍过）。在心情签到功能中，就使用了小程序云的数据库，用它来存储用户的签到心情。</p> <h3 id="在云开发控制台创建数据库"><a href="#在云开发控制台创建数据库" class="header-anchor">#</a> 在云开发控制台创建数据库</h3> <p>首先从小程序开发者工具中的「云开发」进入数据库管理 tab，然后点击「添加集合」，创建一个 <code>diary</code> 的集合（数据库）。</p> <div style="margin:20px auto;text-align:center;"><img src="https://user-gold-cdn.xitu.io/2018/8/13/1653149ee77c70b2?w=544&amp;h=176&amp;f=jpeg&amp;s=10801" width="480"></div> <p>这个集合中的文档数据格式如下图所示。</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/1/165938bd3dbe91ab?w=311&amp;h=143&amp;f=jpeg&amp;s=13693" alt=""></p> <p>其中，<code>_id</code> 和 <code>_openid</code> 是系统自动生成的，文档（表）中其他字段的意思解释如下：</p> <ul><li>emotion：当天的心情，一共有 5 种心情</li> <li>tsModified：签到的时间戳</li> <li>openid：根据授权信息获取的 openid，跟 <code>_openid</code> 一致</li></ul> <p>有了数据库的信息，需要编写增加一条心情数据（<code>addEmotion</code>）和获取某个月份所有心情数据（<code>getEmotionByOpenidAndDate</code>）。</p> <h3 id="增加心情数据"><a href="#增加心情数据" class="header-anchor">#</a> 增加心情数据</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// lib/api.js</span>
+<span class="token comment">// 初始化 cloud 环境</span>
+wx<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  env<span class="token operator">:</span> <span class="token string">'envID'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 获取数据库实例</span>
+<span class="token keyword">const</span> db <span class="token operator">=</span> wx<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span><span class="token function">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 用户心情签到</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">addEmotion</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">openid<span class="token punctuation">,</span> emotion</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> db<span class="token punctuation">.</span><span class="token function">collection</span><span class="token punctuation">(</span><span class="token string">'diary'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      openid<span class="token punctuation">,</span>
+      emotion<span class="token punctuation">,</span>
+      tsModified<span class="token operator">:</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="获取心情数据"><a href="#获取心情数据" class="header-anchor">#</a> 获取心情数据</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// lib/api.js</span>
+<span class="token comment">// 初始化 cloud 环境</span>
+wx<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  env<span class="token operator">:</span> <span class="token string">'envID'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 获取数据库实例</span>
+<span class="token keyword">const</span> db <span class="token operator">=</span> wx<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span><span class="token function">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 根据用户 openid 和日期获取心情数据</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getEmotionByOpenidAndDate</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">openid<span class="token punctuation">,</span> year<span class="token punctuation">,</span> month</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> _ <span class="token operator">=</span> db<span class="token punctuation">.</span>command
+  year <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span>
+  month <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>month<span class="token punctuation">)</span>
+
+  <span class="token keyword">let</span> start <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>year<span class="token punctuation">,</span> month <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> end <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>year<span class="token punctuation">,</span> month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// console.log(start, end, `${year}-${nextMonth}-01 00:00:00`,`${year}-${month}-01 00:00:00`)</span>
+  <span class="token keyword">return</span> db
+    <span class="token punctuation">.</span><span class="token function">collection</span><span class="token punctuation">(</span><span class="token string">'diary'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      openid<span class="token punctuation">,</span>
+      tsModified<span class="token operator">:</span> _<span class="token punctuation">.</span><span class="token function">gte</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">lt</span><span class="token punctuation">(</span>end<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>小程序云开发的数据库为了提升查询性能，<strong>不能够一次查询出来超过20条以上的数据</strong>。所以上面的代码最多能够查询出20条数据，当签到数据超过20天（一个月最多31天），这时候就需要做两次查询（根据<code>tsModified</code> 正序，反序各取一次），然后合并数据了，所以最后的代码如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getEmotionByOpenidAndDate</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">openid<span class="token punctuation">,</span> year<span class="token punctuation">,</span> month</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> _ <span class="token operator">=</span> db<span class="token punctuation">.</span>command
+  year <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span>
+  month <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>month<span class="token punctuation">)</span>
+
+  <span class="token keyword">let</span> start <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>year<span class="token punctuation">,</span> month <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> end <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>year<span class="token punctuation">,</span> month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// 这里因为限制 limit 20，所以查询两次，一共31条（最多31天）记录</span>
+  <span class="token comment">// 正序反序各取一次，使用 orderBy 排序</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      db
+        <span class="token punctuation">.</span><span class="token function">collection</span><span class="token punctuation">(</span><span class="token string">'diary'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          openid<span class="token punctuation">,</span>
+          tsModified<span class="token operator">:</span> _<span class="token punctuation">.</span><span class="token function">gte</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">lt</span><span class="token punctuation">(</span>end<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token string">'tsModified'</span><span class="token punctuation">,</span> <span class="token string">'desc'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      db
+        <span class="token punctuation">.</span><span class="token function">collection</span><span class="token punctuation">(</span><span class="token string">'diary'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          openid<span class="token punctuation">,</span>
+          tsModified<span class="token operator">:</span> _<span class="token punctuation">.</span><span class="token function">gte</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">lt</span><span class="token punctuation">(</span>end<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token string">'tsModified'</span><span class="token punctuation">,</span> <span class="token string">'asc'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> <span class="token punctuation">[</span>data1<span class="token punctuation">,</span> data2<span class="token punctuation">]</span> <span class="token operator">=</span> data
+        <span class="token keyword">let</span> <span class="token keyword">set</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        data1 <span class="token operator">=</span> data1<span class="token punctuation">.</span>data <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        data2 <span class="token operator">=</span> data2<span class="token punctuation">.</span>data <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        data <span class="token operator">=</span> data1<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>data2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">set</span><span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>_id<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">set</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>_id<span class="token punctuation">)</span>
+          <span class="token keyword">return</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span>data<span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>心情数据是根据 <code>openid</code> 和月份获取的，日期范围为：月份 1 日的凌晨 0 点（start）到下一月份 1 日的凌晨 0 点（end），在云数据库中可以使用 <code>_.gte(start).and(_.lt(end))</code>，即大于等于 <code>start</code> 小于 <code>end</code>。</p> <p>这里计算 <code>start</code> 和 <code>end</code> 的时候，遇见了 <code>Date</code> 兼容性的两个问题：</p> <ol><li><code>localDateString</code> 问题</li> <li>时区问题</li></ol> <h4 id="localdatestring-问题"><a href="#localdatestring-问题" class="header-anchor">#</a> <code>localDateString</code> 问题</h4> <p>笔者一开始使用将日期转化成类似 <code>2018-01-01 00:00:00</code> 的格式，然后使用 <code>new Date('2018-01-01 00:00:00')</code>，可以得到 Date 实例，这在开发者工具和 Android 手机上都没有问题，但是在 iOS 系统下却识别成了 <code>Invalid Date</code>，变成了 <code>1970-01-01</code>。这是因为 iOS 上 <code>localDateString</code>（本地时间）的<a href="https://stackoverflow.com/questions/13363673/javascript-date-is-invalid-on-ios" target="_blank" rel="noopener noreferrer">问题<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，使用 <code>new Date().toLocaleDateString()</code> 就可以知道，iOS 下识别的数据是 <code>2018/01/01 00:00:00</code> 这样的格式的。</p> <h4 id="时区问题"><a href="#时区问题" class="header-anchor">#</a> 时区问题</h4> <p>小程序云开发的云函数和数据库是面向全球开发者的，它们使用的时区并不是我们的东八区（北京时间），因此我们在获取 Date 的时候就要小心，简单拼接 <code>2018-01-01 00:00:00</code> 获取的时间并不是北京时间，数据库存入的数据如果使用北京时间（本地 JS），那么获取数据的时候就应该使用北京时间（云端执行 JS 时）。</p> <p>为了解决 Date 的问题，笔者在计算时区的时候，都转换成了 UTC 标准时间，比如在云函数中，笔者使用了 <code>new Date().getUTCHours()</code> 这样的时间，详见 server/inline/utils.js。</p> <p>而在获取特定某一天的 Date 实例的时候，则使用 <code>new Date(year, month, day)</code> 的方式，这样在数据库获取某个月份时间戳时，就不会出现不同系统环境不同数值的问题，详见 client/lib/api.js 的 <code>getEmotionByOpenidAndDate</code> 方法。</p> <h2 id="使用-navigator-增加跳转"><a href="#使用-navigator-增加跳转" class="header-anchor">#</a> 使用 navigator 增加跳转</h2> <p>心情签到页面做完之后，还需要在天气预报页面给它做跳转。在天气预报页面增加跳转的 WXML 代码如下：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!--weather/index.wxml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>navigator<span class="token punctuation">&quot;</span></span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>goDiary<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>icon</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>edit<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>页面绑定了事件 <code>goDiary</code> 代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// weather/index.js</span>
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">goDiary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/pages/diary/index</span><span class="token template-punctuation string">`</span></span>
+    wx<span class="token punctuation">.</span><span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      url
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>在心情签到页面，顶部导航需要增加返回操作：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!--diary/index.wxml--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>navigator<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>icon</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>back<span class="token punctuation">&quot;</span></span> <span class="token attr-name">bindtap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>goBack<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// diary/index.js</span>
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">goBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    wx<span class="token punctuation">.</span><span class="token function">navigateBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="心情签到页面整体流程图"><a href="#心情签到页面整体流程图" class="header-anchor">#</a> 心情签到页面整体流程图</h2> <p><img src="https://user-gold-cdn.xitu.io/2018/8/13/16531487782ac35b?w=1024&amp;h=768&amp;f=jpeg&amp;s=210592" alt=""></p> <h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>本节介绍了新鲜天气日历使用、用户授权流程和数据库操作。</p> <p>日历使用需要在小程序管理后台搜索对应的插件 id，然后申请授权。日历的日期背景颜色是跟当时签到心情相对应的，当切换了日历的月份之后，应该重新获取当前月份的签到数据信息。</p> <p>用户授权流程由小程序、开发者服务器和微信接口服务三方参与，整个流程包括调用 <code>wx.login</code> 授权获取临时登录凭证，使用临时登录凭证获取 <code>openid</code> 和 <code>session_key</code>，以及获取用户信息三个步骤。<code>session_key</code> 可以用于解密敏感数据，但是 <code>session_key</code> 具有时效性，需要调用 <code>wx.checkSession</code> 方法来校验其是否失效。</p> <p>云开发的数据库每条记录自带 <code>_openid</code> 字段，可以单独来设置数据库权限。笔者在心情签到功能中主动通过授权获得用户 <code>openid</code> 然后增加记录。在进行跟日期、时间戳相关的数据查询时应该注意云环境的时区，最佳实践是使用格林尼治时间，使用 <code>Date</code> 对象的时候也应该注意生产环节和本地环境 <code>localeDateString</code> 的差异。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年12月4日星期五凌晨1点01分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/frontend/微信小程序/8实战篇 5：为天气页面制作雨雪效果的粒子系统.html" class="prev">
+        实战篇 5：为天气页面制作雨雪效果的粒子系统
+      </a></span> <span class="next"><a href="/frontend/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="router-link-active">
+        首页
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.706dfc08.js" defer></script><script src="/assets/js/5.a1985014.js" defer></script><script src="/assets/js/2.06f532ef.js" defer></script><script src="/assets/js/129.b42b4e5e.js" defer></script><script src="/assets/js/3.cce15a36.js" defer></script>
+  </body>
+</html>

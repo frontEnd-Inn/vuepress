@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>服务端渲染的探索与实践 | 软件客栈大掌柜</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/1.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="软件客栈大掌柜笔记">
+    <meta name="author" content="大掌柜">
+    <meta name="keywords" content="vuepress介绍, vuepress说明,软件客栈大掌柜">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.7f98414a.css" as="style"><link rel="preload" href="/assets/js/app.706dfc08.js" as="script"><link rel="preload" href="/assets/js/5.a1985014.js" as="script"><link rel="preload" href="/assets/js/2.06f532ef.js" as="script"><link rel="preload" href="/assets/js/164.150aab74.js" as="script"><link rel="preload" href="/assets/js/3.cce15a36.js" as="script"><link rel="prefetch" href="/assets/js/10.2c79d68c.js"><link rel="prefetch" href="/assets/js/100.f100f4ea.js"><link rel="prefetch" href="/assets/js/101.8792d9db.js"><link rel="prefetch" href="/assets/js/102.aaa2fe97.js"><link rel="prefetch" href="/assets/js/103.a5ce24af.js"><link rel="prefetch" href="/assets/js/104.b040fffb.js"><link rel="prefetch" href="/assets/js/105.5eee1282.js"><link rel="prefetch" href="/assets/js/106.106a9c26.js"><link rel="prefetch" href="/assets/js/107.a2b61042.js"><link rel="prefetch" href="/assets/js/108.b892dd66.js"><link rel="prefetch" href="/assets/js/109.3314fe2f.js"><link rel="prefetch" href="/assets/js/11.ad036196.js"><link rel="prefetch" href="/assets/js/110.30c4ce99.js"><link rel="prefetch" href="/assets/js/111.2ceb9df8.js"><link rel="prefetch" href="/assets/js/112.7483a3b4.js"><link rel="prefetch" href="/assets/js/113.bac5445b.js"><link rel="prefetch" href="/assets/js/114.1c27f5dc.js"><link rel="prefetch" href="/assets/js/115.e16aef72.js"><link rel="prefetch" href="/assets/js/116.84137466.js"><link rel="prefetch" href="/assets/js/117.d5d2c4aa.js"><link rel="prefetch" href="/assets/js/118.a228463d.js"><link rel="prefetch" href="/assets/js/119.6a6b4f4f.js"><link rel="prefetch" href="/assets/js/12.a52711b9.js"><link rel="prefetch" href="/assets/js/120.b5e71441.js"><link rel="prefetch" href="/assets/js/121.00bd220c.js"><link rel="prefetch" href="/assets/js/122.8f700f5b.js"><link rel="prefetch" href="/assets/js/123.7f413c25.js"><link rel="prefetch" href="/assets/js/124.b783b5cb.js"><link rel="prefetch" href="/assets/js/125.b5e9a09f.js"><link rel="prefetch" href="/assets/js/126.288282b5.js"><link rel="prefetch" href="/assets/js/127.b441e0c9.js"><link rel="prefetch" href="/assets/js/128.0c4282c6.js"><link rel="prefetch" href="/assets/js/129.b42b4e5e.js"><link rel="prefetch" href="/assets/js/13.fde39ba1.js"><link rel="prefetch" href="/assets/js/130.756fff45.js"><link rel="prefetch" href="/assets/js/131.b3d70b12.js"><link rel="prefetch" href="/assets/js/132.57548e9e.js"><link rel="prefetch" href="/assets/js/133.71d13054.js"><link rel="prefetch" href="/assets/js/134.1ecaf78e.js"><link rel="prefetch" href="/assets/js/135.a9a23af5.js"><link rel="prefetch" href="/assets/js/136.562aa5dc.js"><link rel="prefetch" href="/assets/js/137.d602b6b5.js"><link rel="prefetch" href="/assets/js/138.554b8fce.js"><link rel="prefetch" href="/assets/js/139.4865b599.js"><link rel="prefetch" href="/assets/js/14.ffd16da9.js"><link rel="prefetch" href="/assets/js/140.0961d9df.js"><link rel="prefetch" href="/assets/js/141.5cd1a745.js"><link rel="prefetch" href="/assets/js/142.57802000.js"><link rel="prefetch" href="/assets/js/143.93d9efce.js"><link rel="prefetch" href="/assets/js/144.de603eb8.js"><link rel="prefetch" href="/assets/js/145.bf1c2688.js"><link rel="prefetch" href="/assets/js/146.7f6c3213.js"><link rel="prefetch" href="/assets/js/147.f7bf171c.js"><link rel="prefetch" href="/assets/js/148.014a8cac.js"><link rel="prefetch" href="/assets/js/149.c5fa5906.js"><link rel="prefetch" href="/assets/js/15.248c685c.js"><link rel="prefetch" href="/assets/js/150.0cc5ef1c.js"><link rel="prefetch" href="/assets/js/151.07566101.js"><link rel="prefetch" href="/assets/js/152.f74690f8.js"><link rel="prefetch" href="/assets/js/153.7e065629.js"><link rel="prefetch" href="/assets/js/154.a2415b30.js"><link rel="prefetch" href="/assets/js/155.9afb0898.js"><link rel="prefetch" href="/assets/js/156.32f77a06.js"><link rel="prefetch" href="/assets/js/157.6501de59.js"><link rel="prefetch" href="/assets/js/158.e5e5a393.js"><link rel="prefetch" href="/assets/js/159.9ec0457f.js"><link rel="prefetch" href="/assets/js/16.9ac46bb6.js"><link rel="prefetch" href="/assets/js/160.cd094c7d.js"><link rel="prefetch" href="/assets/js/161.ae3e0313.js"><link rel="prefetch" href="/assets/js/162.89539aca.js"><link rel="prefetch" href="/assets/js/163.e452a748.js"><link rel="prefetch" href="/assets/js/165.026bf111.js"><link rel="prefetch" href="/assets/js/166.89c86017.js"><link rel="prefetch" href="/assets/js/167.69ee6ede.js"><link rel="prefetch" href="/assets/js/168.43b68632.js"><link rel="prefetch" href="/assets/js/169.2f9f0246.js"><link rel="prefetch" href="/assets/js/17.82a262d3.js"><link rel="prefetch" href="/assets/js/170.c19dc3dd.js"><link rel="prefetch" href="/assets/js/171.e56c55d9.js"><link rel="prefetch" href="/assets/js/172.a3e7845e.js"><link rel="prefetch" href="/assets/js/173.0b83d9c2.js"><link rel="prefetch" href="/assets/js/174.c68c0269.js"><link rel="prefetch" href="/assets/js/175.539f71f0.js"><link rel="prefetch" href="/assets/js/176.04964db3.js"><link rel="prefetch" href="/assets/js/177.dc992454.js"><link rel="prefetch" href="/assets/js/178.ddfa4a03.js"><link rel="prefetch" href="/assets/js/179.2af0e66e.js"><link rel="prefetch" href="/assets/js/18.28b713e4.js"><link rel="prefetch" href="/assets/js/180.9a4d8869.js"><link rel="prefetch" href="/assets/js/181.6a33aa9b.js"><link rel="prefetch" href="/assets/js/182.73a72c77.js"><link rel="prefetch" href="/assets/js/183.dff62977.js"><link rel="prefetch" href="/assets/js/184.35b18776.js"><link rel="prefetch" href="/assets/js/185.71974dff.js"><link rel="prefetch" href="/assets/js/186.38f792fc.js"><link rel="prefetch" href="/assets/js/187.76a4e549.js"><link rel="prefetch" href="/assets/js/188.43f54939.js"><link rel="prefetch" href="/assets/js/189.3628cb16.js"><link rel="prefetch" href="/assets/js/19.1162fb05.js"><link rel="prefetch" href="/assets/js/190.5d0bf71c.js"><link rel="prefetch" href="/assets/js/191.85bd91c1.js"><link rel="prefetch" href="/assets/js/192.a38cb0a3.js"><link rel="prefetch" href="/assets/js/193.bfad9e0b.js"><link rel="prefetch" href="/assets/js/194.c7264c65.js"><link rel="prefetch" href="/assets/js/195.859098a6.js"><link rel="prefetch" href="/assets/js/196.d36f5885.js"><link rel="prefetch" href="/assets/js/197.85a45767.js"><link rel="prefetch" href="/assets/js/198.a4fe959f.js"><link rel="prefetch" href="/assets/js/199.8b459d06.js"><link rel="prefetch" href="/assets/js/20.ee441cb8.js"><link rel="prefetch" href="/assets/js/200.632f8c04.js"><link rel="prefetch" href="/assets/js/201.643156f4.js"><link rel="prefetch" href="/assets/js/202.ba4a5291.js"><link rel="prefetch" href="/assets/js/203.81a1285e.js"><link rel="prefetch" href="/assets/js/204.8d7384ea.js"><link rel="prefetch" href="/assets/js/205.dd4215ed.js"><link rel="prefetch" href="/assets/js/206.6483093c.js"><link rel="prefetch" href="/assets/js/207.081cff93.js"><link rel="prefetch" href="/assets/js/208.093175e4.js"><link rel="prefetch" href="/assets/js/209.0f54a115.js"><link rel="prefetch" href="/assets/js/21.a4e4754d.js"><link rel="prefetch" href="/assets/js/210.1a0ea810.js"><link rel="prefetch" href="/assets/js/211.abcdbd7b.js"><link rel="prefetch" href="/assets/js/212.1546c314.js"><link rel="prefetch" href="/assets/js/213.2160f67c.js"><link rel="prefetch" href="/assets/js/214.52111592.js"><link rel="prefetch" href="/assets/js/215.b10cb717.js"><link rel="prefetch" href="/assets/js/216.89b60e69.js"><link rel="prefetch" href="/assets/js/217.ad947edf.js"><link rel="prefetch" href="/assets/js/218.27519362.js"><link rel="prefetch" href="/assets/js/219.cb427e64.js"><link rel="prefetch" href="/assets/js/22.d3a7f5c6.js"><link rel="prefetch" href="/assets/js/220.e5905962.js"><link rel="prefetch" href="/assets/js/221.e8322cc4.js"><link rel="prefetch" href="/assets/js/222.0298c6a3.js"><link rel="prefetch" href="/assets/js/223.b5391d9e.js"><link rel="prefetch" href="/assets/js/224.e899bce3.js"><link rel="prefetch" href="/assets/js/225.30cc066e.js"><link rel="prefetch" href="/assets/js/226.ecbe8929.js"><link rel="prefetch" href="/assets/js/227.a12905d3.js"><link rel="prefetch" href="/assets/js/228.a16591a7.js"><link rel="prefetch" href="/assets/js/229.472b2a1b.js"><link rel="prefetch" href="/assets/js/23.873bdd58.js"><link rel="prefetch" href="/assets/js/230.31eaa533.js"><link rel="prefetch" href="/assets/js/231.b686a972.js"><link rel="prefetch" href="/assets/js/232.fb49ef6d.js"><link rel="prefetch" href="/assets/js/233.8d8b812d.js"><link rel="prefetch" href="/assets/js/234.cfba3218.js"><link rel="prefetch" href="/assets/js/235.a0f1f597.js"><link rel="prefetch" href="/assets/js/236.f7e4e484.js"><link rel="prefetch" href="/assets/js/237.a6690e2c.js"><link rel="prefetch" href="/assets/js/238.38806924.js"><link rel="prefetch" href="/assets/js/239.07a31fe4.js"><link rel="prefetch" href="/assets/js/24.ff07a49c.js"><link rel="prefetch" href="/assets/js/240.cff79828.js"><link rel="prefetch" href="/assets/js/241.328d40c3.js"><link rel="prefetch" href="/assets/js/242.a776c189.js"><link rel="prefetch" href="/assets/js/243.540bc455.js"><link rel="prefetch" href="/assets/js/244.02f22973.js"><link rel="prefetch" href="/assets/js/245.fbb6e0c1.js"><link rel="prefetch" href="/assets/js/246.6b6e5c79.js"><link rel="prefetch" href="/assets/js/247.5862a275.js"><link rel="prefetch" href="/assets/js/248.1f88d123.js"><link rel="prefetch" href="/assets/js/249.e9495770.js"><link rel="prefetch" href="/assets/js/25.e40e0dd4.js"><link rel="prefetch" href="/assets/js/250.8a1aab0e.js"><link rel="prefetch" href="/assets/js/251.aced0a71.js"><link rel="prefetch" href="/assets/js/252.4d531500.js"><link rel="prefetch" href="/assets/js/253.9dd9776b.js"><link rel="prefetch" href="/assets/js/254.0f0ccb74.js"><link rel="prefetch" href="/assets/js/255.aae0849b.js"><link rel="prefetch" href="/assets/js/256.6f58d98f.js"><link rel="prefetch" href="/assets/js/257.28618e10.js"><link rel="prefetch" href="/assets/js/258.fe57c27c.js"><link rel="prefetch" href="/assets/js/259.b78ef20a.js"><link rel="prefetch" href="/assets/js/26.de36a71a.js"><link rel="prefetch" href="/assets/js/260.0ea2dc1a.js"><link rel="prefetch" href="/assets/js/261.7e3c0863.js"><link rel="prefetch" href="/assets/js/262.84e63ce4.js"><link rel="prefetch" href="/assets/js/263.510ae371.js"><link rel="prefetch" href="/assets/js/264.4160bc98.js"><link rel="prefetch" href="/assets/js/27.c580ee78.js"><link rel="prefetch" href="/assets/js/28.976d6702.js"><link rel="prefetch" href="/assets/js/29.6174cc16.js"><link rel="prefetch" href="/assets/js/30.aa22d6be.js"><link rel="prefetch" href="/assets/js/31.46de1df0.js"><link rel="prefetch" href="/assets/js/32.1b964f72.js"><link rel="prefetch" href="/assets/js/33.05676cb2.js"><link rel="prefetch" href="/assets/js/34.81be320f.js"><link rel="prefetch" href="/assets/js/35.00de593f.js"><link rel="prefetch" href="/assets/js/36.9c9ac879.js"><link rel="prefetch" href="/assets/js/37.0f391c8d.js"><link rel="prefetch" href="/assets/js/38.af0c2484.js"><link rel="prefetch" href="/assets/js/39.ad3acf6f.js"><link rel="prefetch" href="/assets/js/4.42dba944.js"><link rel="prefetch" href="/assets/js/40.4a9cb0ee.js"><link rel="prefetch" href="/assets/js/41.88e3ef3a.js"><link rel="prefetch" href="/assets/js/42.5e31c822.js"><link rel="prefetch" href="/assets/js/43.b02d7688.js"><link rel="prefetch" href="/assets/js/44.5465006b.js"><link rel="prefetch" href="/assets/js/45.26bca022.js"><link rel="prefetch" href="/assets/js/46.4005d589.js"><link rel="prefetch" href="/assets/js/47.e62a1130.js"><link rel="prefetch" href="/assets/js/48.c04ff0d0.js"><link rel="prefetch" href="/assets/js/49.0ddb5ba9.js"><link rel="prefetch" href="/assets/js/50.565951e1.js"><link rel="prefetch" href="/assets/js/51.3544d229.js"><link rel="prefetch" href="/assets/js/52.7a64588f.js"><link rel="prefetch" href="/assets/js/53.03b79fe7.js"><link rel="prefetch" href="/assets/js/54.fdac08cf.js"><link rel="prefetch" href="/assets/js/55.d9689762.js"><link rel="prefetch" href="/assets/js/56.2240d487.js"><link rel="prefetch" href="/assets/js/57.b041c091.js"><link rel="prefetch" href="/assets/js/58.d0dcd829.js"><link rel="prefetch" href="/assets/js/59.118f91f2.js"><link rel="prefetch" href="/assets/js/6.b166fe72.js"><link rel="prefetch" href="/assets/js/60.f7d99c31.js"><link rel="prefetch" href="/assets/js/61.6455ebd3.js"><link rel="prefetch" href="/assets/js/62.1fbfe7ef.js"><link rel="prefetch" href="/assets/js/63.9e81074e.js"><link rel="prefetch" href="/assets/js/64.b9941626.js"><link rel="prefetch" href="/assets/js/65.941d7e50.js"><link rel="prefetch" href="/assets/js/66.7b1d3392.js"><link rel="prefetch" href="/assets/js/67.49dda8c2.js"><link rel="prefetch" href="/assets/js/68.8aa1ca17.js"><link rel="prefetch" href="/assets/js/69.38d9a056.js"><link rel="prefetch" href="/assets/js/7.a03281b2.js"><link rel="prefetch" href="/assets/js/70.1ac937fe.js"><link rel="prefetch" href="/assets/js/71.b8ac9f51.js"><link rel="prefetch" href="/assets/js/72.19194d07.js"><link rel="prefetch" href="/assets/js/73.de1a0d69.js"><link rel="prefetch" href="/assets/js/74.57533fe3.js"><link rel="prefetch" href="/assets/js/75.d53f74a8.js"><link rel="prefetch" href="/assets/js/76.458d38d0.js"><link rel="prefetch" href="/assets/js/77.4f935fe6.js"><link rel="prefetch" href="/assets/js/78.7e272b25.js"><link rel="prefetch" href="/assets/js/79.d509d5a0.js"><link rel="prefetch" href="/assets/js/8.93c0ee07.js"><link rel="prefetch" href="/assets/js/80.73751a4c.js"><link rel="prefetch" href="/assets/js/81.fead5e9e.js"><link rel="prefetch" href="/assets/js/82.c1e5ee7e.js"><link rel="prefetch" href="/assets/js/83.6d22cb17.js"><link rel="prefetch" href="/assets/js/84.91a277e5.js"><link rel="prefetch" href="/assets/js/85.75219345.js"><link rel="prefetch" href="/assets/js/86.6fc3e32a.js"><link rel="prefetch" href="/assets/js/87.64384c54.js"><link rel="prefetch" href="/assets/js/88.6bef428a.js"><link rel="prefetch" href="/assets/js/89.d74f197d.js"><link rel="prefetch" href="/assets/js/9.81ed1b88.js"><link rel="prefetch" href="/assets/js/90.488a321b.js"><link rel="prefetch" href="/assets/js/91.b541fb2c.js"><link rel="prefetch" href="/assets/js/92.a3da2740.js"><link rel="prefetch" href="/assets/js/93.199e39e4.js"><link rel="prefetch" href="/assets/js/94.222c18be.js"><link rel="prefetch" href="/assets/js/95.fe7ed0da.js"><link rel="prefetch" href="/assets/js/96.2c756e51.js"><link rel="prefetch" href="/assets/js/97.d771cd41.js"><link rel="prefetch" href="/assets/js/98.9f8e2685.js"><link rel="prefetch" href="/assets/js/99.87d07b72.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f98414a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/hero.png" alt="软件客栈大掌柜" class="logo"> <span class="site-name can-hide">软件客栈大掌柜</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/computer/" class="nav-link">
+  计算机
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="系统" class="dropdown-title"><span class="title">系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/os/linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-item"><!----> <a href="/os/manjaro/" class="nav-link">
+  Manjaro
+</a></li><li class="dropdown-item"><!----> <a href="/os/ubuntu/" class="nav-link">
+  Ubuntu
+</a></li><li class="dropdown-item"><!----> <a href="/os/centos/" class="nav-link">
+  CentOS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend/前端最全资源整理/" class="nav-link">
+  2021前端最全资源集锦
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/javascript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记/" class="nav-link">
+  黑马js笔记
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/黑马-js笔记2/" class="nav-link">
+  黑马js笔记2
+</a></li><li class="dropdown-item"><!----> <a href="https://css.shanyuhai.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSS
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/frontend/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/d3js/" class="nav-link">
+  D3
+</a></li><li class="dropdown-item"><!----> <a href="/frontend/utils/" class="nav-link">
+  Utils
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  Koa
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  MongoDB
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  Nginx
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  springboot
+</a></li><li class="dropdown-item"><!----> <a href="/backend/java/" class="nav-link">
+  java
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试题" class="dropdown-title"><span class="title">面试题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/mianshiti/Html/" class="nav-link">
+  Html
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/Css/" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/javaScript/" class="nav-link">
+  javaScript
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/工具/" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/面试记录/" class="nav-link">
+  面试记录
+</a></li><li class="dropdown-item"><!----> <a href="/mianshiti/算法/" class="nav-link">
+  算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目实战" class="dropdown-title"><span class="title">项目实战</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend/nodejs/" class="nav-link">
+  vue项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/koa/" class="nav-link">
+  springcloud微服务项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/mongodb/" class="nav-link">
+  小程序项目实战
+</a></li><li class="dropdown-item"><!----> <a href="/backend/nginx/" class="nav-link">
+  spingboot+vue全栈项目
+</a></li><li class="dropdown-item"><!----> <a href="/backend/springboot/" class="nav-link">
+  待整理项目实战
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tools/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/tools/github/" class="nav-link">
+  Github
+</a></li><li class="dropdown-item"><!----> <a href="/tools/vscode/" class="nav-link">
+  VSCode
+</a></li><li class="dropdown-item"><!----> <a href="/tools/chrome/" class="nav-link">
+  Chrome Developer tools
+</a></li><li class="dropdown-item"><!----> <a href="/tools/bookmark-scripts/" class="nav-link">
+  Bookmark scripts
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/more/algorithm/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/more/hodgepodge/" class="nav-link">
+  大杂烩
+</a></li><li class="dropdown-item"><!----> <a href="/more/clean/" class="nav-link">
+  风格指南
+</a></li><li class="dropdown-item"><!----> <a href="https://v1.vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VuePress1.x 官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>性能优化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/mianshiti/性能优化/0开篇：知识体系与小册格局.html" class="sidebar-link">知识体系与小册格局</a></li><li><a href="/mianshiti/性能优化/10渲染篇 5：最后一击——回流（Reflow）与重绘（Repaint）.html" class="sidebar-link">最后一击——回流（Reflow）与重绘（Repaint）</a></li><li><a href="/mianshiti/性能优化/11应用篇 1：优化首屏体验——Lazy-Load 初探.html" class="sidebar-link">优化首屏体验——Lazy-Load 初探</a></li><li><a href="/mianshiti/性能优化/12应用篇 2：事件的节流（throttle）与防抖（debounce）.html" class="sidebar-link">事件的节流（throttle）与防抖（debounce）</a></li><li><a href="/mianshiti/性能优化/13性能监测篇：Performance、LightHouse 与性能 API.html" class="sidebar-link">Performance、LightHouse 与性能 API</a></li><li><a href="/mianshiti/性能优化/14前方的路：希望以此为你的起点.html" class="sidebar-link">前方的路：希望成为你的起点</a></li><li><a href="/mianshiti/性能优化/1网络篇 1：webpack 性能调优与 Gzip 原理.html" class="sidebar-link">webpack 性能调优与 Gzip 原理</a></li><li><a href="/mianshiti/性能优化/2网络篇 2：图片优化——质量与性能的博弈.html" class="sidebar-link">图片优化——质量与性能的博弈</a></li><li><a href="/mianshiti/性能优化/3存储篇 1：浏览器缓存机制介绍与缓存策略剖析.html" class="sidebar-link">浏览器缓存机制介绍与缓存策略剖析</a></li><li><a href="/mianshiti/性能优化/4存储篇 2：本地存储——从 Cookie 到 Web Storage、IndexDB.html" class="sidebar-link">本地存储——从 Cookie 到 Web Storage、IndexDB</a></li><li><a href="/mianshiti/性能优化/5彩蛋篇：CDN 的缓存与回源机制解析.html" class="sidebar-link">CDN 的缓存与回源机制解析</a></li><li><a href="/mianshiti/性能优化/6渲染篇 1：服务端渲染的探索与实践.html" class="active sidebar-link">服务端渲染的探索与实践</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/mianshiti/性能优化/6渲染篇 1：服务端渲染的探索与实践.html#服务端渲染的运行机制" class="sidebar-link">服务端渲染的运行机制</a></li><li class="sidebar-sub-header"><a href="/mianshiti/性能优化/6渲染篇 1：服务端渲染的探索与实践.html#服务端渲染解决了什么性能问题" class="sidebar-link">服务端渲染解决了什么性能问题</a></li><li class="sidebar-sub-header"><a href="/mianshiti/性能优化/6渲染篇 1：服务端渲染的探索与实践.html#服务端渲染的应用实例" class="sidebar-link">服务端渲染的应用实例</a></li><li class="sidebar-sub-header"><a href="/mianshiti/性能优化/6渲染篇 1：服务端渲染的探索与实践.html#服务端渲染的应用场景" class="sidebar-link">服务端渲染的应用场景</a></li></ul></li><li><a href="/mianshiti/性能优化/7渲染篇 2：知己知彼——解锁浏览器背后的运行机制.html" class="sidebar-link">知己知彼——解锁浏览器背后的运行机制</a></li><li><a href="/mianshiti/性能优化/8渲染篇 3：对症下药——DOM 优化原理与基本实践.html" class="sidebar-link">对症下药—— DOM 优化原理与基本实践</a></li><li><a href="/mianshiti/性能优化/9渲染篇 4：千方百计——Event Loop 与异步更新策略.html" class="sidebar-link">千方百计——Event Loop 与异步更新策略</a></li><li><a href="/mianshiti/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="sidebar-link">首页</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="服务端渲染的探索与实践"><a href="#服务端渲染的探索与实践" class="header-anchor">#</a> 服务端渲染的探索与实践</h1> <p>服务端渲染（SSR）近两年炒得很火热，相信各位同学对这个名词多少有所耳闻。本节我们将围绕“是什么”（服务端渲染的运行机制）、“为什么”（服务端渲染解决了什么性能问题  ）、“怎么做”（服务端渲染的应用实例与使用场景）这三个点，对服务端渲染进行探索。</p> <p>服务端渲染是一个相对的概念，它的对立面是“客户端渲染”。在运行机制解析这部分，我们会借力客户端渲染的概念，来帮大家理解服务端渲染的工作方式。基于对工作方式的了解，再去深挖它的原理与优势。</p> <p>任何知识点都不是“一座孤岛”，服务端渲染的实践往往与当下流行的前端技术（譬如 Vue，React，Redux 等）紧密结合。本节下半场将以 React 和 Vue 下的服务端渲染实现为例，为大家呈现一个完整的 SSR 实现过程。</p> <h2 id="服务端渲染的运行机制"><a href="#服务端渲染的运行机制" class="header-anchor">#</a> 服务端渲染的运行机制</h2> <p>相对于服务端渲染，同学们普遍对客户端渲染接受度更高一些，所以我们先从大家喜闻乐见的客户端渲染说起。</p> <h3 id="客户端渲染"><a href="#客户端渲染" class="header-anchor">#</a> 客户端渲染</h3> <p>客户端渲染模式下，服务端会把渲染需要的静态文件发送给客户端，客户端加载过来之后，自己在浏览器里跑一遍 JS，根据 JS 的运行结果，生成相应的 DOM。这种特性使得客户端渲染的源代码总是特别简洁，往往是这个德行：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!doctype html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>我是客户端渲染的页面<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>root<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>index.js<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>根节点下到底是什么内容呢？你不知道，我不知道，只有浏览器把 index.js 跑过一遍后才知道，这就是典型的客户端渲染。</p> <p><strong>页面上呈现的内容，你在 html 源文件里里找不到</strong>——这正是它的特点。</p> <h3 id="服务端渲染"><a href="#服务端渲染" class="header-anchor">#</a> 服务端渲染</h3> <p>服务端渲染的模式下，当用户第一次请求页面时，由服务器把需要的组件或页面渲染成 HTML 字符串，然后把它返回给客户端。客户端拿到手的，是可以直接渲染然后呈现给用户的 HTML 内容，不需要为了生成 DOM 内容自己再去跑一遍 JS 代码。</p> <p>使用服务端渲染的网站，可以说是“所见即所得”，<strong>页面上呈现的内容，我们在 html 源文件里也能找到</strong>。</p> <p>比如知乎就是典型的服务端渲染案例：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/26/166162c1cbad2c64?w=2736&amp;h=582&amp;f=png&amp;s=351372" alt=""></p> <p>zhihu.com 返回的 HTML 文件已经是可以直接进行渲染的内容了。</p> <h2 id="服务端渲染解决了什么性能问题"><a href="#服务端渲染解决了什么性能问题" class="header-anchor">#</a> 服务端渲染解决了什么性能问题</h2> <p>事实上，很多网站是出于效益的考虑才启用服务端渲染，性能倒是在其次。</p> <p>假设 A 网站页面中有一个关键字叫“前端性能优化”，这个关键字是 JS 代码跑过一遍后添加到 HTML 页面中的。那么客户端渲染模式下，我们在搜索引擎搜索这个关键字，是找不到 A 网站的——搜索引擎只会查找现成的内容，不会帮你跑 JS 代码。A 网站的运营方见此情形，感到很头大：搜索引擎搜不出来，用户找不到我们，谁还会用我的网站呢？为了把“现成的内容”拿给搜索引擎看，A 网站不得不启用服务端渲染。</p> <p>但性能在其次，不代表性能不重要。服务端渲染解决了一个非常关键的性能问题——首屏加载速度过慢。在客户端渲染模式下，我们除了加载 HTML，还要等渲染所需的这部分 JS 加载完，之后还得把这部分 JS 在浏览器上再跑一遍。这一切都是发生在用户点击了我们的链接之后的事情，在这个过程结束之前，用户始终见不到我们网页的庐山真面目，也就是说用户一直在等！相比之下，服务端渲染模式下，服务器给到客户端的已经是一个直接可以拿来呈现给用户的网页，中间环节早在服务端就帮我们做掉了，用户岂不“美滋滋”？</p> <h2 id="服务端渲染的应用实例"><a href="#服务端渲染的应用实例" class="header-anchor">#</a> 服务端渲染的应用实例</h2> <p>下面我们先来看一下在一个 React 项目里，服务端渲染是怎么实现的。本例中，我们使用 Express 搭建后端服务。</p> <p>项目中有一个叫做 VDom 的 React 组件，它的内容如下。</p> <p>VDom.js:</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">VDom</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>我是一个被渲染为真实<span class="token constant">DOM</span>的虚拟<span class="token constant">DOM</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> VDom
+</code></pre></div><p>在服务端的入口文件中，我引入这个组件，对它进行渲染：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> express <span class="token keyword">from</span> <span class="token string">'express'</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> renderToString <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-dom/server'</span>
+<span class="token keyword">import</span> VDom <span class="token keyword">from</span> <span class="token string">'./VDom'</span>
+
+<span class="token comment">// 创建一个express应用</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// renderToString 是把虚拟DOM转化为真实DOM的关键方法</span>
+<span class="token keyword">const</span> RDom <span class="token operator">=</span> <span class="token function">renderToString</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>VDom <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">)</span>
+<span class="token comment">// 编写HTML模板，插入转化后的真实DOM内容</span>
+<span class="token keyword">const</span> Page <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+            &lt;html&gt;
+              &lt;head&gt;
+                &lt;title&gt;test&lt;/title&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+                &lt;span&gt;服务端渲染出了真实DOM:  &lt;/span&gt;
+                </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>RDom<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+              &lt;/body&gt;
+            &lt;/html&gt;
+            </span><span class="token template-punctuation string">`</span></span>
+            
+<span class="token comment">// 配置HTML内容对应的路由</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/index'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>Page<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 配置端口号</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span>
+</code></pre></div><p>根据我们的路由配置，当我访问 http://localhost:8000/index 时，就可以呈现出服务端渲染的结果了：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/9/26/16615e831fa4c113?w=1502&amp;h=408&amp;f=png&amp;s=129026" alt=""></p> <p>我们可以看到，VDom 组件已经被 renderToString 转化为了一个内容为<code>&lt;div data-reactroot=&quot;&quot;&gt;我是一个被渲染为真实DOM的虚拟DOM&lt;/div&gt;</code>的字符串，这个字符串被插入 HTML 代码，成为了真实 DOM 树的一部分。</p> <p>那么 Vue 是如何实现服务端渲染的呢？</p> <p>其实是一个套路，我这里基于 <a href="https://ssr.vuejs.org/zh/#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B8%B2%E6%9F%93-ssr-%EF%BC%9F" target="_blank" rel="noopener noreferrer">Vue SSR 指南<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 中官方给出的例子为大家讲解 Vue 中的实现思路（思路见注释）。</p> <p>该示例直接将 Vue 实例整合进了服务端的入口文件中：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> Vue <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vue'</span><span class="token punctuation">)</span>
+<span class="token comment">// 创建一个express应用</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 提取出renderer实例</span>
+<span class="token keyword">const</span> renderer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vue-server-renderer'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createRenderer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+server<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'*'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 编写Vue实例（虚拟DOM节点）</span>
+  <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      url<span class="token operator">:</span> req<span class="token punctuation">.</span>url
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 编写模板HTML的内容</span>
+    template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;div&gt;访问的 URL 是： {{ url }}&lt;/div&gt;</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+  <span class="token comment">// renderToString 是把Vue实例转化为真实DOM的关键方法</span>
+  renderer<span class="token punctuation">.</span><span class="token function">renderToString</span><span class="token punctuation">(</span>app<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> html</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'Internal Server Error'</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 把渲染出来的真实DOM字符串插入HTML模板中</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang=&quot;en&quot;&gt;
+        &lt;head&gt;&lt;title&gt;Hello&lt;/title&gt;&lt;/head&gt;
+        &lt;body&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>html<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/body&gt;
+      &lt;/html&gt;
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">)</span>
+</code></pre></div><p>大家对比一下 React 项目中的注释内容，是不是发现这两段代码从本质上来说区别不大呢？</p> <p>以上两个小🌰，为大家演示了基本的服务端渲染实现流程。</p> <p>实际项目比这些复杂很多，但万变不离其宗。强调的只有两点：一是这个 renderToString() 方法；二是把转化结果“塞”进模板里的这一步。这两个操作是服务端渲染的灵魂操作。在虚拟 DOM“横行”的当下，服务端渲染不再是早年 JSP 里简单粗暴的字符串拼接过程，它还要求这一端要具备将虚拟 DOM 转化为真实 DOM 的能力。与其说是“把 JS 在服务器上先跑一遍”，不如说是“把 Vue、React 等框架代码先在 Node 上跑一遍”。</p> <h2 id="服务端渲染的应用场景"><a href="#服务端渲染的应用场景" class="header-anchor">#</a> 服务端渲染的应用场景</h2> <p>打眼一看，这个服务端渲染给浏览器省了这么多事儿，性能肯定是质的飞跃啊！喜闻乐见！但是大家打开自己经常访问的那些网页看一看，会发现仍然有许多网站压根儿不用服务端渲染——看来这个东西也不是万能的。</p> <p>根据我们前面的描述，不难看出，服务端渲染本质上是<strong>本该浏览器做的事情，分担给服务器去做</strong>。这样当资源抵达浏览器时，它呈现的速度就快了。乍一看好像很合理：浏览器性能毕竟有限，服务器多牛逼！能者多劳，就该让服务器多干点活！</p> <p>但仔细想想，在这个网民遍地的时代，几乎有多少个用户就有多少台浏览器。用户拥有的浏览器总量多到数不清，那么一个公司的服务器又有多少台呢？我们把这么多台浏览器的渲染压力集中起来，分散给相比之下数量并不多的服务器，服务器肯定是承受不住的。</p> <p>这样分析下来，服务端渲染也并非万全之策。在实践中，我一般会建议大家先忘记服务端渲染这个事情——服务器稀少而宝贵，但首屏渲染体验和 SEO 的优化方案却很多——我们最好先把能用的低成本“大招”都用完。除非网页对性能要求太高了，以至于所有的招式都用完了，性能表现还是不尽人意，这时候我们就可以考虑向老板多申请几台服务器，把服务端渲染搞起来了~</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2020年12月4日星期五凌晨1点01分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/mianshiti/性能优化/5彩蛋篇：CDN 的缓存与回源机制解析.html" class="prev">
+        CDN 的缓存与回源机制解析
+      </a></span> <span class="next"><a href="/mianshiti/性能优化/7渲染篇 2：知己知彼——解锁浏览器背后的运行机制.html">
+        知己知彼——解锁浏览器背后的运行机制
+      </a>
+      →
+    </span></p></div>  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.706dfc08.js" defer></script><script src="/assets/js/5.a1985014.js" defer></script><script src="/assets/js/2.06f532ef.js" defer></script><script src="/assets/js/164.150aab74.js" defer></script><script src="/assets/js/3.cce15a36.js" defer></script>
+  </body>
+</html>
