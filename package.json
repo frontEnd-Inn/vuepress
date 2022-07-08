@@ -23,7 +23,7 @@
     "@vssue/api-github-v4": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.3",
     "i": "^0.3.6",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "vuepress-plugin-auto-sidebar": "^1.4.1"
   },
   "devDependencies": {
